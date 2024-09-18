@@ -88,30 +88,6 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6); 
-}
-
-.modal-content {
-  background-color: rgba(255, 255, 255, 0.3); 
-  backdrop-filter: blur(10px); 
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* ========== Modal Section ========== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,6 +232,19 @@ nav a:hover {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header img {
+    width: 100px;
+    height: 100px;
+  }
+  header h1 {
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+  }
   nav {
     display: none;
     flex-direction: column;
@@ -272,8 +261,16 @@ nav a:hover {
   }
   .hamburger {
     display: flex;
+    align-self: flex-end;
   }
   .nav-active {
     display: flex;
+  }
+  /* Adjust filter buttons and sort dropdown */
+  #filter-buttons {
+    text-align: center;
+  }
+  #sort-options {
+    width: 100%;
   }
 }
