@@ -1,0 +1,12 @@
+// Custom Bootstrap variables
+$primary: #007bff; // Change this to your primary color
+$secondary: #6c757d; // Change this to your secondary color
+$success: #28a745; // Change this to your success color
+$info: #17a2b8; // Change this to your info color
+$warning: #ffc107; // Change this to your warning color
+$danger: #dc3545; // Change this to your danger color
+$light: #f8f9fa; // Change this to your light color
+$dark: #343a40; // Change this to your dark color
+
+// Import Bootstrap's Sass files
+@import "node_modules/bootstrap/scss/bootstrap";

@@ -3,7 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Celeste's Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header class="container-fluid">
+      <img src="/assets/images/pfp.jpg" alt="Profile Picture" />
+      <h1 class="text-center">Celeste Artley</h1>
+      <div class="hamburger" onclick="toggleNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav>
+        <a href="#">Portfolio</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <div class="container-fluid">
+      <div class="row my-3">
+        <div id="filter-buttons" class="col">
+          <button
+            class="btn btn-primary filter-btn"
+            onclick="filterCards('all')"
+          >
+            All
+          </button>
+          <button
+            class="btn btn-secondary filter-btn"
+            onclick="sortCardsByGenre('Discovery')"
+          >
+            Discovery
+          </button>
+          <button
+            class="btn btn-secondary filter-btn"
+            onclick="sortCardsByGenre('Tool')"
+          >
+            Tool
+          </button>
+          <button
+            class="btn btn-secondary filter-btn"
+            onclick="sortCardsByGenre('Game')"
+          >
+            Game
+          </button>
+          <button
+            class="btn btn-secondary filter-btn"
+            onclick="sortCardsByGenre('Website')"
+          >
+            Website
+          </button>
+          <!-- Add more filter buttons as needed -->
+        </div>
+        <div class="col-auto ml-auto">
+          <select id="sort-options" class="form-control" onchange="sortCards()">
+            <option value="date-desc">Date Descending</option>
+            <option value="date-asc">Date Ascending</option>
+            <option value="title-asc">Title A-Z</option>
+            <option value="title-desc">Title Z-A</option>
+          </select>
+        </div>
+      </div>
+      <div id="portfolio-cards" class="row m-2">
+        <!-- Cards will be generated here -->
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title"></h5>
+          <button
+            type="button"
+            class="close"
+            onclick="closeModal()"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img
+            id="modal-image"
+            src=""
+            alt=""
+            style="width: 100%; height: auto"
+          />
+          <p id="modal-description"></p>
+        </div>
+        <div class="modal-footer">
+          <a
+            id="modal-link"
+            href=""
+            target="_blank"
+            class="btn btn-primary btn-block"
+            >View Code</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="assets/js/portfolio.js"></script>
+    <script>
+      function toggleNav() {
+        const nav = document.querySelector("header nav");
+        nav.classList.toggle("nav-active");
+      }
+    </script>
+  </body>
 </html>
