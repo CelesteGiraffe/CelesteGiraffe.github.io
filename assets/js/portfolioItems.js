@@ -73,7 +73,7 @@ export const portfolioItems = [
       "A tool to create and share tierlists. Developed using HTML, CSS, and JavaScript.",
     longDescription:
       "This is a tool I created to make and share tierlists. Other Tierlist makers online did not support the pictures I wanted and I wanted a programatic way to create my own and share with my friends in discord so I created this tool.",
-    image: "/assets/images/TierlistMaker.png",
+    image: "/assets/images/TierListMaker.png",
     link: "https://github.com/CelesteGiraffe/Teirlist",
     date: "2021-05-20",
     genre: "tool",
