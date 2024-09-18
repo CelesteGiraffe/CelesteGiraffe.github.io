@@ -1,23 +1,21 @@
-/* Add this to your /assets/css/index.css file */
-
 /* Adjust the skill cards container to use Flexbox */
 .skills-list {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping to the next line if necessary */
-    justify-content: center; /* Centers the skill cards horizontally */
+    flex-wrap: wrap; 
+    justify-content: center; 
   }
   
   /* Adjust the skill cards */
   .skills-list .card {
-    width: 100px; /* Adjust the width as needed */
-    margin: 5px; /* Adjust the margin as needed */
-    padding: 10px; /* Adjust the padding as needed */
+    width: 100px; 
+    margin: 5px; 
+    padding: 10px;
   }
   
   /* Make the icons fit the full size of the buttons */
   .skills-list .card-body i {
-    font-size: 3em; /* Adjust the font size as needed */
+    font-size: 3em; 
     display: block;
     text-align: center;
-    margin-bottom: 5px; /* Adjust the margin as needed */
+    margin-bottom: 5px; 
   }
