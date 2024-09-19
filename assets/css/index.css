@@ -251,11 +251,34 @@ nav a:hover {
   .nav-active {
     display: flex;
   }
-  /* Adjust filter buttons and sort dropdown */
   #filter-buttons {
     text-align: center;
   }
   #sort-options {
     width: 100%;
   }
+}
+/* ========== Footer Section ========== */
+.footer {
+  background-color: #012851 !important; 
+  color: white;
+  padding: 20px 0;
+}
+
+.footer .container {
+  background-color: #012851 !important; 
+}
+
+.footer h5 {
+  font-family: 'Merriweather', serif;
+  color: #fda085;
+}
+
+.footer a {
+  color: #fda085;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

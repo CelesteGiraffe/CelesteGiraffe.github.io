@@ -1,21 +1,39 @@
-/* Adjust the skill cards container to use Flexbox */
+
 .skills-list {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
   }
   
-  /* Adjust the skill cards */
   .skills-list .card {
     width: 100px; 
     margin: 5px; 
     padding: 10px;
   }
   
-  /* Make the icons fit the full size of the buttons */
   .skills-list .card-body i {
     font-size: 3em; 
     display: block;
     text-align: center;
     margin-bottom: 5px; 
   }
+  /* ========== Footer Section ========== */
+.footer {
+  background-color: #012851;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer h5 {
+  font-family: 'Merriweather', serif;
+  color: #fda085;
+}
+
+.footer a {
+  color: #fda085;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
