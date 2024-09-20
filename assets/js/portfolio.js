@@ -5,10 +5,10 @@ function generateCards(items) {
   container.innerHTML = "";
   items.forEach((item) => {
     const col = document.createElement("div");
-    col.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-4"; // Added col-lg-3 for large screens
+    col.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-4";
 
     const card = document.createElement("div");
-    card.className = "card bg-secondary bg-gradient text-white h-100"; // Ensure card takes full height of column
+    card.className = "card bg-secondary bg-gradient text-white h-100";
     card.onclick = () =>
       showModal(item.title, item.longDescription, item.image || "", item.link);
     card.innerHTML = `
@@ -51,10 +51,8 @@ function filterCards(tag) {
     generateCards(filteredItems);
   }
 
-  // Update active button
   updateActiveButton(tag);
 
-  // Sort the visible cards after filtering
   sortCards();
 }
 
@@ -124,7 +122,7 @@ function showModal(title, description, image, link) {
   document.getElementById("modal-description").innerText = description;
   document.getElementById("modal-image").src = image;
   document.getElementById("modal-link").href = link;
-  modal.style.display = "block";
+  modal.style.display = "flex"; // Change display to flex to center the modal
 }
 
 function closeModal() {
