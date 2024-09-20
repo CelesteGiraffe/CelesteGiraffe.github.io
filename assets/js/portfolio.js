@@ -119,7 +119,7 @@ function showModal(title, description, image, link) {
   console.log("showModal called with:", { title, description, image, link });
   const modal = document.getElementById("projectModal");
   document.getElementById("modal-title").innerText = title;
-  document.getElementById("modal-description").innerText = description;
+  document.getElementById("modal-description").innerHTML = description; // Use innerHTML to render HTML tags
   document.getElementById("modal-image").src = image;
   document.getElementById("modal-link").href = link;
   modal.style.display = "flex"; // Change display to flex to center the modal
