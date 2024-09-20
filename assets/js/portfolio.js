@@ -144,5 +144,14 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.style.display = "none";
 
   generateCards(portfolioItems);
+
+  // Set the sort option to "date-desc" and sort the cards
+  const sortOptions = document.getElementById("sort-options");
+  sortOptions.value = "date-desc";
+  sortCards();
+
+  // Add event listener for sort options change
+  sortOptions.addEventListener("change", sortCards);
+
   document.getElementById("sort-options").addEventListener("change", sortCards);
 });
