@@ -103,9 +103,20 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-height: 80vh; 
-  overflow-y: auto; 
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;  /
+}
+.modal-content {
+  max-height: 80vh; 
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; 
 }
 
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
 
 body.modal-open {
   overflow: hidden;
