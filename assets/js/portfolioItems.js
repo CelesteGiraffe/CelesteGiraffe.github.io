@@ -231,7 +231,7 @@ export const portfolioItems = [
       "The first version of a portfolio website developed using HTML, CSS, and JavaScript.",
     image: "/assets/images/Portfolio.png",
     link: "https://github.com/CelesteGiraffe/Personal-Portfolio",
-    date: "2021-05-20",
+    date: "2022-03-20",
     genre: "Discovery",
   },
   {
