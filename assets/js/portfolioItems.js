@@ -120,7 +120,7 @@ export const portfolioItems = [
     title: "Tierlist Maker",
     tags: ["HTML", "CSS", "JavaScript"],
     description:
-      "A personal tool to create and share tierlists with friends, inspired by Discord chats.",
+      'A personal tool to create and share tierlists with friends, inspired by Discord chats. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
     longDescription: `
       <p>Frustrated by other tierlist makers not supporting the images I wanted to use, I built my own using HTML, CSS, and JavaScript. Features include:</p>
       <ul>
@@ -145,7 +145,7 @@ export const portfolioItems = [
       <p>This project is a Linux-based version control system developed as part of a school assignment. Key concepts explored:</p>
       <ul>
         <li>Commit and version tracking</li>
-        <li>Branching and merging</li>
+        <li>Diffing and Merging</li>
         <li>Command-line interface for version control operations</li>
       </ul>
       <p>It offered insight into how version control systems operate under the hood.</p>
@@ -161,11 +161,11 @@ export const portfolioItems = [
     description:
       "An IRC chatroom and chatbot built with Python, following IRC protocol.",
     longDescription: `
-      <p>This project demonstrates how to programmatically interact with an IRC chatroom using Python. It includes a chatbot with the following features:</p>
+      <p>This project demonstrates how to programmatically create a IRC server and a IRC chatbot using Python sockets. It includes the following features:</p>
       <ul>
         <li>Real-time interaction with users via IRC protocol</li>
         <li>Automated responses, jokes, and commands</li>
-        <li>Socket-based communication for networking practice</li>
+        <li>Socket-based communication using IRC protocol for networking practice</li>
       </ul>
       <p>This project helped develop my skills in socket programming and network protocol adherence.</p>
     `,
@@ -233,7 +233,7 @@ export const portfolioItems = [
     title: "Sorting Algorithm Visualizer",
     tags: ["HTML", "CSS", "JavaScript", "TypeScript"],
     description:
-      "A tool to visualise and understand sorting algorithms through interactive visuals.",
+      'A tool to visualise and understand sorting algorithms through interactive visuals. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
     longDescription: `
       <p>This tool provides an interactive way to visualise sorting algorithms. Features include:</p>
       <ul>
@@ -291,16 +291,16 @@ export const portfolioItems = [
     title: "Little Shop on Hallow Hill (GameJam version)",
     tags: ["C#", "Unity"],
     description:
-      "A game where you run a Halloween-themed shop and defend the town from human threats. (incomplete game jam version)",
+      'A game where you run a Halloween-themed shop and defend the town from human threats.</br> </br> <B>This was an incomplete submission done for a game jam during the end of summer break.</B> </br> <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play what I got done</a>',
     longDescription: `
-      <p>Little Shop on Hallow Hill is a GameJam project where you play as a shopkeeper in a Halloween town, selling items to protect the town from humans. This was an incomplete submission done for a game jambe during summer break. </br> Key features:</p>
+      <p>Little Shop on Hallow Hill is a GameJam project where you play as a shopkeeper in a Halloween town, selling items to protect the town from humans. <B>This was an incomplete submission done for a game jam during the end of summer break.</B> </br> Key features:</p>
       <ul>
         <li>Shop management mechanics with item selling</li>
-        <li>Defence against human invaders</li>
+        <li>Detailed inventory and selling system</li>
         <li>Spooky Halloween theme developed in Unity with C#</li>
       </ul>
       <p>This project allowed me to explore creative storytelling and resource management game mechanics.</p>
-      <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play the Game</a>
+      <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play what I got done</a>
     `,
     image: "/assets/images/TLSoHH.png",
     link: "https://github.com/CelesteGiraffe/Shopkeep",
@@ -315,7 +315,7 @@ export const portfolioItems = [
     longDescription: `
       <p>Techsavvy is my university capstone project, aimed at creating a platform for women in STEM. The site includes:</p>
       <ul>
-        <li>User registration and login system</li>
+        <li>User registration and login system using Oauth 2</li>
         <li>Discussion forums and resources for women in tech</li>
         <li>Developed using Python, Flask, MySQL, and Bootstrap</li>
       </ul>
