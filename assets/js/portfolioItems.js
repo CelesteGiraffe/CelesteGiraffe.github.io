@@ -242,7 +242,7 @@ export const portfolioItems = [
         <li>Built using JavaScript and TypeScript for dynamic visualisation</li>
       </ul>
       <p>This project helped me understand sorting algorithms and their visual representation.</p>
-      <a href="/SortingAlgoVisualizer/sort.html" target="_blank" class="btn btn-primary">Try It Out</a>
+      <a href="/SortingAlgoVisualizer/Sort.html" target="_blank" class="btn btn-primary">Try It Out</a>
     `,
     image: "/assets/images/Sort.png",
     link: "https://github.com/CelesteGiraffe/Sorting-Algorithm-Visualizer",
