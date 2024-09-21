@@ -291,7 +291,7 @@ export const portfolioItems = [
     title: "Little Shop on Hallow Hill (GameJam version)",
     tags: ["C#", "Unity"],
     description:
-      'A game where you run a Halloween-themed shop and defend the town from human threats.</br> </br> <B>This was an incomplete submission done for a game jam during the end of summer break.</B> </br> <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play what I got done</a>',
+      'A game where you run a Halloween-themed shop and defend the town from human threats.</br> </br> <B>This was an incomplete submission done for a game jam during the end of summer break.</B> </br> <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play my submission</a>',
     longDescription: `
       <p>Little Shop on Hallow Hill is a GameJam project where you play as a shopkeeper in a Halloween town, selling items to protect the town from humans. <B>This was an incomplete submission done for a game jam during the end of summer break.</B> </br> Key features:</p>
       <ul>
@@ -300,7 +300,7 @@ export const portfolioItems = [
         <li>Spooky Halloween theme developed in Unity with C#</li>
       </ul>
       <p>This project allowed me to explore creative storytelling and resource management game mechanics.</p>
-      <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play what I got done</a>
+      <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play my submission</a>
     `,
     image: "/assets/images/TLSoHH.png",
     link: "https://github.com/CelesteGiraffe/Shopkeep",
