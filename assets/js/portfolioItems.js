@@ -129,6 +129,7 @@ export const portfolioItems = [
         <li>User-friendly drag-and-drop interface</li>
       </ul>
       <p>This tool allows for easy creation and sharing of custom tierlists among friends.</p>
+      <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>
     `,
     image: "/assets/images/TierListMaker.png",
     link: "https://github.com/CelesteGiraffe/Teirlist",
@@ -241,6 +242,7 @@ export const portfolioItems = [
         <li>Built using JavaScript and TypeScript for dynamic visualisation</li>
       </ul>
       <p>This project helped me understand sorting algorithms and their visual representation.</p>
+      <a href="/SortingAlgoVisualizer/sort.html" target="_blank" class="btn btn-primary">Try It Out</a>
     `,
     image: "/assets/images/Sort.png",
     link: "https://github.com/CelesteGiraffe/Sorting-Algorithm-Visualizer",

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tier List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <a href="../index.html" class="btn btn-primary">Back to Portfolio</a>
+      <div class="addnew">
+        <button id="addTier">+</button>
+        <input
+          type="text"
+          class="tiername"
+          id="newTierName"
+          placeholder="Enter new tier name"
+        />
+      </div>
+
+      <!-- Tier Rows -->
+      <div id="tier-S" class="tier-row S row">
+        <button class="select-row">Select</button>
+        <h3>S Tier</h3>
+      </div>
+      <div id="tier-A" class="tier-row A row">
+        <button class="select-row">Select</button>
+        <h3>A Tier</h3>
+      </div>
+      <div id="tier-B" class="tier-row B row">
+        <button class="select-row">Select</button>
+        <h3>B Tier</h3>
+      </div>
+      <div id="tier-C" class="tier-row C row">
+        <button class="select-row">Select</button>
+        <h3>C Tier</h3>
+      </div>
+      <div id="tier-D" class="tier-row D row">
+        <button class="select-row">Select</button>
+        <h3>D Tier</h3>
+      </div>
+      <div id="tier-F" class="tier-row F row">
+        <button class="select-row">Select</button>
+        <h3>F Tier</h3>
+      </div>
+      <!-- ... where more teirs get generated -->
+
+      <!-- Image Squares -->
+      <div id="images" class="d-flex">
+        <!-- ...This is where the images load -->
+      </div>
+    </div>
+    <div id="large-image-container">
+      <img id="large-image" alt="Selected image will appear here" />
+    </div>
+
+    <!-- Include jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      // Read image URLs from localStorage
+      const imageLinks = JSON.parse(localStorage.getItem("imageUrls") || "[]");
+
+      // Create img elements for each image URL and append to the #images div
+      imageLinks.forEach((link, index) => {
+        const imgElement = `<div class="image-square"><img src="${link}" alt="Image ${
+          index + 1
+        }"></div>`;
+        $("#images").append(imgElement);
+      });
+
+      // Initialize draggable for newly added image squares
+      $(".image-square").draggable({
+        revert: "invalid",
+      });
+    </script>
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="tierlist.js"></script>
+  </body>
+</html>
