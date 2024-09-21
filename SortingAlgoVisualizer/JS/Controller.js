@@ -1,49 +1,59 @@
 import { AlgoSort } from "./AlgoSort.js";
+
 var algoSort = new AlgoSort(120, "AlgoDisplay", 650);
 var algoSortSmall = new AlgoSort(27, "sAlgoDisplay", 395);
-//Series of event listeners for the buttons under the canvas
+
+// Event listeners for the main canvas
 document
-    .getElementById("reset")
-    .addEventListener("click", algoSort.reset.bind(algoSort));
+  .getElementById("reset")
+  .addEventListener("click", algoSort.reset.bind(algoSort));
 document
-    .getElementById("newArray")
-    .addEventListener("click", algoSort.newArray.bind(algoSort));
+  .getElementById("newArray")
+  .addEventListener("click", algoSort.newArray.bind(algoSort));
 document
-    .getElementById("quick")
-    .addEventListener("click", algoSort.quickSort.bind(algoSort));
+  .getElementById("quick")
+  .addEventListener("click", algoSort.quickSort.bind(algoSort));
 document
-    .getElementById("bubble")
-    .addEventListener("click", algoSort.bubbleSort.bind(algoSort));
+  .getElementById("bubble")
+  .addEventListener("click", algoSort.bubbleSort.bind(algoSort));
 document
-    .getElementById("insertion")
-    .addEventListener("click", algoSort.insertionSort.bind(algoSort));
+  .getElementById("insertion")
+  .addEventListener("click", algoSort.insertionSort.bind(algoSort));
 document
-    .getElementById("heap")
-    .addEventListener("click", algoSort.heapSort.bind(algoSort));
+  .getElementById("heap")
+  .addEventListener("click", algoSort.heapSort.bind(algoSort));
 document
-    .getElementById("test")
-    .addEventListener("click", algoSort.functioningSortTestAlgo.bind(algoSort));
-//end series of Event listeners for buttons under canvas.
-//Series of event listeners for the buttons under the canvas
+  .getElementById("merge")
+  .addEventListener("click", algoSort.mergeSort.bind(algoSort));
 document
-    .getElementById("sreset")
-    .addEventListener("click", algoSortSmall.reset.bind(algoSortSmall));
+  .getElementById("test")
+  .addEventListener("click", algoSort.functioningSortTestAlgo.bind(algoSort));
+
+// Event listeners for the small canvas
 document
-    .getElementById("snewArray")
-    .addEventListener("click", algoSortSmall.newArray.bind(algoSortSmall));
+  .getElementById("sreset")
+  .addEventListener("click", algoSortSmall.reset.bind(algoSortSmall));
 document
-    .getElementById("squick")
-    .addEventListener("click", algoSortSmall.quickSort.bind(algoSortSmall));
+  .getElementById("snewArray")
+  .addEventListener("click", algoSortSmall.newArray.bind(algoSortSmall));
 document
-    .getElementById("sbubble")
-    .addEventListener("click", algoSortSmall.bubbleSort.bind(algoSortSmall));
+  .getElementById("squick")
+  .addEventListener("click", algoSortSmall.quickSort.bind(algoSortSmall));
 document
-    .getElementById("sinsertion")
-    .addEventListener("click", algoSortSmall.insertionSort.bind(algoSortSmall));
+  .getElementById("sbubble")
+  .addEventListener("click", algoSortSmall.bubbleSort.bind(algoSortSmall));
 document
-    .getElementById("sheap")
-    .addEventListener("click", algoSortSmall.heapSort.bind(algoSortSmall));
+  .getElementById("sinsertion")
+  .addEventListener("click", algoSortSmall.insertionSort.bind(algoSortSmall));
 document
-    .getElementById("stest")
-    .addEventListener("click", algoSortSmall.functioningSortTestAlgo.bind(algoSortSmall));
-//end series of Event listeners for buttons under canvas.
+  .getElementById("sheap")
+  .addEventListener("click", algoSortSmall.heapSort.bind(algoSortSmall));
+document
+  .getElementById("smerge")
+  .addEventListener("click", algoSortSmall.mergeSort.bind(algoSortSmall));
+document
+  .getElementById("stest")
+  .addEventListener(
+    "click",
+    algoSortSmall.functioningSortTestAlgo.bind(algoSortSmall)
+  );
