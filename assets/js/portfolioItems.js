@@ -13,6 +13,7 @@ export const portfolioItems = [
         <li>Developed in C# with Mixamo animations</li>
       </ul>
       <p>This project was a deep dive into Unity game development and AI behaviour scripting.</p>
+      <a href="https://youtu.be/yN1TZMd2CG8?si=yMvQWZNsgEUc5_-y" target="_blank" class="btn btn-primary">Watch Some Gameplay</a>
     `,
     image: "/assets/images/cordellia.png",
     link: "https://github.com/UniversityOfDundee-Computing/vertical-slice-of-a-game-CelesteGiraffe",
