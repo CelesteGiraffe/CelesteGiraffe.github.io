@@ -291,15 +291,16 @@ export const portfolioItems = [
     title: "Little Shop on Hallow Hill (GameJam version)",
     tags: ["C#", "Unity"],
     description:
-      "A game where you run a Halloween-themed shop and defend the town from human threats.",
+      "A game where you run a Halloween-themed shop and defend the town from human threats. (incomplete game jam version)",
     longDescription: `
-      <p>Little Shop on Hallow Hill is a GameJam project where you play as a shopkeeper in a Halloween town, selling items to protect the town from humans. Key features:</p>
+      <p>Little Shop on Hallow Hill is a GameJam project where you play as a shopkeeper in a Halloween town, selling items to protect the town from humans. This was an incomplete submission done for a game jambe during summer break. </br> Key features:</p>
       <ul>
         <li>Shop management mechanics with item selling</li>
         <li>Defence against human invaders</li>
         <li>Spooky Halloween theme developed in Unity with C#</li>
       </ul>
       <p>This project allowed me to explore creative storytelling and resource management game mechanics.</p>
+      <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play the Game</a>
     `,
     image: "/assets/images/TLSoHH.png",
     link: "https://github.com/CelesteGiraffe/Shopkeep",
