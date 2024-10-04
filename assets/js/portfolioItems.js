@@ -292,17 +292,17 @@ export const portfolioItems = [
   },
   {
     title: "Minesweeper Grid Game (Sketchsweepr)",
-    tags: ["C#", ".net"],
+    tags: ["C#", ".NET", "Custom Graphics", "Grid Systems", "Game Development"],
     description:
-      "A hand-drawn style Minesweeper game developed using C# and .NET.",
+      "A unique, hand-drawn style Minesweeper game developed using C# and .NET, intended to explore grid systems and creative UI design.",
     longDescription: `
-      <p>Sketchsweepr is a unique take on the classic Minesweeper game, designed with a hand-drawn aesthetic. Features include:</p>
+      <p>Sketchsweepr is a creative twist on the classic Minesweeper game, designed as a project at the University of Dundee to experiment with grid systems and custom graphics. This project stood out due to its distinctive hand-drawn aesthetic, reminiscent of notebook doodles, which gave it a playful and personal touch. Key features include:</p>
       <ul>
-        <li>Custom grid-based system for game board display</li>
-        <li>Hand-drawn style UI to give a fresh look to Minesweeper</li>
-        <li>Developed using C# and .NET framework</li>
+        <li><strong>Custom Grid-Based System:</strong> Developed an interactive grid system for the Minesweeper game board, showcasing an understanding of grid-based logic and dynamic layouts.</li>
+        <li><strong>Hand-Drawn Style UI:</strong> The game features a visually unique user interface, with elements inspired by sketches you might find in class notes, bringing a personal and charming style to the game.</li>
+        <li><strong>C# and .NET Framework:</strong> Implemented in C# using the .NET framework, focusing on creating an intuitive and engaging user experience.</li>
       </ul>
-      <p>This project allowed me to experiment with UI/UX design while recreating a classic game.</p>
+      <p>This project provided valuable experience in combining technical concepts like grid management with creative storytelling through unique visual styles, enhancing both gameplay and player experience.</p>
     `,
     image: "/assets/images/SketchSweeper.png",
     link: "https://github.com/nataliiaash/Minesweeper2/tree/master",
