@@ -1,19 +1,28 @@
 export const portfolioItems = [
   {
     title: "Cordellia",
-    tags: ["Unity", "C#", "Mixamo", "Blender"],
+    tags: [
+      "Unity",
+      "C#",
+      "State Machine AI",
+      "NavMesh",
+      "Game Design",
+      "Blender",
+      "Mixamo",
+      "Animation",
+      "Player Movement",
+    ],
     description:
-      "A Unity-based game where you guide a mushroom girl, Cordellia, through a magical world.",
+      "Cordellia is a Unity-based vertical slice where players guide a mushroom girl, Cordellia, through an enchanted world filled with dangers and wonder. I developed this game solo as part of my Games Programming course at Dundee University, focusing on both game design and coding complex AI behaviours.",
     longDescription: `
-      <p>Cordellia is a captivating game developed in Unity, where players control a small mushroom girl on an adventure through enchanted forests and mystical lands. The game features:</p>
-      <ul>
-        <li>Complex AI-driven enemies</li>
-        <li>Multiple vibrant levels</li>
-        <li>Stunning hand-crafted graphics</li>
-        <li>Developed in C# with Mixamo animations</li>
-      </ul>
-      <p>This project was a deep dive into Unity game development and AI behaviour scripting.</p>
-      <a href="https://youtu.be/yN1TZMd2CG8?si=yMvQWZNsgEUc5_-y" target="_blank" class="btn btn-primary">Watch Some Gameplay</a>
+      <p>Cordellia is a captivating game developed in Unity, where players control a small mushroom girl on an adventure through enchanted forests and mystical lands. This project was a significant challenge as it was my first deep dive into full-fledged 3D game development beyond Game Jams. The game features:</p>
+    <ul>
+      <li><strong>Complex AI-Driven Enemies:</strong> Using a state machine approach, each enemy (including the <em>GiantAI</em>) has a unique set of behaviours—patrolling, chasing, attacking, or retreating—creating dynamic combat encounters. The AI also uses Unity's NavMesh for navigation, making interactions more realistic and challenging for players.</li>
+      <li><strong>Movement Controller:</strong> The player movement system is a hybrid inspired by games like <em>Dark Souls</em> and <em>Hollow Knight</em>. I focused heavily on precise camera control, responsive movement, and adding nuanced elements like dashing and aerial momentum, contributing to an engaging, fluid player experience. Features like dashing are implemented through coroutines for smooth, precise movement during combat.</li>
+      <li><strong>Hand-Crafted Visuals:</strong> The game incorporates animations from Mixamo and models I created or adapted in Blender, leading to a visually immersive experience.</li>
+    </ul>
+    <p>This project gave me invaluable experience in working with AI systems, player movement mechanics, and integrating animations to create a cohesive game experience. It was a great learning experience in balancing the technical and creative challenges involved in making an adventure game.</p>
+    <a href="https://youtu.be/yN1TZMd2CG8?si=yMvQWZNsgEUc5_-y" target="_blank" class="btn btn-primary">Watch Some Gameplay</a>
     `,
     image: "/assets/images/cordellia.png",
     link: "https://github.com/UniversityOfDundee-Computing/vertical-slice-of-a-game-CelesteGiraffe",
