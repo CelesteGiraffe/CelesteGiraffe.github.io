@@ -51,17 +51,20 @@ export const portfolioItems = [
   },
   {
     title: "Pedro's Pizza Database Backend",
-    tags: ["HTML", "CSS", "Bootstrap", "MySQL", "TailwindCSS"],
+    tags: [
+      "PHP",
+      "MySQL",
+      "Bootstrap",
+      "TailwindCSS",
+      "Database Management",
+      "CRUD Operations",
+      "Web Development",
+      "Backend Development",
+    ],
     description:
-      "A backend system for a pizza restaurant, managing employees and orders.",
+      "Pedro's Pizza is a backend system designed to manage employee data, order tracking, business metrics, and inventory for a pizza restaurant. I developed this system to refine my skills in database management, backend integration, and collaborative planning.",
     longDescription: `
-      <p>Pedro's Pizza is a backend system designed to handle employee data and customer orders for a pizza restaurant. Key features include:</p>
-      <ul>
-        <li>PHP-based backend with MySQL database integration</li>
-        <li>CRUD operations for employee and order management</li>
-        <li>User-friendly interface developed with Bootstrap and TailwindCSS</li>
-      </ul>
-      <p>This project helped refine my backend development skills, particularly in database management and PHP integration.</p>
+            <p>Pedro's Pizza is a comprehensive backend system built to manage the operations of a pizza restaurant, handling both employee management and customer orders. This project strengthened my skills in backend web development, database design, and collaborative team planning. Key features include:</p>       <ul>         <li><strong>PHP-Based Backend:</strong> The backend was built using PHP, ensuring a dynamic, server-side interaction with the database. CRUD operations included managing orders with tracking, employee car usage, employee roster management, business metrics, and inventory management to keep stores functional.</li>         <li><strong>MySQL Database Integration:</strong> I designed and implemented a MySQL database schema to handle all data storage needs, including joined tables for analyzing specific location profits and maintaining data integrity. We created pre-run queries for frequently accessed data and joined tables for efficient lookups.</li>         <li><strong>User-Friendly Interface:</strong> The frontend was designed using Bootstrap and TailwindCSS, creating a responsive, intuitive interface that allowed managers to interact easily with the backend system. This ensured that all data could be accessed and manipulated without a steep learning curve.</li>         <li><strong>Security and Optimization:</strong> Data security was a critical focus, with measures taken to prevent SQL injection and other vulnerabilities. I implemented prepared statements for SQL queries and optimized common data retrievals to improve performance and safety.</li>       </ul>       <p>The biggest takeaway from this project was learning the importance of planning and team alignment in development projects. Effective collaboration required more upfront planning than initially expected, as getting everyone on the same page proved vital for success. This project also honed my skills in database architecture, security, and backend integration.</p>       <a href="https://github.com/CelesteGiraffe/DatabaseSystems" target="_blank" class="btn btn-primary">View the Repository</a> 
     `,
     image: "/assets/images/PedrosPizza.png",
     link: "https://github.com/CelesteGiraffe/DatabaseSystems",
