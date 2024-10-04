@@ -139,21 +139,21 @@ export const portfolioItems = [
   },
   {
     title: "Tierlist Maker",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript", "JQuery", "Bootstrap"],
     description:
-      'A personal tool to create and share tierlists with friends, inspired by Discord chats. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
+      'A personal tierlist maker built to streamline creating and sharing tierlists using image URLs without the need for reuploading images manually. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
     longDescription: `
-      <p>Frustrated by other tierlist makers not supporting the images I wanted to use, I built my own using HTML, CSS, and JavaScript. Features include:</p>
+      <p>Frustrated by the cumbersome process of downloading and re-uploading images with other tierlist makers, I built my own solution using HTML, CSS, JavaScript, and JQuery. This tool allows users to create custom tierlists simply by inputting the image URL, eliminating the unnecessary extra steps. Key features include:</p>
       <ul>
-        <li>Custom image uploads</li>
-        <li>Shareable links for Discord integration</li>
-        <li>User-friendly drag-and-drop interface</li>
+        <li>URL-Based Image Loading: Add images directly from the web using URLs, avoiding the hassle of downloading and uploading</li>
+        <li>Customizable Tiers: Easily add or rename tiers to suit your preferences, with a drag-and-drop interface for image sorting</li>
+        <li>Shareable Links: The tierlists can be easily shared, particularly in Discord, allowing for collaborative and fun interactions</li>
       </ul>
-      <p>This tool allows for easy creation and sharing of custom tierlists among friends.</p>
+      <p>This project was inspired by community interactions and was designed with simplicity and user convenience in mind, especially for quick and easy tierlist creation.</p>
       <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>
     `,
     image: "/assets/images/TierListMaker.png",
-    link: "https://github.com/CelesteGiraffe/Teirlist",
+    link: "https://github.com/CelesteGiraffe/Tierlist",
     date: "2023-10-24",
     genre: "tool",
   },
