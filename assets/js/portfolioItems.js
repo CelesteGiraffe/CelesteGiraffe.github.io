@@ -358,7 +358,7 @@ export const portfolioItems = [
     `,
     image: "/assets/images/TechSavvy.png",
     link: "https://github.com/maddisonstockton/TechSavvy",
-    date: "2024-09-01",
+    date: "2024-10-04",
     genre: "tool",
   },
   {
