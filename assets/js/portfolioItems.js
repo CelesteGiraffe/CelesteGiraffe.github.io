@@ -310,17 +310,23 @@ export const portfolioItems = [
   },
   {
     title: "Little Shop on Hallow Hill (GameJam version)",
-    tags: ["C#", "Unity"],
+    tags: [
+      "C#",
+      "Unity",
+      "Game Design",
+      "NPC Interaction",
+      "Inventory Management",
+    ],
     description:
-      'A game where you run a Halloween-themed shop and defend the town from human threats.</br> </br> <B>This was an incomplete submission done for a game jam during the end of summer break.</B> </br> <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play my submission</a>',
+      "Little Shop on Hallow Hill is a GameJam project where you manage a spooky shop, selling items and defending the Halloween town from human threats. This project, though incomplete, showcases my work on NPC AI and interaction systems as well as inventory mechanics.",
     longDescription: `
-      <p>Little Shop on Hallow Hill is a GameJam project where you play as a shopkeeper in a Halloween town, selling items to protect the town from humans. <B>This was an incomplete submission done for a game jam during the end of summer break.</B> </br> Key features:</p>
+      <p>Little Shop on Hallow Hill was a GameJam submission that explored the concept of running a spooky Halloween-themed shop while defending the town from invading humans. <strong>Due to time constraints, this project remains incomplete, and some features may not be fully functional.</strong> Despite this, we were able to achieve several significant milestones:</p>
       <ul>
-        <li>Shop management mechanics with item selling</li>
-        <li>Detailed inventory and selling system</li>
-        <li>Spooky Halloween theme developed in Unity with C#</li>
+        <li><strong>Shop Management:</strong> Players could sell various items, with an inventory system to keep track of available goods. The <em>OpenInv.cs</em> script managed the player's inventory effectively, allowing for a range of items to be offered for sale.</li>
+        <li><strong>NPC Interaction and AI:</strong> NPCs were designed with varied behaviours—customers would enter the shop, interact with items, and either buy or gossip about what they found. The <em>Customer.cs</em> and <em>Gossiper.cs</em> files helped implement this depth of interaction, adding character to the town.</li>
+        <li><strong>Dynamic Environment:</strong> I worked on <em>PlayerManager.cs</em> and <em>Movement.cs</em>, focusing on character movement and the interaction with the environment, contributing to an immersive shopkeeping experience.</li>
       </ul>
-      <p>This project allowed me to explore creative storytelling and resource management game mechanics.</p>
+      <p>Although this project wasn't fully realized due to our other commitments, it was a great exercise in rapid prototyping and teamwork under tight deadlines. It allowed us to explore NPC AI, player interaction systems, and inventory management—all while bringing a whimsical Halloween town to life.</p>
       <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play my submission</a>
     `,
     image: "/assets/images/TLSoHH.png",
