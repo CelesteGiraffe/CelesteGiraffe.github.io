@@ -56,7 +56,7 @@ export const portfolioItems = [
       "MySQL",
       "Bootstrap",
       "TailwindCSS",
-      "Database Management",
+      "Database Architecture",
       "CRUD Operations",
       "Web Development",
       "Backend Development",
@@ -202,30 +202,30 @@ export const portfolioItems = [
       "HTML",
       "CSS",
       "JavaScript",
-      "Mql",
       "SCSS",
       "Node.js",
       "MongoDB",
       "Dotenv",
       "EJS",
       "Express",
-      "Oauth 2",
+      "OAuth 2",
       "Regex",
-      "Jquery",
-      "omdbapi",
-      "nytimesapi",
+      "jQuery",
+      "OMDB API",
+      "New York Times API",
     ],
     description:
-      "A movie rating system revamped using Node.js and MongoDB for a modern tech stack.",
+      "A full-stack rewrite of the original Movie Rating System, upgrading from a LAMP stack to a modern tech stack using Node.js and MongoDB.",
     longDescription: `
-      <p>This project is a complete rewrite of an old movie rating system. It uses a modern tech stack, including Node.js and MongoDB. Key features include:</p>
+      <p>Movie Rating Project 2.0 is a complete overhaul of my first movie rating project. Originally built with the LAMP stack, this new version embraces more recent technologies to enhance the overall experience. Key improvements and features include:</p>
       <ul>
-        <li>User authentication using OAuth 2</li>
-        <li>Movie information fetched from OMDB API and New York Times API</li>
-        <li>Responsive design using SCSS and Bootstrap</li>
-        <li>Data storage in MongoDB with CRUD operations</li>
+        <li><strong>Modern Tech Stack:</strong> Migrated the backend from PHP and MySQL to Node.js with MongoDB, adopting Express.js for server-side development, providing improved scalability and development efficiency.</li>
+        <li><strong>User Authentication with OAuth 2:</strong> Implemented OAuth 2 for user authentication, offering a secure and streamlined login process using third-party services like Google.</li>
+        <li><strong>Rich Movie Data:</strong> Integrated external APIs (OMDB API and New York Times API) to fetch rich movie details and reviews, enhancing the content available for users.</li>
+        <li><strong>Improved Frontend with SCSS and Bootstrap:</strong> Updated the frontend design with SCSS for modular styles and Bootstrap for responsive design, providing a polished and user-friendly interface.</li>
+        <li><strong>Full-Stack Development with MEVN:</strong> Leveraged MongoDB, Express, Vue.js, and Node.js (MEVN stack) to modernize the application, allowing more dynamic, efficient data handling and interactivity.</li>
       </ul>
-      <p>This project improved my skills in full-stack development using the MEVN stack (MongoDB, Express, Vue.js, Node.js).</p>
+      <p>This project deepened my understanding of modern full-stack development, API integration, and managing data flow within a more contemporary architecture. It represents a significant upgrade in both functionality and maintainability over the original version.</p>
     `,
     image: "/assets/images/MovieRating.png",
     link: "https://github.com/CelesteGiraffe/Movie-Rating-Personal-Project-v2",
