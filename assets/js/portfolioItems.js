@@ -120,17 +120,17 @@ export const portfolioItems = [
   },
   {
     title: "Rust Sandbox",
-    tags: ["Rust"],
+    tags: ["Rust", "Memory Management", "Concurrency", "Learning Project"],
     description:
-      "An experimental sandbox to dive deep into the Rust programming language.",
+      "A personal experimental sandbox for exploring Rust, focusing on learning its syntax, memory management, and unique features.",
     longDescription: `
-      <p>This sandbox project serves as a playground for exploring Rust. It includes experiments with:</p>
+      <p>This Rust Sandbox project was created as a learning environment to explore the Rust programming language. Inspired by <em>The Rust Programming Language</em> book by Steve Klabnik and Carol Nichols, I used this project as an opportunity to gain hands-on experience with Rust's syntax, concepts, and unique features. Key experiments include:</p>
       <ul>
-        <li>Memory safety and borrowing rules</li>
-        <li>Concurrency and parallel programming</li>
-        <li>Efficient data structures</li>
+        <li><strong>Memory Safety and Borrowing Rules:</strong> Practicing Rust's ownership model, learning how borrowing and references ensure memory safety without needing a garbage collector.</li>
+        <li><strong>Concurrency and Parallel Programming:</strong> Testing Rust's concurrency model to understand how it guarantees thread safety, even with complex parallel tasks.</li>
+        <li><strong>Data Structures:</strong> Experimenting with Rust's standard data structures to understand their efficiency and how they leverage Rust's memory safety guarantees.</li>
       </ul>
-      <p>This project solidified my understanding of Rust’s key features, particularly memory management.</p>
+      <p>This sandbox is an ongoing project, primarily aimed at gaining familiarity with Rust's features and experimenting with small code snippets. Though not a complete application, it demonstrates my curiosity and willingness to learn new languages by diving into their fundamental concepts.</p>
     `,
     image: "/assets/images/RustSandbox.png",
     link: "#",
