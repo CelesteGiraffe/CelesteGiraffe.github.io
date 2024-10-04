@@ -31,7 +31,7 @@ export const portfolioItems = [
   },
   {
     title: "alaseason.com (My first website)",
-    tags: ["Javascript", "HTML", "CSS", "Bootstrap"],
+    tags: ["JavaScript", "HTML", "CSS", "Bootstrap", "Web Development"],
     description:
       "A business website developed for a cleaning startup, built from scratch during my first year.",
     longDescription: `
@@ -56,8 +56,8 @@ export const portfolioItems = [
       "MySQL",
       "Bootstrap",
       "TailwindCSS",
-      "Database Architecture",
-      "CRUD Operations",
+      "Database Design & Management",
+      "CRUD",
       "Web Development",
       "Backend Development",
     ],
@@ -120,7 +120,7 @@ export const portfolioItems = [
   },
   {
     title: "Rust Sandbox",
-    tags: ["Rust", "Memory Management", "Concurrency", "Learning Project"],
+    tags: ["Rust", "Memory Management", "Concurrency", "Learning"],
     description:
       "A personal experimental sandbox for exploring Rust, focusing on learning its syntax, memory management, and unique features.",
     longDescription: `
@@ -139,7 +139,14 @@ export const portfolioItems = [
   },
   {
     title: "Tierlist Maker",
-    tags: ["HTML", "CSS", "JavaScript", "JQuery", "Bootstrap"],
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "JQuery",
+      "Bootstrap",
+      "Web Development",
+    ],
     description:
       'A personal tierlist maker built to streamline creating and sharing tierlists using image URLs without the need for reuploading images manually. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
     longDescription: `
@@ -208,11 +215,12 @@ export const portfolioItems = [
       "Dotenv",
       "EJS",
       "Express",
-      "OAuth 2",
+      "OAuth2",
       "Regex",
       "jQuery",
       "OMDB API",
       "New York Times API",
+      "Full-Stack Development",
     ],
     description:
       "A full-stack rewrite of the original Movie Rating System, upgrading from a LAMP stack to a modern tech stack using Node.js and MongoDB.",
@@ -234,17 +242,18 @@ export const portfolioItems = [
   },
   {
     title: "Inventory Java OOP Project",
-    tags: ["Java", "JavaFX", "OOP", "Netbeans"],
+    tags: ["Java", "JavaFX", "OOP", "NetBeans", "SQL"],
     description:
-      "An inventory management system built to demonstrate object-oriented principles in Java.",
+      "An inventory management system developed to demonstrate and apply object-oriented programming (OOP) principles using Java and JavaFX.",
     longDescription: `
-      <p>This Java project was developed to manage inventory, offering features like:</p>
+      <p>This project is an inventory management system, built to fully leverage the object-oriented capabilities of Java and to create a functional and intuitive user interface with JavaFX. Key features include:</p>
       <ul>
-        <li>CRUD operations for inventory items</li>
-        <li>Object-oriented design principles applied using JavaFX</li>
-        <li>Local database integration for item storage</li>
+        <li><strong>CRUD Operations:</strong> Implemented Create, Read, Update, and Delete (CRUD) operations for managing inventory items, showcasing how OOP principles can be applied for clean and reusable code.</li>
+        <li><strong>Object-Oriented Design:</strong> Emphasised OOP concepts such as encapsulation, inheritance, and polymorphism to create a flexible and maintainable codebase.</li>
+        <li><strong>User Interface:</strong> Developed a user-friendly interface using JavaFX, providing an interactive way for users to manage inventory effectively.</li>
+        <li><strong>Local Database Integration:</strong> Integrated a local database for persistent storage of inventory data, connecting the application logic to a backend for a complete full-stack approach.</li>
       </ul>
-      <p>This project deepened my understanding of Java’s OOP principles and user interface design using JavaFX.</p>
+      <p>This project significantly deepened my understanding of Java's OOP principles, how they can be used to solve real-world problems, and the role of JavaFX in building interactive UIs. Additionally, it helped me develop skills in database integration to create more robust software solutions.</p>
     `,
     image: "/assets/images/JavaInv.png",
     link: "https://github.com/CelesteGiraffe/InventoryJavaOOP",
@@ -253,7 +262,7 @@ export const portfolioItems = [
   },
   {
     title: "Sorting Algorithm Visualizer",
-    tags: ["HTML", "CSS", "JavaScript", "TypeScript"],
+    tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Web Development"],
     description:
       'A tool to visualise and understand sorting algorithms through interactive visuals. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
     longDescription: `
@@ -273,17 +282,27 @@ export const portfolioItems = [
   },
   {
     title: "Manic Movers Game",
-    tags: ["C#", "Unity", "GameJam", "Blender"],
+    tags: [
+      "C#",
+      "Unity",
+      "GameJam",
+      "Blender",
+      "State System",
+      "Time Manipulation",
+      "Game Design",
+    ],
     description:
-      "A fast-paced puzzle game where movers throw furniture, and you must use rewind mechanics to dodge.",
+      "A fast-paced puzzle game created for a Game Jam, where movers throw furniture and you use time-rewind mechanics to avoid and reset chaos. Developed from concept to playable demo in just 3 days, showcasing my passion for game design and problem-solving.",
     longDescription: `
-      <p>Developed for a Game Jam with the theme 'rewind', Manic Movers challenges players to solve puzzles while dodging furniture. Key features include:</p>
+      <p>Manic Movers is a unique puzzle game where players face frantic movers who hurl furniture across levels. To navigate these chaotic environments, players use time-rewind mechanics to restore order and solve puzzles. This game was developed as part of a Game Jam with the theme 'rewind', and it was my first fully-fledged game project outside of client-based web work. Key features include:</p>
       <ul>
-        <li>Time-rewind mechanics to move through levels</li>
-        <li>Hand-crafted levels with dynamic obstacles</li>
-        <li>Developed using Unity and C# with Blender assets</li>
+        <li><strong>State System for Game Rewind:</strong> Implemented a state management system to capture and store game state, allowing players to rewind and revert changes, bringing elements back to their original positions.</li>
+        <li><strong>Time-Based Gameplay:</strong> Developed time-rewind mechanics inspired by games like Braid, giving players the ability to undo chaotic situations caused by movers, enhancing both puzzle complexity and player engagement.</li>
+        <li><strong>Rapid Development:</strong> Built from idea to playable demo in just 3 days as part of a Game Jam. This was an intense learning experience and a demonstration of my dedication and capability to bring an idea to life under tight constraints.</li>
+        <li><strong>Hand-Crafted Levels:</strong> Created multiple levels with hand-crafted obstacles and assets designed in Blender, adding a unique visual flair to each challenge.</li>
+        <li><strong>Self-Taught Foundations:</strong> As one of my earliest projects during college, I relied on YouTube tutorials and official documentation for Unity and C#, building without direct walkthroughs but using resources to understand and implement core game development concepts.</li>
       </ul>
-      <p>This project helped me hone my skills in game development, particularly in implementing time-based mechanics.</p>
+      <p>Manic Movers represents a major milestone in my journey into game development. It reflects my passion for creative problem-solving, ability to quickly learn and adapt, and my deep interest in game design and time-based gameplay mechanics.</p>
     `,
     image: "/assets/images/ManicMovers.png",
     link: "#",
@@ -292,7 +311,7 @@ export const portfolioItems = [
   },
   {
     title: "Minesweeper Grid Game (Sketchsweepr)",
-    tags: ["C#", ".NET", "Custom Graphics", "Grid Systems", "Game Development"],
+    tags: ["C#", ".NET", "Custom Graphics", "Grid Systems", "Game Design"],
     description:
       "A unique, hand-drawn style Minesweeper game developed using C# and .NET, intended to explore grid systems and creative UI design.",
     longDescription: `
@@ -342,7 +361,7 @@ export const portfolioItems = [
       "Flask",
       "MySQL",
       "OAuth2",
-      "Database Architecture",
+      "Database Design & Management",
       "Security",
       "Docker",
       "HTML",
@@ -375,22 +394,23 @@ export const portfolioItems = [
       "CSS",
       "JavaScript",
       "PHP",
-      "MySql",
+      "MySQL",
       "Linux",
       "Apache2",
-      "Jquery",
+      "jQuery",
       "Bootstrap",
+      "Full-Stack Development",
     ],
     description:
-      "A movie rating system developed in the LAMP stack, using PHP and MySQL.",
+      "The original version of a movie rating system developed using the LAMP stack, marking my first experience with full-stack web development.",
     longDescription: `
-      <p>This is the first version of a movie rating system built using the LAMP stack (Linux, Apache, MySQL, PHP). Features:</p>
+      <p>Movie Rating Project 1.0 was my first real venture into full-stack development, built using the LAMP stack (Linux, Apache, MySQL, PHP). This project helped me learn the foundations of web development, including server-side programming, dynamic content generation, and user management. Key features include:</p>
       <ul>
-        <li>User authentication system</li>
-        <li>Dynamic movie rating and review system</li>
-        <li>Responsive design using Bootstrap</li>
+        <li><strong>User Authentication:</strong> Implemented a user authentication system to allow users to create accounts, log in, and interact with the platform.</li>
+        <li><strong>Dynamic Movie Rating System:</strong> Users could rate movies, write reviews, and see others' ratings and comments, providing an interactive experience.</li>
+        <li><strong>Responsive Design:</strong> Developed a mobile-friendly interface using Bootstrap to ensure the website looked good across different screen sizes.</li>
       </ul>
-      <p>This project was my first experience in full-stack development and server-side programming.</p>
+      <p>This project was instrumental in helping me understand the basics of server-side scripting, database interactions, and client-server communication. It laid the groundwork for my further exploration into full-stack and modern web development.</p>
     `,
     image: "/assets/images/MovieRating.png",
     link: "https://github.com/CelesteGiraffe/Personal-Project-v1",
@@ -399,7 +419,7 @@ export const portfolioItems = [
   },
   {
     title: "Personal Portfolio 1.0",
-    tags: ["HTML", "PHP", "CSS", "JavaScript", "Bootstrap"],
+    tags: ["HTML", "PHP", "CSS", "JavaScript", "Bootstrap", "Web Development"],
     description:
       "The first version of my personal portfolio, showcasing my early projects.",
     longDescription: `
@@ -418,7 +438,7 @@ export const portfolioItems = [
   },
   {
     title: "Personal Portfolio 2.0 (this website)",
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Web Development"],
     description:
       "The second version of my portfolio website, currently live and showcasing my projects.",
     longDescription: `
