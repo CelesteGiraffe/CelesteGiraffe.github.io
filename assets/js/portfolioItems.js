@@ -101,17 +101,17 @@ export const portfolioItems = [
   },
   {
     title: "Cellular Automaton",
-    tags: ["C++", "Console", "Docker"],
+    tags: ["C++", "Console", "Docker", "Emergent Systems", "Complexity Theory"],
     description:
-      "A simulation of cellular automata, demonstrating mathematical patterns and growth.",
+      "A C++ simulation of cellular automata that visualises the emergence of complex behaviours from simple rules, featuring Docker for easy deployment.",
     longDescription: `
-      <p>This cellular automaton simulation, developed in C++, visualises how simple rules can lead to complex behaviour. Features:</p>
+      <p>This project is a C++-based cellular automaton simulation, designed to demonstrate how simple rules can lead to surprisingly complex behaviour. This concept is central to understanding emergence and how intricate systems can evolve from straightforward beginnings. Key features include:</p>
       <ul>
-        <li>Console-based interface</li>
-        <li>Docker containerisation for easy deployment</li>
-        <li>Customizable rules for various cellular automaton models</li>
+        <li><strong>Console-Based Interface:</strong> The simulation runs in a console environment, allowing users to see the changes in each generation of the automaton in real-time.</li>
+        <li><strong>Customizable Rule Sets:</strong> Users can explore different automaton models by adjusting rule sets, providing an interactive way to understand growth patterns, such as Conway's Game of Life and other classic rule variations.</li>
+        <li><strong>Docker Containerisation:</strong> Utilising Docker for easy setup and deployment ensures a consistent environment, making it simple to share and run the simulation across different systems.</li>
       </ul>
-      <p>Through this project, I explored the concepts of emergence and complexity in systems.</p>
+      <p>Working on this project allowed me to gain deeper insights into complexity theory and the concept of emergent properties in dynamic systems, as well as enhancing my skills in Docker and C++ programming.</p>
     `,
     image: "/assets/images/CellularAutomata.png",
     link: "https://github.com/CelesteGiraffe/Cellular-Automaton",
