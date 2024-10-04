@@ -308,18 +308,32 @@ export const portfolioItems = [
     genre: "game",
   },
   {
-    title: "Techsavvy",
-    tags: ["Python", "Flask", "MySql", "HTML", "CSS", "Bootstrap"],
+    title: "TechSavvy",
+    tags: [
+      "Python",
+      "Flask",
+      "MySQL",
+      "OAuth2",
+      "Database Architecture",
+      "Security",
+      "Docker",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+    ],
     description:
-      "A capstone project website providing a space for women in STEM, built using Flask and MySQL.",
+      "A social media platform for women in STEM where I led the database architecture and security implementation.",
     longDescription: `
-      <p>Techsavvy is my university capstone project, aimed at creating a platform for women in STEM. The site includes:</p>
+      <p>TechSavvy is my university capstone project—a social media platform designed to support and connect women in STEM fields. In this project, I took the lead on designing and implementing the database architecture and OAuth2 authentication system. Key contributions and features include:</p>
       <ul>
-        <li>User registration and login system using Oauth 2</li>
-        <li>Discussion forums and resources for women in tech</li>
-        <li>Developed using Python, Flask, MySQL, and Bootstrap</li>
+        <li><strong>Database Architecture:</strong> Architected and developed a comprehensive database schema covering users, authentication, communities, posts, comments, resources, job boards, and messaging.</li>
+        <li><strong>OAuth2 Integration:</strong> Implemented a secure OAuth2 authentication system, allowing users to sign in with external providers like Google, enhancing security and user convenience.</li>
+        <li><strong>Data Access Layer:</strong> Created Data Access Objects (DAOs) and a service layer to ensure a clean separation of concerns and secure database interactions.</li>
+        <li><strong>Security Best Practices:</strong> Focused on safeguarding the application against vulnerabilities such as SQL injection by using prepared statements and adhering to security best practices.</li>
+        <li><strong>Docker Utilization:</strong> Used Docker to containerize the MySQL database, ensuring consistency across development environments and simplifying deployment.</li>
+        <li><strong>Collaboration & Methodology:</strong> Worked within a team using Feature-Driven Development, emphasizing accessibility and inclusivity in our design approach.</li>
       </ul>
-      <p>This project showcases my full-stack development skills and my passion for promoting diversity in tech.</p>
+      <p>This project allowed me to apply and enhance my skills in database architecture, system design, and security while contributing to a platform that promotes diversity and support within the tech community.</p>
     `,
     image: "/assets/images/TechSavvy.png",
     link: "https://github.com/maddisonstockton/TechSavvy",
