@@ -159,17 +159,18 @@ export const portfolioItems = [
   },
   {
     title: "Version Control System",
-    tags: ["Linux Shell"],
+    tags: ["Linux Shell", "Bash Scripting", "Version Control"],
     description:
-      "A version control system developed to understand its internal workings and the Linux shell.",
+      "A custom version control system developed using Linux shell scripting, demonstrating internal workings of version control mechanisms.",
     longDescription: `
-      <p>This project is a Linux-based version control system developed as part of a school assignment. Key concepts explored:</p>
+      <p>This project is a custom version control system built using Linux shell scripting, developed as part of a school assignment. It was a crash course in understanding the Linux shell and version control. Key features and concepts explored include:</p>
       <ul>
-        <li>Commit and version tracking</li>
-        <li>Diffing and Merging</li>
-        <li>Command-line interface for version control operations</li>
+        <li><strong>Repository Management:</strong> Creation, selection, and tracking of repositories, including staging and editing areas to manage changes.</li>
+        <li><strong>Commit and Version Tracking:</strong> Implemented commit functionality to track changes over time, storing logs and tracking versions of files.</li>
+        <li><strong>Diffing and Merging:</strong> Added the ability to check differences between file versions and maintain logs of changes, giving insight into file modifications.</li>
+        <li><strong>Command-Line Interface:</strong> Developed a full command-line interface that allows users to interact with the version control system, edit files, stage changes, and manage commits.</li>
       </ul>
-      <p>It offered insight into how version control systems operate under the hood.</p>
+      <p>This project allowed me to understand the foundational mechanics of version control systems and Linux shell scripting, including the importance of careful planning and organisation for managing multiple versions of code efficiently.</p>
     `,
     image: "/assets/images/UnixShellVCS.png",
     link: "https://github.com/CelesteGiraffe/UnixShellVCS",
