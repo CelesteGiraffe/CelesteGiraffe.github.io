@@ -73,17 +73,26 @@ export const portfolioItems = [
   },
   {
     title: "Manchester Baby Emulator",
-    tags: ["C++", "Assembly"],
+    tags: [
+      "C++",
+      "Assembly",
+      "Emulation",
+      "Compiler Design",
+      "Lexical Analysis",
+      "Parsing",
+      "File I/O",
+    ],
     description:
-      "A C++ and Assembly-based emulator replicating the functionality of the Manchester Baby computer.",
+      "A C++ and Assembly-based emulator replicating the functionality of the Manchester Baby computer, showcasing the fundamentals of compiler design and early computer emulation.",
     longDescription: `
-      <p>This emulator recreates the functionality of the Manchester Baby, the world's first stored-program computer. Features include:</p>
+      <p>This emulator recreates the functionality of the Manchester Baby, the world's first stored-program computer, focusing on the process of assembly language interpretation and execution. This project includes the implementation of a lexer, parser, mnemonic handler, and file writer to fully simulate machine code execution. Key features include:</p>
       <ul>
-        <li>Simulated machine code execution</li>
-        <li>Memory and accumulator display</li>
-        <li>Developed using C++ and Assembly for low-level programming practice</li>
+        <li><strong>Lexical Analysis and Parsing:</strong> A lexer and parser were developed to break down assembly language into tokens and construct a syntax tree, forming the foundation of the emulation process.</li>
+        <li><strong>Mnemonic Handling:</strong> Mnemonics for commands like 'JMP', 'LDN', and 'STO' were used to translate assembly instructions into executable machine operations, simulating early computer behavior.</li>
+        <li><strong>File Writing and Code Generation:</strong> The emulator outputs the translated machine code to an output file, formatted for easy interpretation, showcasing basic file I/O and string manipulation.</li>
       </ul>
-      <p>This project allowed me to explore early computing architecture and delve into low-level programming techniques.</p>
+      <p>This project deepened my understanding of compiler design principles, including lexical analysis, parsing, and emulation, while also reinforcing key concepts in C++ programming.</p>
+      <a href="https://github.com/CelesteGiraffe/ManchesterBaby" target="_blank" class="btn btn-primary">View the Repository</a>
     `,
     image: "/assets/images/ManBaby.jpg",
     link: "https://github.com/CelesteGiraffe/ManchesterBaby",
