@@ -330,7 +330,7 @@ export const portfolioItems = [
     title: "Sorting Algorithm Visualizer",
     tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Web Development"],
     description:
-      'A tool to visualise and understand sorting algorithms through interactive visuals. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
+      'A tool to visualise and understand sorting algorithms through interactive visuals. <a href="/SortingAlgoVisualizer/Sort.html" target="_blank" class="btn btn-primary">Try It Out</a>',
     languagesUsed: {
       HTML: 45,
       CSS: 10,
