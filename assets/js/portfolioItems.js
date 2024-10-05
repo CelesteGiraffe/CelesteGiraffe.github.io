@@ -14,6 +14,11 @@ export const portfolioItems = [
     ],
     description:
       "Cordellia is a Unity-based vertical slice where players guide a mushroom girl, Cordellia, through an enchanted world filled with dangers and wonder. I developed this game solo as part of my Games Programming course at Dundee University, focusing on both game design and coding complex AI behaviours.",
+    languagesUsed: {
+      "C#": 45,
+      Unity: 65,
+    },
+    effort: 7,
     longDescription: `
       <p>Cordellia is a captivating game developed in Unity, where players control a small mushroom girl on an adventure through enchanted forests and mystical lands. This project was a significant challenge as it was my first deep dive into full-fledged 3D game development beyond Game Jams. The game features:</p>
     <ul>
@@ -34,6 +39,13 @@ export const portfolioItems = [
     tags: ["JavaScript", "HTML", "CSS", "Bootstrap", "Web Development"],
     description:
       "A business website developed for a cleaning startup, built from scratch during my first year.",
+    languagesUsed: {
+      HTML: 40,
+      CSS: 10,
+      JavaScript: 20,
+      Bootstrap: 30,
+    },
+    effort: 2,
     longDescription: `
       <p>This was my first professional website project, developed for a local cleaning startup during my first year of college. The project highlights include:</p>
       <ul>
@@ -63,6 +75,13 @@ export const portfolioItems = [
     ],
     description:
       "Pedro's Pizza is a backend system designed to manage employee data, order tracking, business metrics, and inventory for a pizza restaurant. I developed this system to refine my skills in database management, backend integration, and collaborative planning.",
+    languagesUsed: {
+      PHP: 10,
+      MySQL: 65,
+      Bootstrap: 15,
+      TailwindCSS: 10,
+    },
+    effort: 8,
     longDescription: `
             <p>Pedro's Pizza is a comprehensive backend system built to manage the operations of a pizza restaurant, handling both employee management and customer orders. This project strengthened my skills in backend web development, database design, and collaborative team planning. Key features include:</p>       <ul>         <li><strong>PHP-Based Backend:</strong> The backend was built using PHP, ensuring a dynamic, server-side interaction with the database. CRUD operations included managing orders with tracking, employee car usage, employee roster management, business metrics, and inventory management to keep stores functional.</li>         <li><strong>MySQL Database Integration:</strong> I designed and implemented a MySQL database schema to handle all data storage needs, including joined tables for analyzing specific location profits and maintaining data integrity. We created pre-run queries for frequently accessed data and joined tables for efficient lookups.</li>         <li><strong>User-Friendly Interface:</strong> The frontend was designed using Bootstrap and TailwindCSS, creating a responsive, intuitive interface that allowed managers to interact easily with the backend system. This ensured that all data could be accessed and manipulated without a steep learning curve.</li>         <li><strong>Security and Optimization:</strong> Data security was a critical focus, with measures taken to prevent SQL injection and other vulnerabilities. I implemented prepared statements for SQL queries and optimized common data retrievals to improve performance and safety.</li>       </ul>       <p>The biggest takeaway from this project was learning the importance of planning and team alignment in development projects. Effective collaboration required more upfront planning than initially expected, as getting everyone on the same page proved vital for success. This project also honed my skills in database architecture, security, and backend integration.</p>       <a href="https://github.com/CelesteGiraffe/DatabaseSystems" target="_blank" class="btn btn-primary">View the Repository</a> 
     `,
@@ -84,6 +103,11 @@ export const portfolioItems = [
     ],
     description:
       "A C++ and Assembly-based emulator replicating the functionality of the Manchester Baby computer, showcasing the fundamentals of compiler design and early computer emulation.",
+    languagesUsed: {
+      "C++": 55,
+      Assembly: 45,
+    },
+    effort: 8,
     longDescription: `
       <p>This emulator recreates the functionality of the Manchester Baby, the world's first stored-program computer, focusing on the process of assembly language interpretation and execution. This project includes the implementation of a lexer, parser, mnemonic handler, and file writer to fully simulate machine code execution. Key features include:</p>
       <ul>
@@ -104,6 +128,12 @@ export const portfolioItems = [
     tags: ["C++", "Console", "Docker", "Emergent Systems", "Complexity Theory"],
     description:
       "A C++ simulation of cellular automata that visualises the emergence of complex behaviours from simple rules, featuring Docker for easy deployment.",
+    languagesUsed: {
+      "C++": 85,
+      console: 5,
+      Docker: 10,
+    },
+    effort: 4,
     longDescription: `
       <p>This project is a C++-based cellular automaton simulation, designed to demonstrate how simple rules can lead to surprisingly complex behaviour. This concept is central to understanding emergence and how intricate systems can evolve from straightforward beginnings. Key features include:</p>
       <ul>
@@ -123,6 +153,10 @@ export const portfolioItems = [
     tags: ["Rust", "Memory Management", "Concurrency", "Learning"],
     description:
       "A personal experimental sandbox for exploring Rust, focusing on learning its syntax, memory management, and unique features.",
+    languagesUsed: {
+      Rust: 100,
+    },
+    effort: 3,
     longDescription: `
       <p>This Rust Sandbox project was created as a learning environment to explore the Rust programming language. Inspired by <em>The Rust Programming Language</em> book by Steve Klabnik and Carol Nichols, I used this project as an opportunity to gain hands-on experience with Rust's syntax, concepts, and unique features. Key experiments include:</p>
       <ul>
@@ -149,6 +183,14 @@ export const portfolioItems = [
     ],
     description:
       'A personal tierlist maker built to streamline creating and sharing tierlists using image URLs without the need for reuploading images manually. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
+    languagesUsed: {
+      HTML: 35,
+      CSS: 10,
+      JavaScript: 35,
+      JQuery: 10,
+      Bootstrap: 10,
+    },
+    effort: 4,
     longDescription: `
       <p>Frustrated by the cumbersome process of downloading and re-uploading images with other tierlist makers, I built my own solution using HTML, CSS, JavaScript, and JQuery. This tool allows users to create custom tierlists simply by inputting the image URL, eliminating the unnecessary extra steps. Key features include:</p>
       <ul>
@@ -169,6 +211,10 @@ export const portfolioItems = [
     tags: ["Linux Shell", "Bash Scripting", "Version Control"],
     description:
       "A custom version control system developed using Linux shell scripting, demonstrating internal workings of version control mechanisms.",
+    languagesUsed: {
+      Bash: 100,
+    },
+    effort: 5,
     longDescription: `
       <p>This project is a custom version control system built using Linux shell scripting, developed as part of a school assignment. It was a crash course in understanding the Linux shell and version control. Key features and concepts explored include:</p>
       <ul>
@@ -189,6 +235,10 @@ export const portfolioItems = [
     tags: ["Python", "IRC", "Sockets", "Networking"],
     description:
       "An IRC chatroom and chatbot built with Python, following IRC protocol.",
+    languagesUsed: {
+      Python: 100,
+    },
+    effort: 8,
     longDescription: `
       <p>This project demonstrates how to programmatically create a IRC server and a IRC chatbot using Python sockets. It includes the following features:</p>
       <ul>
@@ -224,6 +274,16 @@ export const portfolioItems = [
     ],
     description:
       "A full-stack rewrite of the original Movie Rating System, upgrading from a LAMP stack to a modern tech stack using Node.js and MongoDB.",
+    languagesUsed: {
+      HTML: 30,
+      CSS: 10,
+      JavaScript: 15,
+      SCSS: 5,
+      Node: 20,
+      JQuery: 10,
+      EJS: 10,
+    },
+    effort: 7,
     longDescription: `
       <p>Movie Rating Project 2.0 is a complete overhaul of my first movie rating project. Originally built with the LAMP stack, this new version embraces more recent technologies to enhance the overall experience. Key improvements and features include:</p>
       <ul>
@@ -245,6 +305,12 @@ export const portfolioItems = [
     tags: ["Java", "JavaFX", "OOP", "NetBeans", "SQL"],
     description:
       "An inventory management system developed to demonstrate and apply object-oriented programming (OOP) principles using Java and JavaFX.",
+    languagesUsed: {
+      Java: 60,
+      JavaFX: 30,
+      SQL: 10,
+    },
+    effort: 6,
     longDescription: `
       <p>This project is an inventory management system, built to fully leverage the object-oriented capabilities of Java and to create a functional and intuitive user interface with JavaFX. Key features include:</p>
       <ul>
@@ -265,6 +331,12 @@ export const portfolioItems = [
     tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Web Development"],
     description:
       'A tool to visualise and understand sorting algorithms through interactive visuals. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
+    languagesUsed: {
+      HTML: 45,
+      CSS: 10,
+      TypeScript: 45,
+    },
+    effort: 4,
     longDescription: `
       <p>This tool provides an interactive way to visualise sorting algorithms. Features include:</p>
       <ul>
@@ -293,6 +365,12 @@ export const portfolioItems = [
     ],
     description:
       "A fast-paced puzzle game created for a Game Jam, where movers throw furniture and you use time-rewind mechanics to avoid and reset chaos. Developed from concept to playable demo in just 3 days, showcasing my passion for game design and problem-solving.",
+    languagesUsed: {
+      "C#": 20,
+      Unity: 65,
+      Blender: 15,
+    },
+    effort: 5,
     longDescription: `
       <p>Manic Movers is a unique puzzle game where players face frantic movers who hurl furniture across levels. To navigate these chaotic environments, players use time-rewind mechanics to restore order and solve puzzles. This game was developed as part of a Game Jam with the theme 'rewind', and it was my first fully-fledged game project outside of client-based web work. Key features include:</p>
       <ul>
@@ -314,6 +392,10 @@ export const portfolioItems = [
     tags: ["C#", ".NET", "Custom Graphics", "Grid Systems", "Game Design"],
     description:
       "A unique, hand-drawn style Minesweeper game developed using C# and .NET, intended to explore grid systems and creative UI design.",
+    languagesUsed: {
+      "C#": 100,
+    },
+    effort: 3,
     longDescription: `
       <p>Sketchsweepr is a creative twist on the classic Minesweeper game, designed as a project at the University of Dundee to experiment with grid systems and custom graphics. This project stood out due to its distinctive hand-drawn aesthetic, reminiscent of notebook doodles, which gave it a playful and personal touch. Key features include:</p>
       <ul>
@@ -339,6 +421,11 @@ export const portfolioItems = [
     ],
     description:
       "Little Shop on Hallow Hill is a GameJam project where you manage a spooky shop, selling items and defending the Halloween town from human threats. This project, though incomplete, showcases my work on NPC AI and interaction systems as well as inventory mechanics.",
+    languagesUsed: {
+      "C#": 35,
+      Unity: 65,
+    },
+    effort: 8,
     longDescription: `
       <p>Little Shop on Hallow Hill was a GameJam submission that explored the concept of running a spooky Halloween-themed shop while defending the town from invading humans. <strong>Due to time constraints, this project remains incomplete, and some features may not be fully functional.</strong> Despite this, we were able to achieve several significant milestones:</p>
       <ul>
@@ -370,6 +457,15 @@ export const portfolioItems = [
     ],
     description:
       "A social media platform for women in STEM where I led the database architecture and security implementation.",
+    languagesUsed: {
+      Flask: 40,
+      MySQL: 35,
+      Docker: 10,
+      HTML: 5,
+      CSS: 5,
+      Bootstrap: 5,
+    },
+    effort: 10,
     longDescription: `
       <p>TechSavvy is my university capstone project—a social media platform designed to support and connect women in STEM fields. In this project, I took the lead on designing and implementing the database architecture and OAuth2 authentication system. Key contributions and features include:</p>
       <ul>
@@ -403,6 +499,16 @@ export const portfolioItems = [
     ],
     description:
       "The original version of a movie rating system developed using the LAMP stack, marking my first experience with full-stack web development.",
+    languagesUsed: {
+      HTML: 30,
+      CSS: 5,
+      JavaScript: 15,
+      MySQL: 10,
+      JQuery: 5,
+      Bootstrap: 5,
+      PHP: 30,
+    },
+    effort: 5,
     longDescription: `
       <p>Movie Rating Project 1.0 was my first real venture into full-stack development, built using the LAMP stack (Linux, Apache, MySQL, PHP). This project helped me learn the foundations of web development, including server-side programming, dynamic content generation, and user management. Key features include:</p>
       <ul>
@@ -422,6 +528,12 @@ export const portfolioItems = [
     tags: ["HTML", "PHP", "CSS", "JavaScript", "Bootstrap", "Web Development"],
     description:
       "The first version of my personal portfolio, showcasing my early projects.",
+    languagesUsed: {
+      HTML: 30,
+      PHP: 45,
+      Bootstrap: 25,
+    },
+    effort: 8,
     longDescription: `
       <p>This is the original version of my personal portfolio website, built using HTML, PHP, CSS, and JavaScript. Key features:</p>
       <ul>
@@ -441,6 +553,13 @@ export const portfolioItems = [
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Web Development"],
     description:
       "The second version of my portfolio website, currently live and showcasing my projects.",
+    languagesUsed: {
+      HTML: 40,
+      CSS: 10,
+      JavaScript: 25,
+      Bootstrap: 25,
+    },
+    effort: 8,
     longDescription: `
       <p>This is the latest version of my personal portfolio, built using HTML, CSS, JavaScript, and Bootstrap. It features:</p>
       <ul>
