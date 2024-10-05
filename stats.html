@@ -1,0 +1,59 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celeste's Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/assets/css/index.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/pfp.jpg" />
+</head>
+<body>
+  <header class="container-fluid">
+    <img src="/assets/images/pfp.jpg" alt="Profile Picture" />
+    <h1 class="text-center">Celeste Artley</h1>
+    <div class="hamburger" onclick="toggleNav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <a href="index.html">Portfolio</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 ml-2">
+        <div class=""></div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Languages</h5>
+            <div class="chart-container">
+              <canvas id="languagePieChart" width="200" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <script type="module" src="assets/js/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</footer>
