@@ -1,0 +1,78 @@
+/* Responsive Design */
+  @media (max-width: 1024px) {
+    .about-hero {
+      grid-template-columns: 1fr;
+      padding: 2.5rem;
+    }
+
+    .about-timeline {
+      padding: 2.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+  
+    nav {
+      padding: 1rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .tag-selector-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .tag-checkboxes {
+      grid-template-columns: 1fr;
+    }
+  
+    .tag-controls {
+      width: 100%;
+    }
+  
+    .tag-controls .btn {
+      flex: 1;
+      text-align: center;
+    }
+  
+    .display-page-header h1 {
+      font-size: 2rem;
+    }
+  
+    .title-input-container {
+      padding: 1.5rem;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .role-cards-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .custom-filter-card {
+      padding: 2rem 1.5rem;
+    }
+  
+    .custom-filter-title {
+      font-size: 1.5rem;
+    }
+  }

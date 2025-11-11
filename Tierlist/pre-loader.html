@@ -1,35 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Image URL Pre-loader</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tier List Image Loader · Celeste Artley</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container mt-4">
-      <h1>Enter Image URLs</h1>
-      <textarea
-        id="imageUrls"
-        rows="10"
-        cols="100"
-        placeholder="Enter img URL's separated by a new line"
-      ></textarea
-      ><br />
-      <button id="loadImages">Load Images</button>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../game-developer.html">Game Developer</a></li>
+          <li><a href="../web-developer.html">Web Developer</a></li>
+          <li><a href="../backend-developer.html">Backend Developer</a></li>
+          <li><a href="../fullstack-developer.html">Full-Stack Developer</a></li>
+          <li><a href="../custom.html">Custom Filter</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container tierlist-page">
+      <div class="page-header tierlist-upload-header">
+        <h1>Upload images via URL</h1>
+      </div>
+
+      <section class="tierlist-card loader-card">
+        <div class="url-builder">
+          <div class="url-builder-header">
+            <p class="control-label">Image URLs</p>
+            <button type="button" class="btn btn-icon add-url-button" id="addUrl" aria-label="Add another image URL">
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+          <div class="url-inputs" id="urlInputs" aria-live="polite"></div>
+        </div>
+
+        <div class="loader-actions">
+          <button class="btn btn-secondary" id="restoreDefaults">Use Sample Data</button>
+          <button class="btn btn-success" id="loadImages">Save &amp; Open Tier List</button>
+        </div>
+
+        <p class="helper-text">
+          Add each direct image link (PNG, JPG, GIF) separately. Use Sample Data to preload the fruit set or tap the +
+          button for new slots.
+        </p>
+      </section>
     </div>
-    <!-- button to go back to Portfolio -->
-    <a href="../index.html" class="btn btn-primary">Back to Portfolio</a>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Celeste Artley. All rights reserved.</p>
+      </div>
+    </footer>
+
     <script>
       const defaultImageUrls = [
-        "https://images.unsplash.com/photo-1528821128474-27f963b062bf?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1528821128474-27f963b062bf?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1528821128474-27f963b062bf?auto=format&fit=crop&w=600&q=60",
         "https://www.calgiant.com/wp-content/uploads/2021/08/berry-iso-straw-1-878x1024.png",
         "https://i5.walmartimages.com/seo/Fresh-Banana-Fruit-Each_5939a6fa-a0d6-431c-88c6-b4f21608e4be.f7cd0cc487761d74c69b7731493c1581.jpeg",
         "https://familytreefarms.com/wp-content/uploads/2021/03/PeachWhite.jpg",
@@ -37,27 +66,103 @@
         "https://cdn11.bigcommerce.com/s-a9b4a/images/stencil/1280x1280/products/2195/6681/Organic-Green-Nutmeg-Melon__98209.1666483205.jpg?c=2",
       ];
 
-      $(document).ready(function () {
-        // Load URLs from localStorage and populate the textarea
-        const storedUrls = JSON.parse(
-          localStorage.getItem("imageUrls") || "[]"
-        );
-        if (storedUrls.length === 0) {
-          localStorage.setItem("imageUrls", JSON.stringify(defaultImageUrls));
-          $("#imageUrls").val(defaultImageUrls.join("\n"));
-        } else {
-          $("#imageUrls").val(storedUrls.join("\n"));
+      const urlInputsEl = document.getElementById("urlInputs");
+      const addUrlBtn = document.getElementById("addUrl");
+      const restoreDefaultsBtn = document.getElementById("restoreDefaults");
+      const loadImagesBtn = document.getElementById("loadImages");
+      const exampleUrl = defaultImageUrls[0];
+
+      const ensureMinimumField = () => {
+        if (!urlInputsEl.querySelector(".url-field")) {
+          renderUrlFields([]);
         }
+      };
+
+      const createUrlField = (value = "", { isExample = false } = {}) => {
+        const row = document.createElement("div");
+        row.className = "url-field-row";
+
+        const input = document.createElement("input");
+        input.type = "url";
+        input.inputMode = "url";
+        input.className = "url-field";
+        input.placeholder = "https://example.com/fruit.png";
+        input.value = value;
+
+        if (isExample) {
+          input.dataset.example = "true";
+          input.classList.add("url-field-example");
+        }
+
+        input.addEventListener("input", () => {
+          if (input.dataset.example === "true") {
+            delete input.dataset.example;
+            input.classList.remove("url-field-example");
+          }
+        });
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "btn btn-icon remove-url-button";
+        removeBtn.setAttribute("aria-label", "Remove image URL");
+        removeBtn.innerHTML = "&minus;";
+
+        removeBtn.addEventListener("click", () => {
+          row.remove();
+          ensureMinimumField();
+        });
+
+        row.appendChild(input);
+        row.appendChild(removeBtn);
+        return row;
+      };
+
+      const renderUrlFields = (urls = []) => {
+        urlInputsEl.innerHTML = "";
+        if (!urls.length) {
+          urlInputsEl.appendChild(createUrlField(exampleUrl, { isExample: true }));
+        } else {
+          urls.forEach((url) => urlInputsEl.appendChild(createUrlField(url)));
+        }
+      };
+
+      const getUrlValues = () =>
+        Array.from(urlInputsEl.querySelectorAll(".url-field"))
+          .filter((input) => input.dataset.example !== "true")
+          .map((input) => input.value.trim())
+          .filter((value) => value.length > 0);
+
+      addUrlBtn.addEventListener("click", () => {
+        const newRow = createUrlField("");
+        urlInputsEl.appendChild(newRow);
+        newRow.querySelector("input").focus();
       });
 
-      $("#loadImages").click(function () {
-        const imageUrls = $("#imageUrls")
-          .val()
-          .split("\n")
-          .filter((url) => url.trim() !== "");
+      restoreDefaultsBtn.addEventListener("click", () => {
+        renderUrlFields(defaultImageUrls);
+      });
+
+      loadImagesBtn.addEventListener("click", () => {
+        const imageUrls = getUrlValues();
+        if (!imageUrls.length) {
+          alert("Add at least one image URL or load the sample data first.");
+          return;
+        }
         localStorage.setItem("imageUrls", JSON.stringify(imageUrls));
         window.location.href = "Tierlist.html";
       });
+
+      const initUrlBuilder = () => {
+        const storedUrls = JSON.parse(localStorage.getItem("imageUrls") || "[]");
+        renderUrlFields(storedUrls);
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initUrlBuilder);
+      } else {
+        initUrlBuilder();
+      }
     </script>
+    <script src="../js/tryableProjects.js"></script>
   </body>
 </html>

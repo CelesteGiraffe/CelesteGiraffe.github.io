@@ -182,7 +182,7 @@ export const portfolioItems = [
       "Web Development",
     ],
     description:
-      'A personal tierlist maker built to streamline creating and sharing tierlists using image URLs without the need for reuploading images manually. <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>',
+      'A personal tierlist maker built to streamline creating and sharing tierlists using image URLs without the need for reuploading images manually. <a href="/Tierlist/pre-loader.html" class="btn btn-primary">Try It Out</a>',
     languagesUsed: {
       HTML: 35,
       CSS: 10,
@@ -199,7 +199,7 @@ export const portfolioItems = [
         <li>Shareable Links: The tierlists can be easily shared, particularly in Discord, allowing for collaborative and fun interactions</li>
       </ul>
       <p>This project was inspired by community interactions and was designed with simplicity and user convenience in mind, especially for quick and easy tierlist creation.</p>
-      <a href="/Tierlist/pre-loader.html" target="_blank" class="btn btn-primary">Try It Out</a>
+      <a href="/Tierlist/pre-loader.html" class="btn btn-primary">Try It Out</a>
     `,
     image: "/assets/images/TierListMaker.png",
     link: "https://github.com/CelesteGiraffe/Tierlist",
@@ -330,7 +330,7 @@ export const portfolioItems = [
     title: "Sorting Algorithm Visualizer",
     tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Web Development"],
     description:
-      'A tool to visualise and understand sorting algorithms through interactive visuals. <a href="/SortingAlgoVisualizer/Sort.html" target="_blank" class="btn btn-primary">Try It Out</a>',
+      'A tool to visualise and understand sorting algorithms through interactive visuals. <a href="/SortingAlgoVisualizer/Sort.html" class="btn btn-primary">Try It Out</a>',
     languagesUsed: {
       HTML: 45,
       CSS: 10,
@@ -345,7 +345,7 @@ export const portfolioItems = [
         <li>Built using JavaScript and TypeScript for dynamic visualisation</li>
       </ul>
       <p>This project helped me understand sorting algorithms and their visual representation.</p>
-      <a href="/SortingAlgoVisualizer/Sort.html" target="_blank" class="btn btn-primary">Try It Out</a>
+      <a href="/SortingAlgoVisualizer/Sort.html" class="btn btn-primary">Try It Out</a>
     `,
     image: "/assets/images/Sort.png",
     link: "https://github.com/CelesteGiraffe/Sorting-Algorithm-Visualizer",

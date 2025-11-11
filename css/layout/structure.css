@@ -1,0 +1,44 @@
+/* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Header */
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 110, 199, 0.5);
+    letter-spacing: -1px;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      filter: drop-shadow(0 0 10px rgba(255, 110, 199, 0.5));
+    }
+    to {
+      filter: drop-shadow(0 0 20px rgba(255, 110, 199, 0.8));
+    }
+  }
+  
+  .page-header p {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }

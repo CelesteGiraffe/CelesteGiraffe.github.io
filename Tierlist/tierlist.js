@@ -1,13 +1,18 @@
 var selectedSquare = null; // Variable to store the currently selected square
 var selectedRow = null;
 var mouseDownTime;
+var html2canvasLoaderPromise = null;
+var HTML2CANVAS_SRC =
+  "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";
 
 $(document).ready(function () {
   initializeDraggable();
   initializeDroppable();
+  warmupHtml2Canvas();
 
   //add new tier on click
   $("#addTier").click(addNewTier);
+  $("#shareTier").on("click", captureTierSnapshot);
 
   $(document).on("click", ".select-row", function () {
     $(".tier-row").removeClass("selected-row"); // Remove selection from all rows
@@ -17,6 +22,7 @@ $(document).ready(function () {
     selectedRow = $currentRow[0]; // Update selectedRow variable
     selectedSquare = null; // Deselect any selected square
     $("#large-image").removeAttr("src");
+    $("#large-image-container").removeClass("has-image");
   });
 
   //Handle keydown events
@@ -27,12 +33,13 @@ function initializeDraggable() {
   $(".image-square")
     .draggable({
       revert: "invalid",
+      helper: "clone",
+      appendTo: "body",
+      zIndex: 20000,
       start: function () {
-        // Unselect all squares when a drag starts, except the one being dragged
         $(".image-square").not(this).removeClass("selected");
       },
       stop: function () {
-        // Make the dragged square the selected one
         $(".image-square").removeClass("selected");
         $(this).addClass("selected");
         selectedSquare = this;
@@ -51,6 +58,7 @@ function initializeDraggable() {
         selectedRow = null; // Deselect any selected row
         var largeImageSrc = $(this).find("img").attr("src");
         $("#large-image").attr("src", largeImageSrc);
+        $("#large-image-container").addClass("has-image");
       }
     });
 }
@@ -59,22 +67,28 @@ function initializeDroppable() {
   $(".tier-row").droppable({
     accept: ".image-square",
     drop: function (event, ui) {
-      var dropped = ui.helper;
+      var dropped = ui.draggable;
       var droppedOn = this;
-      var children = $(this).children();
+      var children = $(this).children(".image-square");
       var hasInserted = false;
 
       children.each(function () {
         var current = $(this);
         if (current.offset().left > dropped.offset().left && !hasInserted) {
-          $(dropped).detach().css({ top: 0, left: 0 }).insertBefore(current);
+          $(dropped)
+            .detach()
+            .css({ top: "", left: "", position: "static" })
+            .insertBefore(current);
           hasInserted = true;
           return false;
         }
       });
 
       if (!hasInserted) {
-        $(dropped).detach().css({ top: 0, left: 0 }).appendTo(droppedOn);
+        $(dropped)
+          .detach()
+          .css({ top: "", left: "", position: "static" })
+          .appendTo(droppedOn);
       }
     },
   });
@@ -86,8 +100,8 @@ function addNewTier() {
   if (newTierName) {
     const newTierId = newTierName.replace(/ /g, "-"); // Replace spaces with dashes
     const newTierElement = `
-        <div id="${newTierId}" class="tier-row row S">
-          <button class="select-row">Select</button>
+        <div id="${newTierId}" class="tier-row custom-tier">
+          <button class="select-row btn btn-secondary btn-compact">Select</button>
           <h3>${newTierName}</h3>
         </div>`;
 
@@ -98,22 +112,28 @@ function addNewTier() {
     $("#" + newTierId).droppable({
       accept: ".image-square",
       drop: function (event, ui) {
-        var dropped = ui.helper;
-        var droppedOn = this;
-        var children = $(this).children();
+        var dropped = ui.draggable;
+      var droppedOn = this;
+      var children = $(this).children(".image-square");
         var hasInserted = false;
 
         children.each(function () {
           var current = $(this);
           if (current.offset().left > dropped.offset().left && !hasInserted) {
-            $(dropped).detach().css({ top: 0, left: 0 }).insertBefore(current);
+            $(dropped)
+              .detach()
+              .css({ top: "", left: "", position: "static" })
+              .insertBefore(current);
             hasInserted = true;
             return false;
           }
         });
 
         if (!hasInserted) {
-          $(dropped).detach().css({ top: 0, left: 0 }).appendTo(droppedOn);
+          $(dropped)
+            .detach()
+            .css({ top: "", left: "", position: "static" })
+            .appendTo(droppedOn);
         }
       },
     });
@@ -200,4 +220,140 @@ function squaresSelected(e) {
       return;
   }
   e.preventDefault(); // Prevent the default action (scrolling)
+}
+
+function captureTierSnapshot() {
+  var board = document.querySelector(".tier-board");
+  if (!board) {
+    alert("Nothing to capture yet.");
+    return;
+  }
+  setShareButtonState(true);
+  var snapshotContext = createSnapshotBoard(board);
+  var captureTarget = snapshotContext ? snapshotContext.node : board;
+  ensureHtml2Canvas()
+    .then(function () {
+      return html2canvas(captureTarget, {
+        backgroundColor:
+          getComputedStyle(document.body).backgroundColor || "#060612",
+        scale: window.devicePixelRatio || 2,
+        useCORS: true,
+        allowTaint: false,
+      });
+    })
+    .then(function (canvas) {
+      if (canvas.toBlob) {
+        return new Promise(function (resolve) {
+          canvas.toBlob(function (blob) {
+            if (!blob) {
+              fallbackDownload(canvas);
+              resolve();
+              return;
+            }
+            var objectUrl = URL.createObjectURL(blob);
+            triggerDownload(objectUrl);
+            setTimeout(function () {
+              URL.revokeObjectURL(objectUrl);
+              resolve();
+            }, 0);
+          }, "image/png");
+        });
+      }
+      fallbackDownload(canvas);
+      return null;
+    })
+    .catch(function (error) {
+      console.error(error);
+      alert(
+        "Snapshot tool could not load. Please check your connection and try again."
+      );
+    })
+    .finally(function () {
+      if (snapshotContext && typeof snapshotContext.cleanup === "function") {
+        snapshotContext.cleanup();
+      }
+      setShareButtonState(false);
+    });
+}
+
+function fallbackDownload(canvas) {
+  var dataUrl = canvas.toDataURL("image/png");
+  triggerDownload(dataUrl);
+}
+
+function triggerDownload(url) {
+  var link = document.createElement("a");
+  link.href = url;
+  link.download = "tier-list-" + Date.now() + ".png";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function setShareButtonState(isLoading) {
+  var $button = $("#shareTier");
+  if (!$button.length) return;
+  if (isLoading) {
+    $button.prop("disabled", true).text("Sharing...");
+  } else {
+    $button.prop("disabled", false).text("Share");
+  }
+}
+
+function ensureHtml2Canvas() {
+  if (typeof html2canvas !== "undefined") {
+    return Promise.resolve(html2canvas);
+  }
+  if (html2canvasLoaderPromise) {
+    return html2canvasLoaderPromise;
+  }
+  html2canvasLoaderPromise = new Promise(function (resolve, reject) {
+    var script = document.createElement("script");
+    script.src = HTML2CANVAS_SRC;
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    script.referrerPolicy = "no-referrer";
+    script.onload = function () {
+      if (typeof html2canvas !== "undefined") {
+        resolve(html2canvas);
+      } else {
+        reject(new Error("html2canvas failed to initialize"));
+      }
+    };
+    script.onerror = function () {
+      reject(new Error("html2canvas failed to load"));
+    };
+    document.head.appendChild(script);
+  });
+  return html2canvasLoaderPromise;
+}
+
+function warmupHtml2Canvas() {
+  ensureHtml2Canvas().catch(function () {
+    // captureTierSnapshot will surface user-facing errors if needed
+  });
+}
+
+function createSnapshotBoard(board) {
+  if (!board || !board.parentNode) return null;
+  var clone = board.cloneNode(true);
+  clone.classList.add("tier-board-capture");
+  var style = clone.style;
+  style.position = "absolute";
+  style.left = "-99999px";
+  style.top = "0";
+  style.width = board.offsetWidth + "px";
+  style.maxHeight = "none";
+  style.height = "auto";
+  style.overflow = "visible";
+  style.zIndex = "-1";
+  board.parentNode.appendChild(clone);
+  return {
+    node: clone,
+    cleanup: function () {
+      if (clone && clone.parentNode) {
+        clone.parentNode.removeChild(clone);
+      }
+    },
+  };
 }

@@ -1,0 +1,23 @@
+/* Footer */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-light);
+    margin-top: 4rem;
+    border-top: 2px solid var(--border-color);
+    background: rgba(10, 10, 15, 0.5);
+    backdrop-filter: blur(10px);
+  }
+  
+  footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+  }
+  
+  footer a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+    text-decoration: none;
+  }
