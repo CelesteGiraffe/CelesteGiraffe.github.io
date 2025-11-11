@@ -1,23 +1,45 @@
 /* Footer */
   footer {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 1.75rem 1rem;
     color: var(--text-light);
     margin-top: 4rem;
-    border-top: 2px solid var(--border-color);
-    background: rgba(10, 10, 15, 0.5);
+    border-top: 1px solid var(--border-color);
+    background: rgba(10, 10, 15, 0.35);
     backdrop-filter: blur(10px);
   }
   
-  footer a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 600;
+  footer .footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
   }
   
-  footer a:hover {
+  footer .footer-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    background: rgba(20, 20, 30, 0.6);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  footer .footer-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: currentColor;
+  }
+  
+  footer .footer-icon:hover,
+  footer .footer-icon:focus-visible {
     color: var(--accent-color);
-    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
-    text-decoration: none;
+    border-color: rgba(0, 245, 255, 0.6);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 245, 255, 0.25);
   }
