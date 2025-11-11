@@ -1,0 +1,104 @@
+/* Profile PFP (Profile Photo) */
+.profile-pfp {
+  display: block;
+  margin: 0 auto 2rem auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow:
+    0 0 0 7px var(--card-bg),
+    0 0 0 12px var(--border-glow),
+    0 0 40px 8px var(--primary-color),
+    0 8px 30px rgba(255, 110, 199, 0.5);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  transition: box-shadow 0.3s, filter 0.3s, transform 0.35s;
+  filter: brightness(1.23) saturate(1.05);
+  z-index: 3;
+  position: relative;
+  animation: profileGlowPulse 6s ease-in-out infinite alternate;
+}
+
+.profile-pfp:hover,
+.profile-pfp:focus {
+  box-shadow:
+    0 0 0 9px var(--card-bg),
+    0 0 0 15px var(--primary-color),
+    0 0 80px 16px var(--accent-color),
+    0 12px 40px rgba(0,245,255,0.3);
+  filter: brightness(1.38) saturate(1.35) drop-shadow(0 0 12px var(--accent-color));
+  transform: scale(1.045) rotate(-1deg);
+}
+
+@keyframes profileGlowPulse {
+  from {
+    box-shadow:
+      0 0 0 7px var(--card-bg),
+      0 0 0 12px var(--primary-color),
+      0 0 35px 8px var(--accent-color),
+      0 8px 30px rgba(255,110,199,0.5);
+  }
+  to {
+    box-shadow:
+      0 0 0 7px var(--card-bg),
+      0 0 0 18px var(--accent-color),
+      0 0 60px 18px var(--primary-color),
+      0 20px 60px rgba(255,110,199,0.8);
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-pfp {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-hero {
+    padding: 1.5rem;
+  }
+
+  .about-hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .about-hero-actions {
+    flex-direction: column;
+  }
+
+  .about-card,
+  .focus-card,
+  .about-timeline,
+  .about-cta {
+    padding: 1.5rem;
+  }
+
+  .about-photo-badge {
+    font-size: 0.75rem;
+  }
+}
+
+.tag-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-light);
+  position: relative;
+  transition: color 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: 0 0 0 0 transparent;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.tag-link:hover,
+.tag-link:focus {
+  color: var(--primary-color);
+  text-decoration: underline;
+  background: rgba(255, 110, 199, 0.14);
+  box-shadow: 0 2px 12px 0 var(--primary-color), 0 0 2px 0 var(--accent-color);
+}
+
+.tag-link:active {
+  color: var(--accent-color);
+}

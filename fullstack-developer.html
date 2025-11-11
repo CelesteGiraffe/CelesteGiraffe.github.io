@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Stack Developer - Celeste Artley Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="game-developer.html">Game Developer</a></li>
+        <li><a href="web-developer.html">Web Developer</a></li>
+        <li><a href="backend-developer.html">Backend Developer</a></li>
+        <li><a href="fullstack-developer.html" class="active">Full-Stack Developer</a></li>
+        <li><a href="custom.html">Custom Filter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Full-Stack Developer</h1>
+      <p>Complete Web Applications with Frontend and Backend Integration</p>
+    </div>
+
+    <div id="projects-container" class="projects-grid">
+      <div class="loading">Loading projects...</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Celeste Artley. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/portfolioItems.js"></script>
+  <script src="js/rolePages.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filteredItems = filterByRole('fullstack-developer');
+      const container = document.getElementById('projects-container');
+      renderPortfolioItems(filteredItems, container);
+    });
+  </script>
+</body>
+</html>

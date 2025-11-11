@@ -57,11 +57,14 @@ export class AlgoSort {
       while (j >= 0 && array[j] > key) {
         array[j + 1] = array[j];
         j = j - 1;
+        await this.util.sleep();
+        this.canvas.clear();
+        this.canvas.drawGraph(array);
       }
+      array[j + 1] = key;
       await this.util.sleep();
       this.canvas.clear();
       this.canvas.drawGraph(array);
-      array[j + 1] = key;
     }
   }
 
@@ -69,18 +72,18 @@ export class AlgoSort {
     let array = this.canvas.array;
     let n = array.length;
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
-      this.maxHeap(array, n, i);
+      await this.maxHeap(array, n, i);
     }
     for (let i = n - 1; i >= 0; i--) {
       this.util.swap(0, i, array);
       await this.util.sleep();
       this.canvas.clear();
       this.canvas.drawGraph(array);
-      this.maxHeap(array, i, 0);
+      await this.maxHeap(array, i, 0);
     }
   }
 
-  maxHeap(array, n, m) {
+  async maxHeap(array, n, m) {
     let largest = m;
     let l = 2 * m + 1;
     let r = 2 * m + 2;
@@ -92,7 +95,10 @@ export class AlgoSort {
     }
     if (largest != m) {
       this.util.swap(m, largest, array);
-      this.maxHeap(array, n, largest);
+      await this.util.sleep();
+      this.canvas.clear();
+      this.canvas.drawGraph(array);
+      await this.maxHeap(array, n, largest);
     }
   }
 

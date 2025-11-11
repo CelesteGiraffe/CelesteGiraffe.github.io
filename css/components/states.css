@@ -1,0 +1,33 @@
+/* No Results */
+  .no-results {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+  }
+  
+  .no-results h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  /* Loading State */
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+  }
+  
+  .loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+  }
+  
+  @keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+  }

@@ -4,103 +4,100 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Rating System Info</title>
-    <link rel="stylesheet" href="/Styles/Index.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"
-    ></script>
+    <title>Sorting Algorithm Visualizer · Celeste Artley</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
-    <section name="Navigation">
-      <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="../index.html" class="btn btn-primary">Back to Portfolio</a>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../game-developer.html">Game Developer</a></li>
+          <li><a href="../web-developer.html">Web Developer</a></li>
+          <li><a href="../backend-developer.html">Backend Developer</a></li>
+          <li><a href="../fullstack-developer.html">Full-Stack Developer</a></li>
+          <li><a href="../custom.html">Custom Filter</a></li>
+        </ul>
       </div>
-    </section>
-    <section name="Visualizer">
-      <div class="bg-secondary">
-        <h1 class="text-white text-center">Sorting Algorithm Visualizer</h1>
-        <div class="CanvasContainer bg-secondary text-center d-none d-sm-block">
-          <canvas
-            title="Sorting Algorithm Visualizer"
-            id="AlgoDisplay"
-            height="650"
-            width="1800"
-            class="bg-dark"
-          ></canvas>
-          <div class="bg-secondary SortSelection pt-4 pb-4">
-            <button class="btn btn-danger select" id="reset">Reset</button>
-            <button class="btn btn-primary select" id="test">
-              Nested For Loop
-            </button>
-            <button class="btn btn-primary select" id="bubble">
-              Bubble Sort
-            </button>
-            <button class="btn btn-primary select" id="insertion">
-              Insertion Sort
-            </button>
-            <button class="btn btn-primary select" id="heap">Heap Sort</button>
-            <button class="btn btn-primary select" id="quick">
-              Quick Sort
-            </button>
-            <button class="btn btn-primary select" id="merge">
-              Merge Sort
-            </button>
-            <button class="btn btn-success" id="newArray">New Array</button>
-          </div>
-        </div>
-        <div class="CanvasContainer bg-secondary text-center d-block d-sm-none">
-          <canvas
-            title="Sorting Algorithm Visualizer"
-            id="sAlgoDisplay"
-            height="400"
-            width="400"
-            class="bg-dark"
-          ></canvas>
-          <div class="bg-secondary SortSelection pt-4 pb-4">
-            <button class="btn btn-danger select" id="sreset">Reset</button>
-            <button class="btn btn-primary select" id="stest">
-              Nested For Loop
-            </button>
-            <button class="btn btn-primary select" id="sbubble">
-              Bubble Sort
-            </button>
-            <button class="btn btn-primary select" id="smerge">
-              Merge Sort
-            </button>
-            <button class="btn btn-primary select" id="sinsertion">
-              Insertion Sort
-            </button>
-            <button class="btn btn-primary select" id="sheap">Heap Sort</button>
-            <button class="btn btn-primary select" id="squick">
-              Quick Sort
-            </button>
-            <button class="btn btn-success" id="snewArray">New Array</button>
-          </div>
-        </div>
+    </nav>
+
+    <div class="container visualizer-page">
+      <div class="page-header">
+        <h1>Sorting Algorithm Visualizer</h1>
+        <p>Step through classic comparison-based sorts and watch every swap rendered in real-time.</p>
+        <p class="page-subtitle">Run the 120-bar desktop canvas for maximum detail or switch to the compact mobile view for quick sanity checks.</p>
       </div>
-    </section>
+
+      <div class="visualizer-grid">
+        <section class="visualizer-card desktop-only">
+          <div class="visualizer-card-header">
+            <h2>Desktop Visualizer</h2>
+            <span class="device-indicator">120 bars · 1800 × 650 canvas</span>
+          </div>
+          <canvas id="AlgoDisplay" width="1800" height="650" aria-label="Desktop sorting canvas"></canvas>
+          <div class="control-panel">
+            <p class="control-label">Algorithms</p>
+            <div class="control-group">
+              <button class="btn btn-secondary" id="reset">Reset</button>
+              <button class="btn btn-secondary" id="test">Nested Loop Test</button>
+              <button class="btn btn-primary" id="bubble">Bubble Sort</button>
+              <button class="btn btn-primary" id="insertion">Insertion Sort</button>
+              <button class="btn btn-primary" id="heap">Heap Sort</button>
+              <button class="btn btn-primary" id="quick">Quick Sort</button>
+              <button class="btn btn-primary" id="merge">Merge Sort</button>
+            </div>
+            <div class="control-group">
+              <button class="btn btn-success" id="newArray">New Array</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="visualizer-card mobile-only">
+          <div class="visualizer-card-header">
+            <h2>Mobile Visualizer</h2>
+            <span class="device-indicator">27 bars · 400 × 395 canvas</span>
+          </div>
+          <canvas id="sAlgoDisplay" width="400" height="395" aria-label="Mobile sorting canvas"></canvas>
+          <div class="control-panel">
+            <p class="control-label">Algorithms</p>
+            <div class="control-group">
+              <button class="btn btn-secondary" id="sreset">Reset</button>
+              <button class="btn btn-secondary" id="stest">Nested Loop Test</button>
+              <button class="btn btn-primary" id="sbubble">Bubble Sort</button>
+              <button class="btn btn-primary" id="sinsertion">Insertion Sort</button>
+              <button class="btn btn-primary" id="sheap">Heap Sort</button>
+              <button class="btn btn-primary" id="squick">Quick Sort</button>
+              <button class="btn btn-primary" id="smerge">Merge Sort</button>
+            </div>
+            <div class="control-group">
+              <button class="btn btn-success" id="snewArray">New Array</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="visualizer-card info-card">
+          <div class="visualizer-card-header">
+            <h2>How It Works</h2>
+          </div>
+          <ul class="info-list">
+            <li>Each button triggers the algorithm on the current dataset with animated swaps and comparisons.</li>
+            <li>Reset reloads the original array seed, while New Array spins up fresh randomized data.</li>
+            <li>The Nested Loop Test is a debug baseline to highlight the render cadence of the canvas.</li>
+            <li>Desktop and mobile canvases run independently, so you can compare outputs side by side.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Celeste Artley. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="JS/Controller.js"></script>
+    <script src="../js/tryableProjects.js"></script>
   </body>
-  <script type="module" src="JS/Controller.js"></script>
 </html>

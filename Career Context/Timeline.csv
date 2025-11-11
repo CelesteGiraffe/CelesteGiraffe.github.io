@@ -1,0 +1,38 @@
+Category,Field / Prompt,Example / Notes,Your Entry,Start Date,End Date
+Personal Info,Full Legal Name,Celeste Artley,,,
+,Preferred Name,Celeste,,,
+,Location,"Chelsea, AL, USA",,,
+,Email,celestepersonalmail@gmail.com,,,
+,Phone,1 205 200 7739,,,
+,LinkedIn URL,linkedin.com/in/celeste-artley,,,
+,Portfolio / GitHub,celestegiraffe.github.io,,,
+,Work Authorisation,US Citizen,,,
+,Willing to Relocate,Yes – ideally UK,,,
+Education,Institution,Univ. of Alabama at Birmingham,,2020,2024-12
+,Degree,B.Sc. Computer Science,,2020,2024-12
+,Minor,Psychology,,2020,2024-12
+,GPA,3.3 / 4.0,,,
+Experience,Freelance Developer — AlaSeason LLC,Web dev + maintenance,,2020,Present
+,Lead Backend Engineer — TechSavvy,Capstone project,,2024-01,2024-12
+,Network Technician — Trussville BOE,Temp post-grad high school,,2010,2011
+,Geek Squad Technician,Hardware + client repair,,2010,2015
+,Target (Retail / Online Fulfilment),Summer support job,,2016-05,2017-08
+,Wells Fargo (Credit Card Banker I),Summer finance work,,2017-05,2018-08
+Projects,RaccCity (Unity 6 / C#),Game Jam – event bus architecture,,2025-05,2025-06
+,Cordellia (Unity 3D),Vertical Slice – AI + narrative,,2024-02,2024-04
+,TechSavvy (Flask / Docker),Multi-container backend,,2024-01,2024-04
+,Manchester Baby Emulator (C++),Instruction set simulation,,2023-09,2023-11
+,Pedro’s Pizza System (PHP / MySQL),CRUD app + cloud DB,,2023-02,2023-05
+,Little Shop on Hallow Hill,Unity economy prototype,,2024-08,2024-09
+,Tierlist Maker (Web),JS drag-drop tool,,2023-10,2023-10
+,RL-Trainer (C++),BakkesMod plugin prototype,,2025-02,2025-03
+Skills,Languages,Python,C#,C++,JavaScript
+,Frameworks,Flask,Node.js,Express,Docker
+,Databases,MySQL,PostgreSQL,MongoDB,
+,Tools,Git,AWS,LM Studio,VS Code
+,Dev Practices,Agile,SOLID,CI/CD,
+Gaps / Context,Family Care Period,Full-time care + study,,2016-01,2018-12
+,Post-Grad Development,Portfolio + Job Search,,2025-01,Present
+References,Shawn Nutting – Network Admin,Trussville Board of Education,,2010,2011
+,Amber Wagner –  Academic Supervisor,Professor / Capstone Lead,,2024,2024
+,Sophie Riley – Software Developer,Codeveloper,,2022,Present

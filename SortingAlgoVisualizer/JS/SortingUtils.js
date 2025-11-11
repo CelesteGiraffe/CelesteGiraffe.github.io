@@ -37,6 +37,7 @@ export class SortingUtils {
       }
     }
     this.swap(pivotIndex, end, array);
+    await this.sleep();
     this.c.clear();
     this.c.drawGraph(array);
     return pivotIndex;
