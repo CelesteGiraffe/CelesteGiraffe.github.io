@@ -397,6 +397,10 @@ body.tierlist-body {
   padding: 0.25rem 0.5rem 0.25rem 0;
 }
 
+.toolbox-mobile-actions {
+  display: none;
+}
+
 .image-strip {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(78px, 90px));
@@ -427,6 +431,7 @@ body.tierlist-body {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow);
+  touch-action: none;
 }
 
 .image-square.ui-draggable-dragging {
@@ -479,7 +484,7 @@ body.tierlist-body {
 #large-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   display: none;
 }
@@ -510,7 +515,7 @@ body.tierlist-body {
 
 @media (max-width: 768px) {
   body.tierlist-body {
-    padding-bottom: 360px;
+    padding-bottom: 280px;
   }
 
   .tierlist-card {
@@ -526,43 +531,92 @@ body.tierlist-body {
     flex-direction: column;
     height: auto;
     padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .toolbox-strip {
+    order: 1;
+    width: 100%;
+    max-height: 20vh;
+    min-height: 140px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.75rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .toolbox-strip .image-strip {
+    gap: 0.5rem;
+  }
+
+  .toolbox-mobile-actions {
+    order: 2;
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .toolbox-mobile-actions .btn {
+    flex: 1;
+    min-height: 44px;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  .toolbox-panel {
+    order: 3;
+    width: 100%;
+    display: none !important;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(6, 6, 18, 0.9);
+    padding: 1rem;
+  }
+
+  .toolbox-panel.is-visible {
+    display: flex !important;
   }
 
   .toolbox-controls {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: none;
+    gap: 1rem;
   }
 
   .toolbox-controls .btn,
   .toolbox-controls input,
   .toolbox-controls a {
-    flex: 1 1 140px;
-    width: auto;
-  }
-
-  .toolbox-instructions {
     width: 100%;
   }
 
-  .tier-create {
-    width: 100%;
-  }
-
+  .toolbox-instructions,
+  .tier-create,
   .toolbox-actions {
     width: 100%;
   }
 
-  .toolbox-strip {
-    width: 100%;
-    max-height: 200px;
-  }
-
   #large-image-container {
     width: 100%;
+    min-height: 110px;
+    max-width: none;
     height: auto;
-    min-height: 140px;
+    max-height: 140px;
+    padding: 0.5rem;
+  }
+
+  .tier-board {
+    gap: 1.25rem;
+  }
+
+  .tier-row {
+    min-height: 125px;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .tier-row h3 {
+    font-size: 1rem;
   }
 }
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Tier List · Celeste Artley</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/navigation.js" defer></script>
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -64,7 +65,7 @@
 
     <div class="tierlist-toolbox" aria-label="Tier list toolbox">
       <div class="toolbox-inner">
-        <div class="toolbox-controls">
+        <div class="toolbox-controls toolbox-panel" id="toolbox-controls-panel">
           <div class="toolbox-instructions">
             <p>Quick reference</p>
             <ul>
@@ -91,7 +92,15 @@
         <div class="toolbox-strip" aria-label="Image pool">
           <div id="images" class="image-strip"></div>
         </div>
-        <div id="large-image-container" class="toolbox-preview" aria-live="polite">
+        <div class="toolbox-mobile-actions" aria-label="Toolbox panel toggles">
+          <button type="button" class="btn btn-secondary btn-compact toolbox-toggle" data-toolbox-panel="toolbox-controls-panel" aria-expanded="false">
+            Controls
+          </button>
+          <button type="button" class="btn btn-secondary btn-compact toolbox-toggle" data-toolbox-panel="large-image-container" aria-expanded="false">
+            Preview
+          </button>
+        </div>
+        <div id="large-image-container" class="toolbox-preview toolbox-panel" aria-live="polite">
           <span class="preview-placeholder">Select a tile</span>
           <img id="large-image" alt="Selected tile preview" />
         </div>
@@ -119,7 +128,97 @@
         revert: "invalid",
       });
     </script>
+    <script src="../js/jquery.ui.touch-punch.min.js"></script>
     <script src="tierlist.js"></script>
     <script src="../js/tryableProjects.js"></script>
+    <script>
+      (() => {
+        const mobileQuery = window.matchMedia('(max-width: 768px)');
+        const toggleButtons = document.querySelectorAll('.toolbox-toggle[data-toolbox-panel]');
+        if (!toggleButtons.length) {
+          return;
+        }
+
+        const panels = new Map();
+        const buttons = new Map();
+        toggleButtons.forEach((button) => {
+          const targetId = button.getAttribute('data-toolbox-panel');
+          const panel = document.getElementById(targetId);
+          if (panel) {
+            panels.set(targetId, panel);
+            buttons.set(targetId, button);
+            button.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        if (!panels.size) {
+          return;
+        }
+
+        const resetPanels = () => {
+          panels.forEach((panel) => panel.classList.remove('is-visible'));
+          buttons.forEach((button) => button.setAttribute('aria-expanded', 'false'));
+        };
+
+        const showPanel = (panelId) => {
+          const panel = panels.get(panelId);
+          const button = buttons.get(panelId);
+          if (!panel || !button) {
+            return;
+          }
+          panel.classList.add('is-visible');
+          button.setAttribute('aria-expanded', 'true');
+        };
+
+        const handleButtonClick = (event) => {
+          const button = event.currentTarget;
+          const targetId = button.getAttribute('data-toolbox-panel');
+          const panel = panels.get(targetId);
+          if (!panel) {
+            return;
+          }
+
+          if (!mobileQuery.matches) {
+            panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+
+          const isActive = panel.classList.contains('is-visible');
+          resetPanels();
+
+          if (!isActive) {
+            showPanel(targetId);
+          }
+        };
+
+        toggleButtons.forEach((button) => {
+          button.addEventListener('click', handleButtonClick);
+        });
+
+        const showDefaultPanel = () => {
+          const defaultButton = toggleButtons[0];
+          if (mobileQuery.matches && defaultButton) {
+            const targetId = defaultButton.getAttribute('data-toolbox-panel');
+            showPanel(targetId);
+          }
+        };
+
+        const handleViewportChange = () => {
+          resetPanels();
+          if (!mobileQuery.matches) {
+            return;
+          }
+          showDefaultPanel();
+        };
+
+        handleViewportChange();
+
+        if (typeof mobileQuery.addEventListener === 'function') {
+          mobileQuery.addEventListener('change', handleViewportChange);
+        } else if (typeof mobileQuery.addListener === 'function') {
+          mobileQuery.addListener(handleViewportChange);
+        }
+      })();
+    </script>
   </body>
 </html>
