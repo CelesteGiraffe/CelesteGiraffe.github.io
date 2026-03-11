@@ -309,7 +309,7 @@ function updateGenerateButton() {
  */
 function generateDisplayPage() {
   if (selectedTags.size === 0) {
-    alert('Please select at least one tag to generate a display page.');
+    alert('Pick at least one tag before generating a display page.');
     return;
   }
   
@@ -333,7 +333,7 @@ function filterAndDisplayProjects() {
   if (!container) return;
 
   if (selectedTags.size === 0) {
-    container.innerHTML = '<p class="no-results">Please select one or more tags to filter projects.</p>';
+    container.innerHTML = '<p class="no-results">Pick one or more tags to see matching projects.</p>';
     return;
   }
 
@@ -374,7 +374,7 @@ function filterAndDisplayProjects() {
  */
 function renderFilteredProjects(items, container) {
   if (items.length === 0) {
-    container.innerHTML = '<p class="no-results">No projects found matching the selected tags.</p>';
+    container.innerHTML = '<p class="no-results">Nothing matches those tags yet. Try adding or changing a few.</p>';
     return;
   }
 

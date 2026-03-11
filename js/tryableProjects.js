@@ -6,7 +6,7 @@
       shortLabel: "Tier List",
       primaryUrl: "/Tierlist/Tierlist.html",
       routes: ["/Tierlist/Tierlist.html", "/Tierlist/pre-loader.html"],
-      summary: "Drag-and-drop ranking board with custom image loading.",
+      summary: "Drag-and-drop ranking board where you can bring your own images.",
     },
     {
       id: "sorting-visualizer",
@@ -14,7 +14,7 @@
       shortLabel: "Sorting Visualizer",
       primaryUrl: "/SortingAlgoVisualizer/Sort.html",
       routes: ["/SortingAlgoVisualizer/Sort.html"],
-      summary: "Watch comparison-based sorts animate live on canvas.",
+      summary: "See comparison-based sorting algorithms play out on a canvas.",
     },
   ];
 

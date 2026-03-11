@@ -113,7 +113,7 @@ function renderPortfolioItems(items, container) {
   if (!container) return;
 
   if (items.length === 0) {
-    container.innerHTML = '<p class="no-results">No projects found matching the selected criteria.</p>';
+    container.innerHTML = '<p class="no-results">No projects fit this view yet. Feel free to ask me about similar work.</p>';
     return;
   }
 

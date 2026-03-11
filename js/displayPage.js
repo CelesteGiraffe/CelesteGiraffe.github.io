@@ -52,7 +52,7 @@ function updateDisplayHeader(title, tagCount) {
 
   if (subtitleElement) {
     if (tagCount > 0) {
-      subtitleElement.textContent = `Showing projects matching ${tagCount} selected tag${tagCount !== 1 ? 's' : ''}`;
+      subtitleElement.textContent = `Showing projects that match ${tagCount} selected tag${tagCount !== 1 ? 's' : ''}.`;
     } else {
       subtitleElement.textContent = '';
     }
@@ -68,7 +68,7 @@ function displayNoTagsMessage() {
     container.innerHTML = `
       <div class="no-results" style="grid-column: 1 / -1;">
         <h2>No tags selected</h2>
-        <p>Please select tags to view filtered projects.</p>
+        <p>Select at least one tag to see matching projects.</p>
         <a href="custom.html" class="btn btn-primary" style="margin-top: 1rem;">Create Custom View</a>
       </div>
     `;
