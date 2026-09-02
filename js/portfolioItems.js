@@ -1,6 +1,5 @@
 const portfolioItems = [
   {
-    title: "Cordellia: 3D Action-Adventure Vertical Slice",
     title: "Cordellia (3D Action Adventure)",
     tags: [
       "Unity",
@@ -15,7 +14,6 @@ const portfolioItems = [
       "Animation Pipelines",
     ],
     description:
-      "Solo-developed 3D action vertical slice featuring deterministic finite-state-machine enemy AI, NavMesh agent navigation, and a kinematic character controller with coroutine-buffered input windows.",
       "A solo 3D action vertical slice built in Unity where players guide a mushroom character through an enchanted world. Features custom state machine AI, NavMesh navigation, and fluid combat movement.",
     languagesUsed: {
       "C#": 55,
@@ -23,12 +21,8 @@ const portfolioItems = [
     },
     effort: 8,
     longDescription: `
-      <p>Cordellia is a 3D action-adventure vertical slice built in Unity to explore combat kinematics, deterministic AI state machines, and real-time navigation constraints.</p>
       <p>Cordellia was my main project for the Games Programming course during my study abroad at the University of Dundee. It was my first deep dive into full 3D game development beyond game jams, and I built it solo from combat mechanics to enemy logic.</p>
       <ul>
-        <li><strong>Hierarchical Finite State Machine (FSM) AI:</strong> Enemy entities (including the multi-phase <em>GiantAI</em>) execute decoupled state logic covering Patrol, Investigate, Pursue, Telegraphed Attack, Recovery, and Stagger states. Path recalculation over the Unity NavMesh is throttled across frames to prevent CPU saturation.</li>
-        <li><strong>Kinematic Character Controller:</strong> Implemented responsive air control, directional dashes, and attack chaining using coroutine-driven input buffering and frame-accurate invulnerability windows.</li>
-        <li><strong>Animation & Asset Pipeline:</strong> Created and modified 3D meshes in Blender, rigged skeletal hierarchies with Mixamo, and configured mecanim blend trees synchronized with animation event callbacks.</li>
         <li><strong>State Machine Enemy AI:</strong> Built custom finite state machines for enemies (including the multi-phase Giant AI) with distinct states for patrolling, investigating, chasing, attacking, and staggering. NavMesh path recalculations are throttled across frames to keep CPU usage low.</li>
         <li><strong>Combat &amp; Player Movement:</strong> Designed responsive controls inspired by games like <em>Hollow Knight</em> and <em>Dark Souls</em>, using coroutine-based input buffering for smooth dashes, attack chaining, and recovery frames.</li>
         <li><strong>Art &amp; Animation Setup:</strong> Adapted 3D models in Blender, rigged skeletal animations with Mixamo, and set up Mecanim blend trees linked with animation events.</li>
@@ -54,7 +48,6 @@ const portfolioItems = [
       "Systems Programming",
     ],
     description:
-      "Cycle-accurate emulator and two-pass assembler for the 1948 Manchester Small-Scale Experimental Machine (SSEM), modeling 32-word Williams tube electrostatic storage and discrete instruction execution cycles.",
       "A cycle-accurate emulator and two-pass assembler in C++ for the 1948 Manchester Small-Scale Experimental Machine, the world's first stored-program computer.",
     languagesUsed: {
       "C++": 60,
@@ -62,12 +55,8 @@ const portfolioItems = [
     },
     effort: 8,
     longDescription: `
-      <p>A software recreation of the 1948 Manchester Small-Scale Experimental Machine (SSEM), the world’s first stored-program computer, built in C++ to analyze low-level instruction set architecture (ISA) design.</p>
       <p>I built this software recreation of the 1948 Manchester Small-Scale Experimental Machine (SSEM) in C++ to understand early computer architecture and instruction execution at the hardware level.</p>
       <ul>
-        <li><strong>Memory Architecture Emulation:</strong> Models 32 words of 32-bit memory stored in least-significant-bit (LSB) first order, mirroring the physical Williams-Kilburn tube electrostatic cathode-ray storage.</li>
-        <li><strong>Discrete Machine Cycles:</strong> Implements Fetch, Decode, and Execute stages for all hardware mnemonics (<code>JMP</code>, <code>JRP</code>, <code>LDN</code>, <code>STO</code>, <code>SUB</code>, <code>CMP</code>, <code>STP</code>) manipulating an accumulator register and program counter.</li>
-        <li><strong>Two-Pass Assembler:</strong> Custom lexer and token stream parser that resolves symbolic jump labels on the first pass and emits memory-aligned binary machine code on the second pass.</li>
         <li><strong>Memory Simulation:</strong> Accurately models 32 words of 32-bit memory stored in least-significant-bit first order, mirroring the physical Williams-Kilburn tube cathode-ray storage.</li>
         <li><strong>Instruction Cycle:</strong> Implements the fetch, decode, and execute stages for all 7 hardware instructions (<code>JMP</code>, <code>JRP</code>, <code>LDN</code>, <code>STO</code>, <code>SUB</code>, <code>CMP</code>, <code>STP</code>), stepping the accumulator register and program counter.</li>
         <li><strong>Two-Pass Assembler:</strong> Custom lexer and token stream parser that resolves jump labels on the first pass and outputs raw binary machine code on the second pass.</li>
@@ -90,7 +79,6 @@ const portfolioItems = [
       "Systems Programming",
     ],
     description:
-      "High-performance 2D discrete simulation engine in C++ utilizing a toroidal grid matrix, pointer-swapped double buffering to eliminate race conditions, and containerized deterministic execution.",
       "A fast 2D grid simulation engine in C++ with double-buffered memory management, toroidal wrapping, and Docker containerization.",
     languagesUsed: {
       "C++": 85,
@@ -98,12 +86,8 @@ const portfolioItems = [
     },
     effort: 5,
     longDescription: `
-      <p>A 2D discrete dynamical system simulation engine in C++ exploring emergent complexity, algorithmic optimization, and deterministic execution.</p>
       <p>A C++ simulation engine built to experiment with Conway's Game of Life and custom 2D cellular automata rules, focusing on memory efficiency and cache performance.</p>
       <ul>
-        <li><strong>Double-Buffering Memory Management:</strong> Eliminates generation stepping race conditions by maintaining two contiguous grid buffers and swapping pointers per tick, resulting in zero dynamic allocations during active simulation.</li>
-        <li><strong>Toroidal Topology:</strong> Modular boundary indexing evaluates 8-neighbor Moore topologies across wrapped 2D coordinate matrices.</li>
-        <li><strong>Containerized Environment:</strong> Packaged in a minimal Linux Docker container for deterministic headless execution and automated benchmarking.</li>
         <li><strong>Double-Buffered Memory:</strong> Uses two contiguous grid buffers and swaps pointers per tick, eliminating memory allocations during the active simulation loop.</li>
         <li><strong>Toroidal Grid:</strong> Modular arithmetic wraps the 2D grid seamlessly on all borders for accurate 8-neighbor Moore neighborhood calculations.</li>
         <li><strong>Docker Setup:</strong> Packaged in a minimal Linux container for consistent build and execution environments.</li>
@@ -116,7 +100,6 @@ const portfolioItems = [
     genre: "systems",
   },
   {
-    title: "TechSavvy: Distributed Community Platform",
     title: "TechSavvy (Capstone Project)",
     tags: [
       "Python",
@@ -132,7 +115,6 @@ const portfolioItems = [
       "Inclusive Design",
     ],
     description:
-      "Lead backend engineer for a distributed STEM community platform: designed 3NF MySQL relational schemas, OAuth 2.0 authorization code flows, DAO abstraction layers, and multi-container Docker orchestration.",
       "Web platform supporting women in STEM, built as my university capstone project. I served as backend lead, designing the MySQL database schema, REST API endpoints, and Google OAuth login.",
     languagesUsed: {
       Flask: 45,
@@ -141,13 +123,8 @@ const portfolioItems = [
     },
     effort: 10,
     longDescription: `
-      <p>TechSavvy was my university capstone project: a secure web platform supporting women in STEM, where I led the backend systems architecture, relational database design, and authentication flows.</p>
       <p>TechSavvy was my senior capstone project at UAB, built in a small team to provide mentorship channels, job boards, and discussion spaces for women in STEM. I led backend development and database architecture.</p>
       <ul>
-        <li><strong>Relational Schema Design (3NF):</strong> Structured relational tables for users, credentials, role assignments, community channels, threaded posts, job boards, and direct messages, indexed for low-latency joins.</li>
-        <li><strong>OAuth 2.0 & RBAC:</strong> Implemented authorization code grant workflows with Google identity providers and enforced role-based access control across sensitive API endpoints.</li>
-        <li><strong>Data Access Object (DAO) Pattern:</strong> Decoupled query execution from HTTP controllers, enforcing parameterized prepared statements across all data mutation pathways.</li>
-        <li><strong>Containerized Deployment:</strong> Multi-container Docker Compose configuration managing isolated app runtime, persistent MySQL storage volumes, and environment-scoped credential injection.</li>
         <li><strong>Database Schema:</strong> Designed normalized MySQL tables for user accounts, channel permissions, threaded discussion posts, job listings, and direct messages.</li>
         <li><strong>OAuth 2.0 &amp; Role Permissions:</strong> Integrated Google OAuth login and implemented role-based permissions to protect admin and moderator endpoints.</li>
         <li><strong>Data Access Layer:</strong> Built structured Data Access Objects (DAOs) in Python/Flask with prepared statements to keep queries organized and safe from SQL injection.</li>
@@ -161,7 +138,6 @@ const portfolioItems = [
     genre: "backend",
   },
   {
-    title: "Pedro's Pizza: Relational Database & Management API",
     title: "Pedro's Pizza Management System",
     tags: [
       "PHP",
@@ -174,7 +150,6 @@ const portfolioItems = [
       "Web Development",
     ],
     description:
-      "Relational database management backend engineered in PHP and MySQL, featuring 3NF normalized schemas, multi-table JOIN reporting views, transaction boundaries, and prepared statement query sanitization.",
       "A restaurant management backend and web interface in PHP and MySQL for tracking orders, store inventory, employee shifts, and sales reports.",
     languagesUsed: {
       MySQL: 65,
@@ -183,12 +158,8 @@ const portfolioItems = [
     },
     effort: 8,
     longDescription: `
-      <p>A relational database backend engineered to model business operations, shift scheduling, inventory depletion, and logistics for a multi-branch food service enterprise.</p>
       <p>A database management project built to model the day-to-day operations of a multi-location pizza business, from customer order tracking to employee shift scheduling.</p>
       <ul>
-        <li><strong>Normalized Schema Design:</strong> 3NF relational models with explicit foreign key integrity constraints, cascading updates, and optimized indexes on high-frequency lookup fields.</li>
-        <li><strong>ACID Transaction Management:</strong> Database transaction boundaries ensure atomic multi-item order placement, preventing partial record writes during concurrent checkouts.</li>
-        <li><strong>Security & Query Parameterization:</strong> Prepared statements via PHP PDO mitigate SQL injection vulnerabilities across all dynamic data endpoints.</li>
         <li><strong>Relational Database:</strong> Designed normalized MySQL tables with foreign key constraints, cascading updates, and indexes on high-traffic fields.</li>
         <li><strong>Order Transactions:</strong> Used SQL transaction boundaries to ensure multi-item orders and inventory deductions are processed atomically.</li>
         <li><strong>Secure PHP Queries:</strong> Used PHP PDO with prepared statements across all form submissions to prevent SQL injection.</li>
@@ -201,7 +172,6 @@ const portfolioItems = [
     genre: "backend",
   },
   {
-    title: "Network IRC Daemon & Protocol Bot",
     title: "Python IRC Server & Bot",
     tags: [
       "Python",
@@ -213,19 +183,14 @@ const portfolioItems = [
       "Systems Programming",
     ],
     description:
-      "RFC 1459/2812 compliant IRC server daemon and automated client implemented with low-level Python TCP sockets, featuring stream buffering, non-blocking I/O multiplexing, and stateful session tracking.",
       "An RFC-compliant Internet Relay Chat (IRC) server daemon and automated bot written from scratch using Python TCP sockets.",
     languagesUsed: {
       Python: 100,
     },
     effort: 8,
     longDescription: `
-      <p>A low-level networking project implementing an Internet Relay Chat (IRC) server daemon and automated client according to RFC 1459/2812 specifications using raw TCP sockets.</p>
       <p>A networking project implementing an IRC server daemon and automated bot from the ground up using raw Python TCP sockets to study protocol design and network I/O.</p>
       <ul>
-        <li><strong>Protocol Parsing:</strong> Tokenizes byte streams delimited by <code>\r\n</code>, validating command syntax and parameter structures (<code>NICK</code>, <code>USER</code>, <code>JOIN</code>, <code>PRIVMSG</code>, <code>QUIT</code>).</li>
-        <li><strong>Stream Fragmentation Management:</strong> Buffers incoming TCP packets to handle message fragmentation and multi-packet payloads reliably.</li>
-        <li><strong>In-Memory Routing:</strong> Manages stateful client connections, channel membership lists, and multicasts messages across active socket channels.</li>
         <li><strong>Protocol Parsing:</strong> Tokenizes standard IRC messages delimited by CRLF and handles core commands like <code>NICK</code>, <code>USER</code>, <code>JOIN</code>, <code>PRIVMSG</code>, and <code>QUIT</code>.</li>
         <li><strong>Buffer &amp; Stream Handling:</strong> Manages packet fragmentation and TCP stream boundaries so partial messages are properly assembled before execution.</li>
         <li><strong>Connection &amp; Channel Management:</strong> Tracks connected client sockets, manages active channels, and multicasts messages to channel members.</li>
@@ -238,7 +203,6 @@ const portfolioItems = [
     genre: "systems",
   },
   {
-    title: "Rust Systems & Concurrency Sandbox",
     title: "Rust Concurrency & Systems Sandbox",
     tags: [
       "Rust",
@@ -249,19 +213,14 @@ const portfolioItems = [
       "Zero-Cost Abstractions",
     ],
     description:
-      "Low-level exploration of Rust ownership mechanics, borrow checker lifetimes, zero-cost abstractions, and thread-safe multi-producer single-consumer (mpsc) message-passing concurrency.",
       "A collection of low-level experiments exploring Rust's ownership model, lifetime rules, multi-threaded worker pools, and memory layout.",
     languagesUsed: {
       Rust: 100,
     },
     effort: 4,
     longDescription: `
-      <p>A technical sandbox focused on evaluating Rust’s compile-time memory safety guarantees, ownership semantics, and lock-free concurrency models.</p>
       <p>A hands-on learning repository built to explore Rust's memory safety guarantees, concurrency primitives, and zero-cost abstractions.</p>
       <ul>
-        <li><strong>Ownership & Borrowing Semantics:</strong> Practical exercises in stack versus heap layout, RAII resource destruction, and lifetime annotations without runtime garbage collection.</li>
-        <li><strong>Multi-Threaded Concurrency:</strong> Implemented worker pools communicating via thread-safe <code>std::sync::mpsc</code> channels and atomic reference counting (<code>Arc&lt;Mutex&lt;T&gt;&gt;</code>).</li>
-        <li><strong>Data Structure Benchmarking:</strong> Comparative memory analysis between contiguous cache-aligned buffers (<code>Vec&lt;T&gt;</code>) and heap-allocated pointer chains.</li>
         <li><strong>Ownership &amp; Lifetimes:</strong> Practiced managing stack vs. heap memory, RAII resource cleanup, and explicit lifetime annotations.</li>
         <li><strong>Multi-Threading:</strong> Implemented thread pools and worker queues using <code>std::sync::mpsc</code> channels and <code>Arc&lt;Mutex&lt;T&gt;&gt;</code>.</li>
         <li><strong>Memory Experiments:</strong> Compared performance and cache locality between contiguous vectors and pointer-based data structures.</li>
@@ -273,7 +232,6 @@ const portfolioItems = [
     genre: "systems",
   },
   {
-    title: "Sketchsweepr: 2D Grid Engine",
     title: "Sketchsweepr (2D Grid Engine)",
     tags: [
       "C#",
@@ -284,19 +242,14 @@ const portfolioItems = [
       "UI Architecture",
     ],
     description:
-      "2D matrix game engine built in C#/.NET featuring discrete cell state models, recursive flood-fill cascade revelation algorithms, and a decoupled custom UI rendering layer.",
       "A Minesweeper-inspired 2D grid game built in C# and .NET, featuring recursive flood-fill tile revelation and a decoupled UI layer.",
     languagesUsed: {
       "C#": 100,
     },
     effort: 4,
     longDescription: `
-      <p>Developed at the University of Dundee to explore 2D grid matrix algorithms, state mutation, and decoupled UI rendering pipelines in C# and .NET.</p>
       <p>A 2D puzzle game engine developed during my time at Dundee University to practice grid algorithms and clean UI separation in C#.</p>
       <ul>
-        <li><strong>Grid State Representation:</strong> 2D array managing discrete cell enumerations (<code>Hidden</code>, <code>Flagged</code>, <code>Revealed</code>, <code>Mine</code>) and computing adjacent mine densities.</li>
-        <li><strong>Recursive Flood-Fill Cascade:</strong> Cascade revelation algorithm traversing contiguous zero-mine cells with boundary and visited-set validation to prevent stack overflows.</li>
-        <li><strong>Decoupled Presentation Layer:</strong> Separated grid mathematical rules from the presentation surface, enabling modular UI refactoring.</li>
         <li><strong>Grid Matrix Logic:</strong> Manages 2D tile states (hidden, flagged, revealed, mine) and calculates neighboring mine counts.</li>
         <li><strong>Recursive Flood-Fill:</strong> Cascade reveal algorithm that uncovers connected empty cells safely with boundary checks.</li>
         <li><strong>Clean Architecture:</strong> Kept the game board rules independent from the visual rendering, making UI tweaks simple.</li>
@@ -321,7 +274,6 @@ const portfolioItems = [
       "Accessibility",
     ],
     description:
-      "Complete platform architectural migration from a LAMP stack to asynchronous Node.js/Express and MongoDB document storage, integrating OAuth 2.0 authentication and external REST API pipelines.",
       "A rewrite of my original movie review site, moving from a PHP/MySQL LAMP stack to Node.js, Express, and MongoDB with external movie API integration.",
     languagesUsed: {
       HTML: 30,
@@ -334,12 +286,8 @@ const portfolioItems = [
     },
     effort: 7,
     longDescription: `
-      <p>A ground-up architectural rewrite of my initial movie review platform, transitioning from a relational LAMP stack to an asynchronous document-based architecture.</p>
       <p>A complete rebuild of my first web app, redesigned to learn modern JavaScript backends, NoSQL document databases, and third-party API integration.</p>
       <ul>
-        <li><strong>Stack Migration & Schema Denormalization:</strong> Migrated from MySQL relational tables to flexible MongoDB document collections, optimizing read latency for review threads and user watchlists.</li>
-        <li><strong>Asynchronous Event Loop Architecture:</strong> Leveraged Node.js and Express middleware pipelines for non-blocking I/O, token-based session verification, and structured error propagation.</li>
-        <li><strong>External API Aggregation:</strong> Integrated upstream REST endpoints (OMDB API, New York Times API) with response transformation and rate-limiting safeguards.</li>
         <li><strong>Stack Migration:</strong> Migrated from PHP/MySQL to Node.js, Express, and MongoDB, restructuring relational tables into flexible document collections.</li>
         <li><strong>External APIs:</strong> Connected the OMDB and NYT APIs to fetch movie posters, release metadata, and critic reviews dynamically.</li>
         <li><strong>User Reviews &amp; Lists:</strong> Added user accounts, custom watchlists, and star rating submissions.</li>
@@ -352,7 +300,6 @@ const portfolioItems = [
     genre: "website",
   },
   {
-    title: "The Little Shop on Hallow Hill (Game Jam)",
     title: "The Little Shop on Hallow Hill",
     tags: [
       "Unity",
@@ -363,7 +310,6 @@ const portfolioItems = [
       "Rapid Prototyping",
     ],
     description:
-      "Game jam prototype built in Unity/C#, featuring modular inventory data structures, dynamic NPC customer interaction state loops, and resource management mechanics.",
       "A 48-hour game jam project made in Unity and C#, featuring a spooky shop economy loop, inventory management, and NPC customer interactions.",
     languagesUsed: {
       "C#": 35,
@@ -371,12 +317,8 @@ const portfolioItems = [
     },
     effort: 6,
     longDescription: `
-      <p>A 48-hour Game Jam project exploring shopkeeping economy loops and NPC state behaviors within a constrained timeline.</p>
       <p>A cozy shopkeeping prototype created in 48 hours for a Game Jam, focusing on quick prototyping, inventory systems, and customer state loops.</p>
       <ul>
-        <li><strong>Modular Inventory Controller:</strong> Scriptable object and event-driven inventory data model tracking item quantities, valuations, and capacity thresholds.</li>
-        <li><strong>NPC Interaction Behavior:</strong> State-driven customer agents executing shopping sequences: shop entry, inventory evaluation, purchasing transactions, and dialogue triggers.</li>
-        <li><strong>Prototyping Trade-offs:</strong> Rapid feature scoping and script decoupling under strict time constraints.</li>
         <li><strong>Inventory System:</strong> ScriptableObject-based inventory tracking item stocks, buy/sell values, and player inventory capacity.</li>
         <li><strong>Customer NPC Behavior:</strong> Simple state-driven NPCs that browse shop shelves, make purchase decisions, and trigger dialogue.</li>
         <li><strong>Game Jam Workflow:</strong> Focused on fast iteration, scoping features to fit the 48-hour deadline, and writing modular scripts.</li>
@@ -390,7 +332,6 @@ const portfolioItems = [
     genre: "game",
   },
   {
-    title: "Client-Side Tier List Board",
     title: "Interactive Tier List Tool",
     tags: [
       "HTML",
@@ -402,7 +343,6 @@ const portfolioItems = [
       "Web Development",
     ],
     description:
-      "Client-side interactive ranking application built with HTML5/JavaScript, utilizing DOM drag-and-drop APIs, asynchronous image URL preloading, and dynamic board serialization.",
       "A lightweight client-side ranking tool in vanilla JavaScript and HTML5, using native drag-and-drop events and direct image URL loading.",
     languagesUsed: {
       HTML: 35,
@@ -413,12 +353,8 @@ const portfolioItems = [
     },
     effort: 4,
     longDescription: `
-      <p>A client-side ranking tool engineered to eliminate server-side storage overhead by operating entirely in the browser via DOM manipulation and URL ingestion.</p>
       <p>A quick, lightweight tier list maker running entirely in the browser without any backend or server requirements.</p>
       <ul>
-        <li><strong>DOM Drag-and-Drop:</strong> Native mouse and touch event handling for dynamic re-ordering of ranking tiles across configurable tier containers.</li>
-        <li><strong>Asynchronous Image Pipeline:</strong> Ingests external image URLs with error fallbacks, avoiding server uploads and preserving client bandwidth.</li>
-        <li><strong>Board Serialization:</strong> Dynamic DOM generation with extensible tier categorization.</li>
         <li><strong>Drag and Drop:</strong> Uses native HTML5 drag-and-drop APIs with touch support to smoothly reorder items across tiers.</li>
         <li><strong>Image Loading:</strong> Loads images directly from URLs with broken link fallbacks, keeping the tool fast and server-free.</li>
         <li><strong>Customization:</strong> Lets users add, delete, rename, and color-code ranking rows on the fly.</li>
@@ -443,7 +379,6 @@ const portfolioItems = [
       "Web Development",
     ],
     description:
-      "Algorithm visualization tool rendering real-time execution states for comparison sorting algorithms (QuickSort, MergeSort, etc.) on HTML5 Canvas using asynchronous dispatch loops.",
       "An interactive Canvas tool in TypeScript that visualizes QuickSort, MergeSort, BubbleSort, and InsertionSort step by step with asynchronous delays.",
     languagesUsed: {
       HTML: 45,
@@ -452,12 +387,8 @@ const portfolioItems = [
     },
     effort: 4,
     longDescription: `
-      <p>An educational visualization tool designed to render computational complexity and memory partition behaviors of sorting algorithms in real time.</p>
       <p>An educational visualization tool designed to demonstrate how different comparison sorting algorithms partition and sort arrays in real time.</p>
       <ul>
-        <li><strong>Algorithm Implementations:</strong> Models QuickSort partition invariants, MergeSort auxiliary arrays, BubbleSort, and InsertionSort.</li>
-        <li><strong>Non-Blocking Render Loop:</strong> Employs asynchronous dispatch and timer intervals to decouple algorithm execution from the UI thread, ensuring continuous canvas frame rendering.</li>
-        <li><strong>Step-by-Step State Inspection:</strong> Tracks active array comparisons, swaps, and sorted boundary partitions dynamically.</li>
         <li><strong>Algorithm Visualizations:</strong> Step-by-step animations of QuickSort (pivot partitioning), MergeSort (auxiliary merging), BubbleSort, and InsertionSort.</li>
         <li><strong>Async Render Loop:</strong> Uses asynchronous delays to let algorithms yield to the browser's render thread, keeping Canvas animations smooth.</li>
         <li><strong>Visual Feedback:</strong> Color-codes active comparisons, swaps, and sorted subarrays for easy visual tracking.</li>
@@ -480,19 +411,14 @@ const portfolioItems = [
       "CLI",
     ],
     description:
-      "Snapshot-based version control tool written in POSIX Bash, modeling content-addressable storage trees, staging index management, commit hashing, and delta diff calculation.",
       "A Git-inspired version control tool written in POSIX Bash, implementing content-addressable storage, a staging index, and commit histories.",
     languagesUsed: {
       Bash: 100,
     },
     effort: 5,
     longDescription: `
-      <p>A command-line version control system implemented in POSIX shell scripts to analyze the internal storage and diffing mechanics of Git.</p>
       <p>A command-line version control tool written in Bash to understand how Git works under the hood with content-addressable object storage.</p>
       <ul>
-        <li><strong>Content-Addressable Storage:</strong> Directory-based object tree tracking file snapshots via checksum manifests and metadata logs.</li>
-        <li><strong>Staging & Commit Workflows:</strong> CLI commands handling workspace status checks, staging area index updates, commit history traversal, and revision checkouts.</li>
-        <li><strong>Delta Computation:</strong> Employs Unix core tools (<code>diff</code>, <code>patch</code>, <code>sed</code>) for calculating and verifying incremental file differences.</li>
         <li><strong>Object Storage:</strong> Stores file snapshots in a directory tree indexed by file checksums and metadata.</li>
         <li><strong>Staging &amp; Commits:</strong> CLI commands for staging files (add), committing snapshots with log messages, and viewing commit history.</li>
         <li><strong>Diffing:</strong> Uses standard Unix utilities (diff, patch, sed) to calculate and view changes between revisions.</li>
@@ -505,11 +431,9 @@ const portfolioItems = [
     genre: "tool",
   },
   {
-    title: "Inventory Management Desktop Application",
     title: "Java Desktop Inventory App",
     tags: ["Java", "JavaFX", "OOP", "SQL", "NetBeans", "Software Engineering"],
     description:
-      "Desktop inventory management system built in Java/JavaFX applying strict object-oriented design patterns, MVC separation, and persistent relational storage.",
       "A desktop inventory management application built in Java and JavaFX with an MVC structure and local database persistence.",
     languagesUsed: {
       Java: 60,
@@ -518,12 +442,8 @@ const portfolioItems = [
     },
     effort: 6,
     longDescription: `
-      <p>A desktop application designed to demonstrate object-oriented software engineering principles, persistent data storage, and graphical user interfaces in Java.</p>
       <p>A desktop application developed to practice object-oriented design patterns, GUI building in JavaFX, and database integration in Java.</p>
       <ul>
-        <li><strong>OOP Design Patterns:</strong> Strict adherence to encapsulation, inheritance hierarchies, and polymorphism across business domain classes.</li>
-        <li><strong>MVC Architecture:</strong> JavaFX UI layer decoupled from data access routines via controller interfaces.</li>
-        <li><strong>Relational Persistence:</strong> Local SQL database integration handling ACID-compliant inventory record mutations.</li>
         <li><strong>OOP Design:</strong> Clear class hierarchies and interfaces modeling inventory items, suppliers, and transaction records.</li>
         <li><strong>MVC Pattern:</strong> Decoupled JavaFX view controllers from business logic and database queries.</li>
         <li><strong>Database Storage:</strong> Connected to a local SQL database for creating, reading, updating, and deleting inventory records.</li>
@@ -536,7 +456,6 @@ const portfolioItems = [
     genre: "tool",
   },
   {
-    title: "Movie Rating Project 1.0 (LAMP Stack)",
     title: "Movie Rating Platform 1.0 (LAMP)",
     tags: [
       "HTML",
@@ -549,7 +468,6 @@ const portfolioItems = [
       "Full-Stack Development",
     ],
     description:
-      "Initial full-stack web application engineered on a LAMP stack (Linux, Apache, MySQL, PHP), implementing relational data persistence, session management, and CRUD pipelines.",
       "My first full-stack web project, built with PHP, MySQL, Apache, and Linux to learn server-side rendering and database management.",
     languagesUsed: {
       HTML: 30,
@@ -562,12 +480,8 @@ const portfolioItems = [
     },
     effort: 5,
     longDescription: `
-      <p>A foundational full-stack project built on a classic LAMP stack to master server-side rendering, session-based authentication, and relational database interactions.</p>
       <p>My initial full-stack project, built on a classic LAMP stack to learn how server-rendered web applications handle forms, databases, and sessions.</p>
       <ul>
-        <li><strong>Session Authentication:</strong> Cookie-backed session verification and user account lifecycle management.</li>
-        <li><strong>Relational CRUD:</strong> Structured MySQL queries for movie ratings, user reviews, and aggregated score tallies.</li>
-        <li><strong>Server Configuration:</strong> Self-managed Apache HTTP Server configuration on Linux.</li>
         <li><strong>Session Auth:</strong> Cookie-based user sessions for logging in, managing account profiles, and submitting reviews.</li>
         <li><strong>MySQL Database:</strong> Tables for user accounts, movie entries, ratings, and written reviews.</li>
         <li><strong>Server Setup:</strong> Configured and ran the application on a local Linux Apache server.</li>
@@ -580,11 +494,9 @@ const portfolioItems = [
     genre: "website",
   },
   {
-    title: "AlaSeason LLC: Production Client Website",
     title: "AlaSeason LLC Client Website",
     tags: ["JavaScript", "HTML", "CSS", "Bootstrap", "Web Development"],
     description:
-      "Commercial production website built for an Alabama startup, featuring responsive design, semantic HTML5 structure, and Apache web server deployment.",
       "A commercial website developed for a local Alabama cleaning business during my first year of university, hosted on Apache.",
     languagesUsed: {
       HTML: 40,
@@ -594,11 +506,8 @@ const portfolioItems = [
     },
     effort: 2,
     longDescription: `
-      <p>A commercial client website developed for a local commercial cleaning business during my first year of university.</p>
       <p>My first paid web development project, built for a local commercial cleaning company during my freshman year.</p>
       <ul>
-        <li><strong>Production Deployment:</strong> Configured Apache HTTP web servers, domain DNS routing, and static asset caching.</li>
-        <li><strong>Semantic HTML5 & Responsive Layouts:</strong> Cross-browser compatibility and accessible page structures.</li>
         <li><strong>Responsive Design:</strong> Built mobile-friendly pages using HTML5, CSS3, and Bootstrap.</li>
         <li><strong>Deployment:</strong> Set up domain DNS routing and configured static hosting on an Apache server.</li>
       </ul>
@@ -610,7 +519,6 @@ const portfolioItems = [
     genre: "website",
   },
   {
-    title: "Personal Portfolio Platform",
     title: "Personal Portfolio Site",
     tags: [
       "HTML",
@@ -621,7 +529,6 @@ const portfolioItems = [
       "Inclusive Design",
     ],
     description:
-      "Static single-page architecture portfolio with client-side role filtering, URL-serialized custom query generation, WCAG AA contrast compliance, and zero external runtime dependencies.",
       "Fast, static portfolio built with vanilla HTML5, CSS3, and JavaScript, featuring real-time tag filtering, shareable URLs, and zero runtime dependencies.",
     languagesUsed: {
       HTML: 40,
@@ -630,12 +537,8 @@ const portfolioItems = [
     },
     effort: 8,
     longDescription: `
-      <p>This portfolio platform is built with pure HTML5, CSS3, and vanilla ECMAScript, operating without runtime frameworks or bundling overhead.</p>
       <p>This portfolio is built with vanilla HTML, CSS, and JavaScript, hosted statically on GitHub Pages with zero framework bloat.</p>
       <ul>
-        <li><strong>Zero-Dependency Architecture:</strong> Pure client-side execution with static hosting on GitHub Pages.</li>
-        <li><strong>URL-Driven Filter State:</strong> Serialized URL query parameters for reproducible and shareable curated views.</li>
-        <li><strong>Accessibility (WCAG AA):</strong> Strict color contrast ratios, keyboard navigation focus indicators, and semantic ARIA landmark hierarchy.</li>
         <li><strong>Zero Dependencies:</strong> Pure HTML/CSS/JS without heavy frameworks or build tools for instant loading.</li>
         <li><strong>URL-Based Filtering:</strong> Custom tag filters update the URL query string so filtered views can be bookmarked and shared.</li>
         <li><strong>Accessible &amp; Clean:</strong> High-contrast color palette, semantic HTML elements, and keyboard-accessible navigation.</li>
