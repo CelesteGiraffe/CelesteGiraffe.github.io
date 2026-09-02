@@ -26,9 +26,11 @@
     <section class="about-hero">
       <div class="about-hero-content">
         <p class="about-card-eyebrow">Engineering Profile</p>
+        <p class="about-card-eyebrow">About Me</p>
         <h1>Celeste Artley</h1>
         <p class="about-hero-lede">
           Game developer and systems engineer focused on deterministic gameplay AI, kinematic character controllers, low-level socket daemons, and accessible client platforms.
+          I'm a game developer and systems programmer with a background in Computer Science and Psychology from the University of Alabama at Birmingham. I love building enemy AI, gameplay mechanics, low-level emulators and socket tools, and clean web apps.
         </p>
         <div class="about-hero-tags">
           <a class="tag-link" href="display.html?tags=Unity&title=Tag:%20Unity" title="Projects tagged Unity">Unity</a>
@@ -42,6 +44,7 @@
         </div>
         <div class="about-hero-actions">
           <a class="btn btn-primary" href="mailto:celestepersonalmail@gmail.com">Contact Directly</a>
+          <a class="btn btn-primary" href="mailto:celestepersonalmail@gmail.com">Send an Email</a>
           <a class="btn btn-secondary" href="custom.html">Custom Tag Query</a>
         </div>
       </div>
@@ -52,6 +55,8 @@
         <div class="about-photo-badge">
           <span>2020 – 2025</span>
           <p>B.A. in Computer Science<br>Psychology Minor<br>University of Alabama at Birmingham</p>
+          <span>2020 – 2024</span>
+          <p>B.S. in Computer Science<br>Psychology Minor<br>University of Alabama at Birmingham</p>
         </div>
       </div>
     </section>
@@ -60,39 +65,57 @@
       <article class="about-card">
         <p class="about-card-eyebrow">Architecture</p>
         <h3>Deterministic & Low-Latency Systems</h3>
+        <p class="about-card-eyebrow">Game Systems</p>
+        <h3>AI &amp; Gameplay Mechanics</h3>
         <p>
           Prioritising predictability and resource efficiency across simulation loops and platform services.
+          I like building games where enemies react intelligibly and player controls feel immediate and satisfying.
         </p>
         <ul class="about-card-list">
           <li>Hierarchical state machine AI with throttled path recalculations to avoid CPU spikes.</li>
           <li>Double-buffered matrix state models and zero-allocation updates during active simulation loops.</li>
           <li>Decoupled event buses and discrete tick updates separating simulation from presentation.</li>
+          <li>Finite state machines for enemy AI (patrol, investigate, attack, stagger) with NavMesh navigation.</li>
+          <li>Responsive movement controllers using coroutine input buffers and tight dash mechanics.</li>
+          <li>Clean separation between gameplay logic, data structures, and visual rendering.</li>
         </ul>
       </article>
 
       <article class="about-card">
         <p class="about-card-eyebrow">Accessibility</p>
         <h3>Inclusive & Cozy Gameplay Design</h3>
+        <p class="about-card-eyebrow">Usability &amp; Design</p>
+        <h3>Accessibility &amp; Player Psychology</h3>
         <p>
           Applying psychological and ergonomics principles to eliminate mechanical friction and broaden player agency.
+          My psychology background taught me to think carefully about player ergonomics, cognitive friction, and accessibility.
         </p>
         <ul class="about-card-list">
           <li>Abstracted input pipelines supporting full controller remapping and alternate device bindings.</li>
           <li>Structured caption and subtitle architectures with high-contrast background scannability.</li>
           <li>Strict adherence to WCAG AA contrast standards and keyboard navigable UI surfaces.</li>
+          <li>Input abstraction supporting controller remapping and alternate device bindings.</li>
+          <li>High-contrast readable UI, clean typography, and WCAG AA compliance across web tools.</li>
+          <li>Clear visual and audio feedback so mechanics are intuitive to pick up.</li>
         </ul>
       </article>
 
       <article class="about-card">
         <p class="about-card-eyebrow">Alignment</p>
         <h3>Targeting UK Studios & Platform Teams</h3>
+        <p class="about-card-eyebrow">Looking Forward</p>
+        <h3>Roles &amp; Relocation</h3>
         <p>
           Seeking engineering roles within UK-based game studios and systems infrastructure teams.
+          I'm actively looking for junior or graduate engineering roles in game development, tools, or backend systems.
         </p>
         <ul class="about-card-list">
           <li>Available for UK relocation, hybrid, or remote technical roles.</li>
           <li>Experienced operating in cross-functional pods spanning gameplay, tools, engine, and platform ops.</li>
           <li>Committed to sustainable engineering rhythms, modular codebases, and comprehensive technical documentation.</li>
+          <li>Open to relocation (particularly to the UK) as well as hybrid or remote roles.</li>
+          <li>Comfortable working across game code, tools, databases, and low-level C++ systems.</li>
+          <li>Excited to join a collaborative team, learn from senior engineers, and ship great software.</li>
         </ul>
       </article>
     </section>
@@ -101,16 +124,21 @@
       <div class="about-timeline-header">
         <p class="about-card-eyebrow">Chronology</p>
         <h2>Technical Development (2020 – 2025)</h2>
+        <p class="about-card-eyebrow">Timeline</p>
+        <h2>Education &amp; Key Projects</h2>
         <p>
           Milestones across gameplay development, systems emulation, relational databases, and platform infrastructure.
+          A summary of my university coursework, capstone work, game jams, and independent projects.
         </p>
       </div>
       <div class="timeline-list">
         <article class="timeline-item">
           <span class="timeline-date">2024 – 2025</span>
           <h3>Gameplay AI, 3D Kinematics & Capstone Leadership</h3>
+          <h3>3D Game Programming &amp; Capstone Lead</h3>
           <p>
             Engineered the <em>Cordellia</em> 3D vertical slice with NavMesh agent AI; delivered the <em>TechSavvy</em> distributed community platform as capstone backend lead.
+            Built the <em>Cordellia</em> 3D action vertical slice with custom enemy AI; served as backend lead on <em>TechSavvy</em> (Flask, MySQL, Docker) for my university capstone.
           </p>
           <div class="timeline-tags">
             <a class="tag-link" href="display.html?tags=Unity&title=Tag:%20Unity">Unity</a>
@@ -124,8 +152,10 @@
         <article class="timeline-item">
           <span class="timeline-date">2023</span>
           <h3>Hardware Emulation, Sockets & Systems Architecture</h3>
+          <h3>Hardware Emulation, Sockets &amp; Databases</h3>
           <p>
             Built the <em>Manchester Baby</em> C++ cycle emulator and assembler; implemented an RFC 1459 compliant TCP socket daemon in Python; engineered relational database systems with ACID transaction boundaries.
+            Built the <em>Manchester Baby</em> C++ instruction emulator and assembler, wrote an RFC-compliant IRC socket server in Python, and designed relational database systems in PHP and MySQL.
           </p>
           <div class="timeline-tags">
             <a class="tag-link" href="display.html?tags=C%2B%2B&title=Tag:%20C%2B%2B">C++</a>
@@ -139,8 +169,10 @@
         <article class="timeline-item">
           <span class="timeline-date">2021 – 2022</span>
           <h3>Full-Stack Migrations & Algorithm Visualisation</h3>
+          <h3>Full-Stack Projects &amp; Canvas Visualizer</h3>
           <p>
             Re-architected movie platform services from LAMP to Node.js/MongoDB with OAuth 2.0; built real-time sorting algorithm canvas visualizers; shipped desktop Java OOP systems.
+            Migrated my movie review site from PHP to Node.js and MongoDB, built an animated sorting algorithm visualizer on HTML5 Canvas, and built a desktop Java/JavaFX inventory tool.
           </p>
           <div class="timeline-tags">
             <a class="tag-link" href="display.html?tags=Node.js&title=Tag:%20Node.js">Node.js</a>
@@ -153,8 +185,10 @@
         <article class="timeline-item">
           <span class="timeline-date">2020 – 2021</span>
           <h3>Foundational Production Web & Client Deployments</h3>
+          <h3>First Client Website &amp; Starting College</h3>
           <p>
             Shipped commercial client websites with custom Apache server configurations, DNS routing, and responsive HTML5/CSS architectures.
+            Built and launched my first commercial client website for AlaSeason LLC on Apache, and started my Computer Science degree at UAB.
           </p>
           <div class="timeline-tags">
             <a class="tag-link" href="display.html?tags=HTML&title=Tag:%20HTML">HTML</a>
@@ -170,22 +204,34 @@
       <article class="focus-card">
         <p class="about-card-eyebrow">Technical Competencies</p>
         <h3>Primary Technology Stacks</h3>
+        <p class="about-card-eyebrow">Technical Skills</p>
+        <h3>Primary Technologies</h3>
         <ul>
           <li><strong>Game Engines & Systems:</strong> Unity, C#, NavMesh, Cinemachine, discrete grid systems, kinematic character physics.</li>
           <li><strong>Backend & Platform:</strong> Python (Flask), Node.js (Express), PHP, MySQL (3NF), MongoDB, Docker Compose, Linux CLI.</li>
           <li><strong>Low-Level & Simulation:</strong> C++, Rust, Assembly, POSIX shell, TCP sockets, discrete toroidal simulation.</li>
           <li><strong>Client & Frontend:</strong> HTML5, CSS3, JavaScript, TypeScript, Canvas API, WCAG AA accessibility patterns.</li>
+          <li><strong>Game Development:</strong> Unity, C#, NavMesh, state machine AI, 2D/3D physics, Blender basics, Mixamo.</li>
+          <li><strong>Systems &amp; Low-Level:</strong> C++, Rust, Assembly, POSIX Bash, TCP socket programming.</li>
+          <li><strong>Backend &amp; Databases:</strong> Python (Flask), Node.js (Express), PHP, MySQL, MongoDB, Docker.</li>
+          <li><strong>Web &amp; Frontend:</strong> JavaScript, TypeScript, HTML5, CSS3, Canvas API.</li>
         </ul>
       </article>
 
       <article class="focus-card">
         <p class="about-card-eyebrow">Engineering Practices</p>
         <h3>Methodology & Operational Standards</h3>
+        <p class="about-card-eyebrow">Engineering Approach</p>
+        <h3>How I Work</h3>
         <ul>
           <li><strong>Deterministic Execution:</strong> Eliminate hidden race conditions and maintain reproducible state mutation loops.</li>
           <li><strong>First-Class Accessibility:</strong> Architect input abstraction layers, configurable text scaling, and high-contrast UI by default.</li>
           <li><strong>Defensive Engineering:</strong> Parameterized queries, explicit transaction boundaries, and strict type safety.</li>
           <li><strong>Clear Technical Documentation:</strong> Structured schema specifications, API contracts, and modular architecture guides.</li>
+          <li><strong>Modular, readable code:</strong> Writing code that is clear, well-structured, and easy for others to work with.</li>
+          <li><strong>Thoughtful mechanics:</strong> Tuning controls and systems so gameplay feels responsive and fair.</li>
+          <li><strong>Practical problem solving:</strong> Picking the right tool for the job without unnecessary architectural bloat.</li>
+          <li><strong>Curious and eager to learn:</strong> Digging into how things work under the hood, from instruction sets to rendering loops.</li>
         </ul>
       </article>
     </section>
@@ -193,8 +239,10 @@
     <section class="about-cta">
       <div class="about-cta-content">
         <h2>Collaboration & Opportunities</h2>
+        <h2>Get in Touch</h2>
         <p>
           If your team is building thoughtful gameplay mechanics, engine tooling, or scalable platform services and values sustainable, inclusive engineering practices, let’s connect.
+          I'm always open to discussing junior engineering opportunities, game development, or interesting projects. Feel free to reach out via email or LinkedIn.
         </p>
         <div class="about-hero-actions">
           <a class="btn btn-primary" href="mailto:celestepersonalmail@gmail.com">Get in Touch</a>

@@ -1,12 +1,18 @@
 # Celeste Artley — Systems & Gameplay Portfolio
+# Celeste Artley - Portfolio & Systems Projects
 
 Personal engineering portfolio showcasing gameplay systems, discrete simulations, hardware emulation, and full-stack backend platforms. Hosted on GitHub Pages as a zero-dependency static web application.
+Personal portfolio website showcasing games, emulation and systems projects, backend services, and web tools. Hosted statically on GitHub Pages with vanilla HTML, CSS, and JavaScript.
 
 ## Architectural Overview
+## Features
 
 - **Zero-Dependency Architecture:** Pure client-side HTML5, CSS3, and ECMAScript. No runtime build dependencies or heavy frontend frameworks.
 - **Dynamic Relevance Scoring & URL Serialization:** Custom multi-tag query engine (`js/tagFilter.js` and `js/displayPage.js`) matching technology constraints and serializing filter state directly into shareable URLs.
 - **High-Density Technical Design System:** Strict WCAG AA contrast compliance across dark slate surfaces (`#0d1117`, `#161b22`), custom monospace/system typography, and responsive grid layouts.
+- **Zero Framework Bloat:** Built with plain HTML5, CSS3, and JavaScript - no heavy npm build steps or runtime frameworks.
+- **Custom Tag Filtering:** Filter projects by languages and tools, with shareable URL parameters for custom views.
+- **Accessible Dark Theme:** Clean dark palette with WCAG AA contrast, responsive layouts, and keyboard accessibility.
 
 ## Repository Structure
 
