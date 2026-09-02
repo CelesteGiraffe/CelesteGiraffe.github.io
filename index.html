@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Celeste Artley - Portfolio</title>
+  <title>Celeste Artley - Portfolio & Systems Engineering</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/navigation.js" defer></script>
 </head>
@@ -23,66 +23,83 @@
   </nav>
 
   <div class="container">
-    <div class="page-header">
-      <img src="assets/images/pfp.jpg" alt="Celeste Artley Profile Photo" class="profile-pfp" />
-      <h1>Celeste Artley</h1>
-      <p>Game Developer & Software Engineer</p>
-      <p style="font-size: 1rem; margin-top: 0.5rem; color: var(--text-muted);">I build games and tools that are practical, kind, and easy to work with.</p>
-    </div>
-
-    <div class="home-content">
-      <h2 class="section-title">Explore my work</h2>
-      <p class="section-description">
-        Look through my projects by role, or build a custom view based on the skills and tools you care about.
+    <header class="home-hero">
+      <img src="assets/images/pfp.jpg" alt="Celeste Artley" class="profile-pfp" />
+      <h1 class="home-hero-title">Celeste Artley</h1>
+      <p class="home-hero-role">Game Developer & Systems Engineer</p>
+      <p class="home-hero-bio">
+        Specialising in gameplay AI, engine tools, backend platform architecture, and inclusive UI systems.
       </p>
+    </header>
+
+    <main class="home-content">
+      <div class="home-intro">
+        <h2 class="section-title">Technical Disciplines</h2>
+        <p class="section-description">
+          Review projects by technical discipline, or build a targeted query matching specific engine, language, or architectural requirements.
+        </p>
+      </div>
 
       <div class="role-cards-grid">
-        <a href="game-developer.html" class="role-card featured">
-          <div class="role-card-icon">🎮</div>
-          <strong class="role-card-title">Game Developer</strong>
-          <span class="role-card-subtitle">Unity, C#, Game Design</span>
-          <div class="role-card-glow"></div>
+        <a href="game-developer.html" class="role-card role-card--game">
+          <div class="role-card-header">
+            <span class="discipline-pip discipline-pip--game" aria-hidden="true"></span>
+            <strong class="role-card-title">Game Development</strong>
+          </div>
+          <span class="role-card-subtitle">Unity · C# · Gameplay AI · Kinematics</span>
+          <span class="role-card-summary">Finite state machine AI, NavMesh navigation, character controllers, and discrete grid engines.</span>
         </a>
-        <a href="web-developer.html" class="role-card">
-          <div class="role-card-icon">🌐</div>
-          <strong class="role-card-title">Web Developer</strong>
-          <span class="role-card-subtitle">HTML, CSS, JavaScript</span>
+        <a href="backend-developer.html" class="role-card role-card--backend">
+          <div class="role-card-header">
+            <span class="discipline-pip discipline-pip--backend" aria-hidden="true"></span>
+            <strong class="role-card-title">Backend & Systems</strong>
+          </div>
+          <span class="role-card-subtitle">Python · C++ · MySQL · Sockets · Docker</span>
+          <span class="role-card-summary">Relational schema design (3NF), low-level socket daemons, emulator cycles, and container orchestration.</span>
         </a>
-        <a href="backend-developer.html" class="role-card">
-          <div class="role-card-icon">⚙️</div>
-          <strong class="role-card-title">Backend Developer</strong>
-          <span class="role-card-subtitle">PHP, MySQL, Flask, APIs</span>
+        <a href="web-developer.html" class="role-card role-card--web">
+          <div class="role-card-header">
+            <span class="discipline-pip discipline-pip--web" aria-hidden="true"></span>
+            <strong class="role-card-title">Web & Client Systems</strong>
+          </div>
+          <span class="role-card-subtitle">TypeScript · Canvas · DOM API · WCAG AA</span>
+          <span class="role-card-summary">Algorithm visualization pipelines, asynchronous rendering, drag-and-drop state, and accessible UI.</span>
         </a>
-        <a href="fullstack-developer.html" class="role-card">
-          <div class="role-card-icon">🚀</div>
-          <strong class="role-card-title">Full-Stack Developer</strong>
-          <span class="role-card-subtitle">End-to-End Solutions</span>
+        <a href="fullstack-developer.html" class="role-card role-card--fullstack">
+          <div class="role-card-header">
+            <span class="discipline-pip discipline-pip--fullstack" aria-hidden="true"></span>
+            <strong class="role-card-title">Full-Stack Platforms</strong>
+          </div>
+          <span class="role-card-subtitle">Flask · Node.js · Express · MongoDB · OAuth2</span>
+          <span class="role-card-summary">End-to-end architectures, identity token authorization, REST API services, and stack migrations.</span>
         </a>
       </div>
 
-      <div class="custom-filter-card">
-        <h3 class="custom-filter-title">Custom Tag Filter</h3>
+      <section class="custom-filter-card">
+        <div class="custom-filter-header">
+          <h3 class="custom-filter-title">Custom Stack Query</h3>
+          <span class="custom-filter-tag">Tag Matrix</span>
+        </div>
         <p class="custom-filter-description">
-          Looking for specific skills or technologies? Use the custom tag filter to build a portfolio view that matches what you’re hiring for.
-          Pick tags from a job description and I’ll surface the closest projects.
+          Filter projects across all disciplines by matching specific technology tags, protocol implementations, or language constraints from a role specification.
         </p>
-        <a href="custom.html" class="btn btn-primary">Create Custom View</a>
-      </div>
-    </div>
+        <a href="custom.html" class="btn btn-primary">Open Custom Filter</a>
+      </section>
+    </main>
   </div>
 
   <footer>
     <div class="container footer-icons">
-      <a href="mailto:celestepersonalmail@gmail.com" class="footer-icon" aria-label="Email Celeste">
+      <a href="mailto:celestepersonalmail@gmail.com" class="footer-icon" aria-label="Email Celeste Artley">
         <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.511l9 5.489 9-5.489V7H3zm18 10V9.489l-8.553 5.207a1 1 0 0 1-1.894 0L2 9.489V17a0 0 0 0 0 0 0h19z"/></svg>
       </a>
-      <a href="https://linkedin.com/in/celeste-artley" class="footer-icon" aria-label="Visit LinkedIn" target="_blank" rel="noreferrer noopener">
+      <a href="https://linkedin.com/in/celeste-artley" class="footer-icon" aria-label="Visit LinkedIn profile" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M20.447 20.452H17.2V14.89c0-1.327-.027-3.036-1.852-3.036-1.853 0-2.136 1.445-2.136 2.939v5.659H9.006V9h3.112v1.561h.044c.433-.82 1.494-1.684 3.073-1.684 3.285 0 3.89 2.165 3.89 4.977v6.598zM5.337 7.433a1.804 1.804 0 1 1 0-3.609 1.804 1.804 0 0 1 0 3.609zM6.777 20.452H3.893V9h2.884v11.452z"/></svg>
       </a>
-      <a href="https://github.com/CelesteGiraffe" class="footer-icon" aria-label="See GitHub" target="_blank" rel="noreferrer noopener">
+      <a href="https://github.com/CelesteGiraffe" class="footer-icon" aria-label="Visit GitHub profile" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.162 19.492c.5.092.683-.217.683-.483 0-.237-.009-.866-.014-1.7-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.071 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025a9.564 9.564 0 0 1 5 0c1.91-1.294 2.75-1.025 2.75-1.025.545 1.378.202 2.397.099 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.338 4.687-4.566 4.936.359.31.678.918.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .268.18.58.688.481A10 10 0 0 0 12 2z"/></svg>
       </a>
-      <a href="https://celestegiraffe.github.io/about.html" class="footer-icon" aria-label="About Celeste">
+      <a href="about.html" class="footer-icon" aria-label="About Celeste Artley">
         <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.75 5a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-2 3.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v6.5h1.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5h1.5v-5h-.75a.75.75 0 0 1-.75-.75z"/></svg>
       </a>
     </div>

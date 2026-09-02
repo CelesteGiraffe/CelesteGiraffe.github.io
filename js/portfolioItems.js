@@ -1,33 +1,34 @@
 const portfolioItems = [
   {
-    title: "Cordellia",
+    title: "Cordellia: 3D Action-Adventure Vertical Slice",
     tags: [
       "Unity",
       "C#",
       "State Machine AI",
       "NavMesh",
       "Game Design",
+      "Player Kinematics",
+      "Input Buffering",
       "Blender",
       "Mixamo",
-      "Animation",
-      "Player Movement",
+      "Animation Pipelines",
     ],
     description:
-      "Cordellia is a Unity-based vertical slice where you guide a mushroom girl through an enchanted world with some fairly opinionated AI and movement.",
+      "Solo-developed 3D action vertical slice featuring deterministic finite-state-machine enemy AI, NavMesh agent navigation, and a kinematic character controller with coroutine-buffered input windows.",
     languagesUsed: {
-      "C#": 45,
-      Unity: 65,
+      "C#": 55,
+      "Unity Engine": 45,
     },
-    effort: 7,
+    effort: 8,
     longDescription: `
-      <p>Cordellia is a 3D Unity project where you control a small mushroom girl making her way through an enchanted forest. It was my first proper 3D game outside of jams, so I used it to push both my AI systems and my movement work. The game includes:</p>
-    <ul>
-      <li><strong>State-machine enemies:</strong> Each enemy (including the <em>GiantAI</em>) runs on a simple state machine—patrolling, chasing, attacking, or backing off—on top of Unity NavMesh for pathfinding.</li>
-      <li><strong>Movement controller:</strong> The movement is loosely inspired by games like <em>Dark Souls</em> and <em>Hollow Knight</em>, with a lot of time spent on camera feel, dashing, and air control. Coroutines keep dash windows and combat movement predictable.</li>
-      <li><strong>Hand-made visuals:</strong> I blended Mixamo animations with Blender models I created or tweaked to keep the look consistent.</li>
-    </ul>
-    <p>This project pulled together AI, movement, and animation work into one small slice and gave me a clearer sense of how those pieces actually feel when you ship them together.</p>
-    <a href="https://youtu.be/yN1TZMd2CG8?si=yMvQWZNsgEUc5_-y" target="_blank" class="btn btn-primary">Watch Some Gameplay</a>
+      <p>Cordellia is a 3D action-adventure vertical slice built in Unity to explore combat kinematics, deterministic AI state machines, and real-time navigation constraints.</p>
+      <ul>
+        <li><strong>Hierarchical Finite State Machine (FSM) AI:</strong> Enemy entities (including the multi-phase <em>GiantAI</em>) execute decoupled state logic covering Patrol, Investigate, Pursue, Telegraphed Attack, Recovery, and Stagger states. Path recalculation over the Unity NavMesh is throttled across frames to prevent CPU saturation.</li>
+        <li><strong>Kinematic Character Controller:</strong> Implemented responsive air control, directional dashes, and attack chaining using coroutine-driven input buffering and frame-accurate invulnerability windows.</li>
+        <li><strong>Animation & Asset Pipeline:</strong> Created and modified 3D meshes in Blender, rigged skeletal hierarchies with Mixamo, and configured mecanim blend trees synchronized with animation event callbacks.</li>
+      </ul>
+      <a href="https://github.com/UniversityOfDundee-Computing/vertical-slice-of-a-game-CelesteGiraffe" target="_blank" class="btn btn-primary">Repository</a>
+      <a href="https://youtu.be/yN1TZMd2CG8?si=yMvQWZNsgEUc5_-y" target="_blank" class="btn btn-secondary">Gameplay Video</a>
     `,
     image: "/assets/images/cordellia.png",
     link: "https://github.com/UniversityOfDundee-Computing/vertical-slice-of-a-game-CelesteGiraffe",
@@ -35,265 +36,245 @@ const portfolioItems = [
     genre: "game",
   },
   {
-    title: "alaseason.com (My first website)",
-    tags: ["JavaScript", "HTML", "CSS", "Bootstrap", "Web Development"],
-    description:
-      "A business website for a local cleaning startup, built from scratch during my first year.",
-    languagesUsed: {
-      HTML: 40,
-      CSS: 10,
-      JavaScript: 20,
-      Bootstrap: 30,
-    },
-    effort: 2,
-    longDescription: `
-      <p>This was my first paid website, built for a local cleaning startup during my first year of college. The project highlights include:</p>
-      <ul>
-        <li>Responsive design using Bootstrap</li>
-        <li>Client interaction and feedback integration</li>
-        <li>Basic SEO implementation</li>
-        <li>Hosted using Apache servers</li>
-      </ul>
-      <p>The live site is gone now, but an archived version is still available via the Wayback Machine.</p>
-    `,
-    image: "/assets/images/AlaSeason.png",
-    link: "https://web.archive.org/web/20230124034233/https://www.alaseasonllc.com/",
-    date: "2020-08-15",
-    genre: "website",
-  },
-  {
-    title: "Pedro's Pizza Database Backend",
-    tags: [
-      "PHP",
-      "MySQL",
-      "Bootstrap",
-      "TailwindCSS",
-      "Database Design & Management",
-      "CRUD",
-      "Web Development",
-      "Backend Development",
-      "Team Facilitation",
-      "Team Collaboration",
-    ],
-    description:
-      "Pedro's Pizza is a backend system for managing employee data, orders, metrics, and inventory for a pizza restaurant.",
-    languagesUsed: {
-      PHP: 10,
-      MySQL: 65,
-      Bootstrap: 15,
-      TailwindCSS: 10,
-    },
-    effort: 8,
-    longDescription: `
-      <p>Pedro's Pizza is a backend system for a fictional pizza chain, used to manage employees, orders, inventory, and a few reporting views. I used it to practice database design and small-team planning. Some key pieces:</p>
-      <ul>
-        <li><strong>PHP-based backend:</strong> PHP scripts handle CRUD around orders, shifts, car usage, and business metrics.</li>
-        <li><strong>MySQL schema:</strong> I designed the schema and joins for pulling out per‑location performance and day‑to‑day inventory data.</li>
-        <li><strong>Bootstrap/Tailwind UI:</strong> A simple Bootstrap/Tailwind frontend gives managers a way to browse and edit data without touching SQL.</li>
-        <li><strong>Basic security:</strong> Common queries use prepared statements to avoid SQL injection and keep the code predictable.</li>
-      </ul>
-      <p>This project was a good reminder that planning and alignment take more time than you expect, and that a clear schema saves a lot of discussion later.</p>
-      <a href="https://github.com/CelesteGiraffe/DatabaseSystems" target="_blank" class="btn btn-primary">View the Repository</a> 
-    `,
-    image: "/assets/images/PedrosPizza.png",
-    link: "https://github.com/CelesteGiraffe/DatabaseSystems",
-    date: "2023-10-19",
-    genre: "website",
-  },
-  {
-    title: "Manchester Baby Emulator",
+    title: "Manchester Baby (SSEM) Emulator & Assembler",
     tags: [
       "C++",
       "Assembly",
       "Emulation",
-      "Compiler Design",
+      "Computer Architecture",
       "Lexical Analysis",
       "Parsing",
-      "File I/O",
+      "Memory Systems",
+      "Systems Programming",
     ],
     description:
-      "A C++ and Assembly emulator of the Manchester Baby computer, built to practice early computer architecture and basic compiler concepts.",
+      "Cycle-accurate emulator and two-pass assembler for the 1948 Manchester Small-Scale Experimental Machine (SSEM), modeling 32-word Williams tube electrostatic storage and discrete instruction execution cycles.",
     languagesUsed: {
-      "C++": 55,
-      Assembly: 45,
+      "C++": 60,
+      Assembly: 40,
     },
     effort: 8,
     longDescription: `
-      <p>This emulator recreates parts of the Manchester Baby, one of the first stored‑program computers. The focus is on reading a tiny assembly‑style language and turning it into something the emulator can run. The project includes:</p>
+      <p>A software recreation of the 1948 Manchester Small-Scale Experimental Machine (SSEM), the world’s first stored-program computer, built in C++ to analyze low-level instruction set architecture (ISA) design.</p>
       <ul>
-        <li><strong>Lexer and parser:</strong> C++ code to tokenise the input and build a minimal structure the emulator can work with.</li>
-        <li><strong>Mnemonics:</strong> Handling operations like <code>JMP</code>, <code>LDN</code>, and <code>STO</code> and mapping them to simple machine‑level steps.</li>
-        <li><strong>File output:</strong> Writing out the resulting machine code to a file so it’s easy to inspect and test.</li>
+        <li><strong>Memory Architecture Emulation:</strong> Models 32 words of 32-bit memory stored in least-significant-bit (LSB) first order, mirroring the physical Williams-Kilburn tube electrostatic cathode-ray storage.</li>
+        <li><strong>Discrete Machine Cycles:</strong> Implements Fetch, Decode, and Execute stages for all hardware mnemonics (<code>JMP</code>, <code>JRP</code>, <code>LDN</code>, <code>STO</code>, <code>SUB</code>, <code>CMP</code>, <code>STP</code>) manipulating an accumulator register and program counter.</li>
+        <li><strong>Two-Pass Assembler:</strong> Custom lexer and token stream parser that resolves symbolic jump labels on the first pass and emits memory-aligned binary machine code on the second pass.</li>
       </ul>
-      <p>Working on this helped make compiler and emulator concepts feel less abstract, and forced me to be more disciplined with C++.</p>
-      <a href="https://github.com/CelesteGiraffe/ManchesterBaby" target="_blank" class="btn btn-primary">View the Repository</a>
+      <a href="https://github.com/CelesteGiraffe/ManchesterBaby" target="_blank" class="btn btn-primary">Repository</a>
     `,
     image: "/assets/images/ManBaby.jpg",
     link: "https://github.com/CelesteGiraffe/ManchesterBaby",
     date: "2023-11-30",
-    genre: "Discovery",
+    genre: "systems",
   },
   {
-    title: "Cellular Automaton",
-    tags: ["C++", "Console", "Docker", "Emergent Systems", "Complexity Theory"],
+    title: "Cellular Automata Simulation Engine",
+    tags: [
+      "C++",
+      "Docker",
+      "Discrete Simulation",
+      "Toroidal Grids",
+      "Memory Optimization",
+      "Systems Programming",
+    ],
     description:
-      "A C++ cellular automaton simulation that shows how simple rules can grow into more complex patterns, wrapped in Docker for easy runs.",
+      "High-performance 2D discrete simulation engine in C++ utilizing a toroidal grid matrix, pointer-swapped double buffering to eliminate race conditions, and containerized deterministic execution.",
     languagesUsed: {
       "C++": 85,
-      console: 5,
-      Docker: 10,
+      Docker: 15,
     },
-    effort: 4,
+    effort: 5,
     longDescription: `
-      <p>This C++ cellular automaton simulation is a small playground for seeing how simple rules can lead to more complex behaviour over time. It was my way of making emergence feel a bit more concrete. It includes:</p>
+      <p>A 2D discrete dynamical system simulation engine in C++ exploring emergent complexity, algorithmic optimization, and deterministic execution.</p>
       <ul>
-        <li><strong>Console output:</strong> The automaton updates in a console window so you can follow each generation.</li>
-        <li><strong>Custom rule sets:</strong> You can tweak rule sets to try out patterns like Conway’s Game of Life and other variants.</li>
-        <li><strong>Dockerised runs:</strong> A Docker setup keeps the environment consistent and easy to share.</li>
+        <li><strong>Double-Buffering Memory Management:</strong> Eliminates generation stepping race conditions by maintaining two contiguous grid buffers and swapping pointers per tick, resulting in zero dynamic allocations during active simulation.</li>
+        <li><strong>Toroidal Topology:</strong> Modular boundary indexing evaluates 8-neighbor Moore topologies across wrapped 2D coordinate matrices.</li>
+        <li><strong>Containerized Environment:</strong> Packaged in a minimal Linux Docker container for deterministic headless execution and automated benchmarking.</li>
       </ul>
-      <p>It was a simple way to connect C++ practice with ideas from complexity and to get more comfortable with Docker.</p>
+      <a href="https://github.com/CelesteGiraffe/Cellular-Automaton" target="_blank" class="btn btn-primary">Repository</a>
     `,
     image: "/assets/images/CellularAutomata.png",
     link: "https://github.com/CelesteGiraffe/Cellular-Automaton",
     date: "2023-11-04",
-    genre: "Discovery",
+    genre: "systems",
   },
   {
-    title: "Rust Sandbox",
-    tags: ["Rust", "Memory Management", "Concurrency", "Learning"],
-    description:
-      "A small Rust sandbox for trying out syntax, memory rules, and concurrency patterns in one place.",
-    languagesUsed: {
-      Rust: 100,
-    },
-    effort: 3,
-    longDescription: `
-      <p>This Rust sandbox is where I worked through examples from <em>The Rust Programming Language</em> and my own experiments. It isn’t a polished app, just a place to try things. I used it to explore:</p>
-      <ul>
-        <li><strong>Ownership and borrowing:</strong> How Rust uses its type system instead of a garbage collector.</li>
-        <li><strong>Concurrency:</strong> Basic examples of multi‑threaded code with compile‑time checks for safety.</li>
-        <li><strong>Standard data structures:</strong> Practising with vectors, maps, and other core types.</li>
-      </ul>
-      <p>It’s an ongoing scratchpad more than a product, but it shows how I like to learn new languages by actually shipping small pieces of code.</p>
-    `,
-    image: "/assets/images/RustSandbox.png",
-    link: "#",
-    date: "2023-10-24",
-    genre: "Discovery",
-  },
-  {
-    title: "Tierlist Maker",
+    title: "TechSavvy: Distributed Community Platform",
     tags: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "jQuery",
-      "Bootstrap",
+      "Python",
+      "Flask",
+      "MySQL",
+      "OAuth2",
+      "Database Architecture",
+      "Docker",
+      "Security",
+      "DAO Pattern",
+      "Full-Stack Development",
+      "Accessibility",
+      "Inclusive Design",
+    ],
+    description:
+      "Lead backend engineer for a distributed STEM community platform: designed 3NF MySQL relational schemas, OAuth 2.0 authorization code flows, DAO abstraction layers, and multi-container Docker orchestration.",
+    languagesUsed: {
+      Flask: 45,
+      MySQL: 35,
+      Docker: 20,
+    },
+    effort: 10,
+    longDescription: `
+      <p>TechSavvy was my university capstone project: a secure web platform supporting women in STEM, where I led the backend systems architecture, relational database design, and authentication flows.</p>
+      <ul>
+        <li><strong>Relational Schema Design (3NF):</strong> Structured relational tables for users, credentials, role assignments, community channels, threaded posts, job boards, and direct messages, indexed for low-latency joins.</li>
+        <li><strong>OAuth 2.0 & RBAC:</strong> Implemented authorization code grant workflows with Google identity providers and enforced role-based access control across sensitive API endpoints.</li>
+        <li><strong>Data Access Object (DAO) Pattern:</strong> Decoupled query execution from HTTP controllers, enforcing parameterized prepared statements across all data mutation pathways.</li>
+        <li><strong>Containerized Deployment:</strong> Multi-container Docker Compose configuration managing isolated app runtime, persistent MySQL storage volumes, and environment-scoped credential injection.</li>
+      </ul>
+      <a href="https://github.com/maddisonstockton/TechSavvy" target="_blank" class="btn btn-primary">Repository</a>
+    `,
+    image: "/assets/images/TechSavvy.png",
+    link: "https://github.com/maddisonstockton/TechSavvy",
+    date: "2024-10-04",
+    genre: "backend",
+  },
+  {
+    title: "Pedro's Pizza: Relational Database & Management API",
+    tags: [
+      "PHP",
+      "MySQL",
+      "Database Architecture",
+      "Transactions",
+      "CRUD",
+      "Security",
+      "Backend Development",
       "Web Development",
     ],
     description:
-      'A personal tierlist maker that lets you build and share tier lists from image URLs, without re‑uploading files. <a href="/Tierlist/pre-loader.html" class="btn btn-primary">Try It Out</a>',
+      "Relational database management backend engineered in PHP and MySQL, featuring 3NF normalized schemas, multi-table JOIN reporting views, transaction boundaries, and prepared statement query sanitization.",
     languagesUsed: {
-      HTML: 35,
-      CSS: 10,
-      JavaScript: 35,
-      jQuery: 10,
+      MySQL: 65,
+      PHP: 25,
       Bootstrap: 10,
     },
-    effort: 4,
+    effort: 8,
     longDescription: `
-      <p>After getting tired of downloading and re‑uploading images for every new tier list, I built my own version with HTML, CSS, JavaScript, and jQuery. You point it at image URLs and skip the file dance. It includes:</p>
+      <p>A relational database backend engineered to model business operations, shift scheduling, inventory depletion, and logistics for a multi-branch food service enterprise.</p>
       <ul>
-        <li><strong>URL‑based images:</strong> Add images by URL instead of downloading and uploading each one.</li>
-        <li><strong>Custom tiers:</strong> Add or rename tiers and drag tiles between them.</li>
-        <li><strong>Easy sharing:</strong> Built with Discord and similar chats in mind.</li>
+        <li><strong>Normalized Schema Design:</strong> 3NF relational models with explicit foreign key integrity constraints, cascading updates, and optimized indexes on high-frequency lookup fields.</li>
+        <li><strong>ACID Transaction Management:</strong> Database transaction boundaries ensure atomic multi-item order placement, preventing partial record writes during concurrent checkouts.</li>
+        <li><strong>Security & Query Parameterization:</strong> Prepared statements via PHP PDO mitigate SQL injection vulnerabilities across all dynamic data endpoints.</li>
       </ul>
-      <p>It started as a small quality‑of‑life tool for friends and turned into a handy way to spin up quick tier lists.</p>
-      <a href="/Tierlist/pre-loader.html" class="btn btn-primary">Try It Out</a>
+      <a href="https://github.com/CelesteGiraffe/DatabaseSystems" target="_blank" class="btn btn-primary">Repository</a>
     `,
-    image: "/assets/images/TierListMaker.png",
-    link: "https://github.com/CelesteGiraffe/Tierlist",
-    date: "2023-10-24",
-    genre: "tool",
+    image: "/assets/images/PedrosPizza.png",
+    link: "https://github.com/CelesteGiraffe/DatabaseSystems",
+    date: "2023-10-19",
+    genre: "backend",
   },
   {
-    title: "Version Control System",
-    tags: ["Linux Shell", "Bash Scripting", "Version Control"],
-    description:
-      "A small version control system written in shell scripts to understand how basic VCS features work under the hood.",
-    languagesUsed: {
-      Bash: 100,
-    },
-    effort: 5,
-    longDescription: `
-      <p>This custom version control system, written with Linux shell scripts, was part of a school assignment and a way to demystify tools like Git. It covers:</p>
-      <ul>
-        <li><strong>Repository management:</strong> Creating and selecting repos with simple staging and edit areas.</li>
-        <li><strong>Commits and history:</strong> Basic commit commands and logs for tracking changes over time.</li>
-        <li><strong>Diffing:</strong> A simple diff view to see what changed between versions.</li>
-        <li><strong>CLI workflow:</strong> A small command‑line interface to glue it all together.</li>
-      </ul>
-      <p>It gave me a better feel for the building blocks behind real‑world VCS tools and made shell scripting less intimidating.</p>
-    `,
-    image: "/assets/images/UnixShellVCS.png",
-    link: "https://github.com/CelesteGiraffe/UnixShellVCS",
-    date: "2023-10-13",
-    genre: "tool",
-  },
-  {
-    title: "Network IRC Chat and Chatbot",
+    title: "Network IRC Daemon & Protocol Bot",
     tags: [
       "Python",
-      "IRC",
       "Sockets",
       "Networking",
-      "Team Facilitation",
-      "Team Collaboration",
-      "Inclusive Teams",
+      "TCP/IP",
+      "RFC 1459",
+      "Concurrent I/O",
+      "Systems Programming",
     ],
     description:
-      "An IRC chatroom and chatbot built with Python sockets, following the IRC protocol.",
+      "RFC 1459/2812 compliant IRC server daemon and automated client implemented with low-level Python TCP sockets, featuring stream buffering, non-blocking I/O multiplexing, and stateful session tracking.",
     languagesUsed: {
       Python: 100,
     },
     effort: 8,
     longDescription: `
-      <p>This project shows how to stand up an IRC server and a simple chatbot with Python sockets. It includes:</p>
+      <p>A low-level networking project implementing an Internet Relay Chat (IRC) server daemon and automated client according to RFC 1459/2812 specifications using raw TCP sockets.</p>
       <ul>
-        <li>Real-time interaction with users via IRC protocol</li>
-        <li>Automated responses, jokes, and commands</li>
-        <li>Socket-based communication using IRC protocol for networking practice</li>
+        <li><strong>Protocol Parsing:</strong> Tokenizes byte streams delimited by <code>\r\n</code>, validating command syntax and parameter structures (<code>NICK</code>, <code>USER</code>, <code>JOIN</code>, <code>PRIVMSG</code>, <code>QUIT</code>).</li>
+        <li><strong>Stream Fragmentation Management:</strong> Buffers incoming TCP packets to handle message fragmentation and multi-packet payloads reliably.</li>
+        <li><strong>In-Memory Routing:</strong> Manages stateful client connections, channel membership lists, and multicasts messages across active socket channels.</li>
       </ul>
-      <p>It was a practical way to practise socket programming and sticking to a real protocol spec.</p>
+      <a href="https://github.com/Achiengmnoma/NetworksIV" target="_blank" class="btn btn-primary">Repository</a>
     `,
     image: "/assets/images/HexChat.png",
     link: "https://github.com/Achiengmnoma/NetworksIV",
     date: "2023-10-13",
-    genre: "tool",
+    genre: "systems",
   },
   {
-    title: "Movie Rating Project 2.0",
+    title: "Rust Systems & Concurrency Sandbox",
     tags: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "SCSS",
+      "Rust",
+      "Memory Management",
+      "Concurrency",
+      "Systems Programming",
+      "Data Structures",
+      "Zero-Cost Abstractions",
+    ],
+    description:
+      "Low-level exploration of Rust ownership mechanics, borrow checker lifetimes, zero-cost abstractions, and thread-safe multi-producer single-consumer (mpsc) message-passing concurrency.",
+    languagesUsed: {
+      Rust: 100,
+    },
+    effort: 4,
+    longDescription: `
+      <p>A technical sandbox focused on evaluating Rust’s compile-time memory safety guarantees, ownership semantics, and lock-free concurrency models.</p>
+      <ul>
+        <li><strong>Ownership & Borrowing Semantics:</strong> Practical exercises in stack versus heap layout, RAII resource destruction, and lifetime annotations without runtime garbage collection.</li>
+        <li><strong>Multi-Threaded Concurrency:</strong> Implemented worker pools communicating via thread-safe <code>std::sync::mpsc</code> channels and atomic reference counting (<code>Arc&lt;Mutex&lt;T&gt;&gt;</code>).</li>
+        <li><strong>Data Structure Benchmarking:</strong> Comparative memory analysis between contiguous cache-aligned buffers (<code>Vec&lt;T&gt;</code>) and heap-allocated pointer chains.</li>
+      </ul>
+    `,
+    image: "/assets/images/RustSandbox.png",
+    link: "#",
+    date: "2023-10-24",
+    genre: "systems",
+  },
+  {
+    title: "Sketchsweepr: 2D Grid Engine",
+    tags: [
+      "C#",
+      ".NET",
+      "Algorithms",
+      "Grid Systems",
+      "Game Design",
+      "UI Architecture",
+    ],
+    description:
+      "2D matrix game engine built in C#/.NET featuring discrete cell state models, recursive flood-fill cascade revelation algorithms, and a decoupled custom UI rendering layer.",
+    languagesUsed: {
+      "C#": 100,
+    },
+    effort: 4,
+    longDescription: `
+      <p>Developed at the University of Dundee to explore 2D grid matrix algorithms, state mutation, and decoupled UI rendering pipelines in C# and .NET.</p>
+      <ul>
+        <li><strong>Grid State Representation:</strong> 2D array managing discrete cell enumerations (<code>Hidden</code>, <code>Flagged</code>, <code>Revealed</code>, <code>Mine</code>) and computing adjacent mine densities.</li>
+        <li><strong>Recursive Flood-Fill Cascade:</strong> Cascade revelation algorithm traversing contiguous zero-mine cells with boundary and visited-set validation to prevent stack overflows.</li>
+        <li><strong>Decoupled Presentation Layer:</strong> Separated grid mathematical rules from the presentation surface, enabling modular UI refactoring.</li>
+      </ul>
+      <a href="https://github.com/nataliiaash/Minesweeper2/tree/master" target="_blank" class="btn btn-primary">Repository</a>
+    `,
+    image: "/assets/images/SketchSweeper.png",
+    link: "https://github.com/nataliiaash/Minesweeper2/tree/master",
+    date: "2024-02-08",
+    genre: "game",
+  },
+  {
+    title: "Movie Rating Platform 2.0",
+    tags: [
       "Node.js",
-      "MongoDB",
-      "Dotenv",
-      "EJS",
       "Express",
+      "MongoDB",
       "OAuth2",
-      "Regex",
-      "jQuery",
-      "OMDB API",
-      "New York Times API",
+      "REST API",
       "Full-Stack Development",
-      "Inclusive Design",
+      "Architecture Migration",
       "Accessibility",
     ],
     description:
-      "A full-stack rewrite of my original movie rating system, moving from a LAMP stack to Node.js and MongoDB.",
+      "Complete platform architectural migration from a LAMP stack to asynchronous Node.js/Express and MongoDB document storage, integrating OAuth 2.0 authentication and external REST API pipelines.",
     languagesUsed: {
       HTML: 30,
       CSS: 10,
@@ -305,14 +286,13 @@ const portfolioItems = [
     },
     effort: 7,
     longDescription: `
-      <p>Movie Rating Project 2.0 is a full rewrite of my first movie rating app. I kept the core idea but moved off LAMP to a more modern stack. Key changes:</p>
+      <p>A ground-up architectural rewrite of my initial movie review platform, transitioning from a relational LAMP stack to an asynchronous document-based architecture.</p>
       <ul>
-        <li><strong>New stack:</strong> Moved from PHP/MySQL to Node.js, Express, and MongoDB.</li>
-        <li><strong>OAuth 2 login:</strong> Integrated Google sign‑in for a smoother auth flow.</li>
-        <li><strong>External APIs:</strong> Pulled movie details from OMDB and reviews from the New York Times API.</li>
-        <li><strong>Frontend refresh:</strong> Used SCSS and Bootstrap to clean up the layout and make it easier to maintain.</li>
+        <li><strong>Stack Migration & Schema Denormalization:</strong> Migrated from MySQL relational tables to flexible MongoDB document collections, optimizing read latency for review threads and user watchlists.</li>
+        <li><strong>Asynchronous Event Loop Architecture:</strong> Leveraged Node.js and Express middleware pipelines for non-blocking I/O, token-based session verification, and structured error propagation.</li>
+        <li><strong>External API Aggregation:</strong> Integrated upstream REST endpoints (OMDB API, New York Times API) with response transformation and rate-limiting safeguards.</li>
       </ul>
-      <p>This version taught me more about API design, auth flows, and what it actually takes to migrate an existing idea to a new stack.</p>
+      <a href="https://github.com/CelesteGiraffe/Movie-Rating-Personal-Project-v2" target="_blank" class="btn btn-primary">Repository</a>
     `,
     image: "/assets/images/MovieRating.png",
     link: "https://github.com/CelesteGiraffe/Movie-Rating-Personal-Project-v2",
@@ -320,148 +300,31 @@ const portfolioItems = [
     genre: "website",
   },
   {
-    title: "Inventory Java OOP Project",
-    tags: ["Java", "JavaFX", "OOP", "NetBeans", "SQL"],
-    description:
-      "An inventory management app built in Java and JavaFX to practise object‑oriented design.",
-    languagesUsed: {
-      Java: 60,
-      JavaFX: 30,
-      SQL: 10,
-    },
-    effort: 6,
-    longDescription: `
-      <p>This inventory management system was a chance to lean into Java’s OOP features and pair them with a JavaFX UI. Highlights include:</p>
-      <ul>
-        <li><strong>CRUD operations:</strong> Create, read, update, and delete flows for managing items.</li>
-        <li><strong>OOP focus:</strong> Encapsulation, inheritance, and polymorphism used in a very concrete way.</li>
-        <li><strong>JavaFX UI:</strong> A small but usable desktop interface.</li>
-        <li><strong>Local storage:</strong> A local database wired into the app so changes actually stick.</li>
-      </ul>
-      <p>It helped connect textbook OOP concepts to a real, working tool with persistence and a UI.</p>
-    `,
-    image: "/assets/images/JavaInv.png",
-    link: "https://github.com/CelesteGiraffe/InventoryJavaOOP",
-    date: "2021-11-28",
-    genre: "tool",
-  },
-  {
-    title: "Sorting Algorithm Visualizer",
-    tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Web Development"],
-    description:
-      'A small tool to see how different sorting algorithms behave, with each step drawn on screen. <a href="/SortingAlgoVisualizer/Sort.html" class="btn btn-primary">Try It Out</a>',
-    languagesUsed: {
-      HTML: 45,
-      CSS: 10,
-      TypeScript: 45,
-    },
-    effort: 4,
-    longDescription: `
-      <p>This tool offers a simple way to visualise sorting algorithms instead of just reading about them. Features include:</p>
-      <ul>
-        <li>Visualisation of various sorting algorithms like QuickSort, MergeSort, etc.</li>
-        <li>Comparison of algorithm time complexity</li>
-        <li>Built using JavaScript and TypeScript for dynamic visualisation</li>
-      </ul>
-      <p>Building it made the differences between the algorithms much easier to see and remember.</p>
-      <a href="/SortingAlgoVisualizer/Sort.html" class="btn btn-primary">Try It Out</a>
-    `,
-    image: "/assets/images/Sort.png",
-    link: "https://github.com/CelesteGiraffe/Sorting-Algorithm-Visualizer",
-    date: "2021-11-25",
-    genre: "tool",
-  },
-  {
-    title: "Manic Movers Game",
+    title: "The Little Shop on Hallow Hill (Game Jam)",
     tags: [
-      "C#",
       "Unity",
-      "GameJam",
-      "Blender",
-      "State System",
-      "Time Manipulation",
-      "Game Design",
-    ],
-    description:
-      "A fast-paced puzzle game created for a Game Jam, where movers throw furniture and you use time-rewind mechanics to avoid and reset chaos. Developed from concept to playable demo in just 3 days, showcasing my passion for game design and problem-solving.",
-    languagesUsed: {
-      "C#": 20,
-      Unity: 65,
-      Blender: 15,
-    },
-    effort: 5,
-    longDescription: `
-      <p>Manic Movers is a unique puzzle game where players face frantic movers who hurl furniture across levels. To navigate these chaotic environments, players use time-rewind mechanics to restore order and solve puzzles. This game was developed as part of a Game Jam with the theme 'rewind', and it was my first fully-fledged game project outside of client-based web work. Key features include:</p>
-      <ul>
-        <li><strong>State System for Game Rewind:</strong> Implemented a state management system to capture and store game state, allowing players to rewind and revert changes, bringing elements back to their original positions.</li>
-        <li><strong>Time-Based Gameplay:</strong> Developed time-rewind mechanics inspired by games like Braid, giving players the ability to undo chaotic situations caused by movers, enhancing both puzzle complexity and player engagement.</li>
-        <li><strong>Rapid Development:</strong> Built from idea to playable demo in just 3 days as part of a Game Jam. This was an intense learning experience and a demonstration of my dedication and capability to bring an idea to life under tight constraints.</li>
-        <li><strong>Hand-Crafted Levels:</strong> Created multiple levels with hand-crafted obstacles and assets designed in Blender, adding a unique visual flair to each challenge.</li>
-        <li><strong>Self-Taught Foundations:</strong> As one of my earliest projects during college, I relied on YouTube tutorials and official documentation for Unity and C#, building without direct walkthroughs but using resources to understand and implement core game development concepts.</li>
-      </ul>
-      <p>Manic Movers represents a major milestone in my journey into game development. It reflects my passion for creative problem-solving, ability to quickly learn and adapt, and my deep interest in game design and time-based gameplay mechanics.</p>
-    `,
-    image: "/assets/images/ManicMovers.png",
-    link: "#",
-    date: "2021-05-20",
-    genre: "game",
-  },
-  {
-    title: "Minesweeper Grid Game (Sketchsweepr)",
-    tags: [
       "C#",
-      ".NET",
-      "Custom Graphics",
-      "Grid Systems",
       "Game Design",
-      "Team Collaboration",
+      "NPC AI",
+      "Inventory Systems",
+      "Rapid Prototyping",
     ],
     description:
-      "A hand-drawn style Minesweeper‑like game in C# and .NET, built to explore grid systems and custom UI.",
-    languagesUsed: {
-      "C#": 100,
-    },
-    effort: 3,
-    longDescription: `
-      <p>Sketchsweepr is a loose take on Minesweeper, built at the University of Dundee to experiment with grid logic and a more personal art style. Key pieces:</p>
-      <ul>
-        <li><strong>Custom grid:</strong> An interactive grid for the play area with the usual Minesweeper‑style rules.</li>
-        <li><strong>Hand‑drawn UI:</strong> Sketch‑style visuals to make it feel like something drawn in the margin of a notebook.</li>
-        <li><strong>C# and .NET:</strong> Implemented as a desktop app with a focus on clarity rather than heavy frameworks.</li>
-      </ul>
-      <p>It linked grid logic work with a more playful presentation, which made the technical parts more fun to test.</p>
-    `,
-    image: "/assets/images/SketchSweeper.png",
-    link: "https://github.com/nataliiaash/Minesweeper2/tree/master",
-    date: "2024-02-08",
-    genre: "game",
-  },
-  {
-    title: "Little Shop on Hallow Hill (GameJam version)",
-    tags: [
-      "C#",
-      "Unity",
-      "Game Design",
-      "NPC Interaction",
-      "Inventory Management",
-      "Team Collaboration",
-    ],
-    description:
-      "Little Shop on Hallow Hill is a GameJam project about running a spooky shop and defending a Halloween town, with a focus on NPC behaviour and inventory systems. The jam build is incomplete but playable.",
+      "Game jam prototype built in Unity/C#, featuring modular inventory data structures, dynamic NPC customer interaction state loops, and resource management mechanics.",
     languagesUsed: {
       "C#": 35,
       Unity: 65,
     },
-    effort: 8,
+    effort: 6,
     longDescription: `
-      <p>Little Shop on Hallow Hill was a GameJam submission about running a Halloween‑themed shop while defending the town from invading humans. <strong>The jam build is incomplete and some features are rough or missing.</strong> Even so, we were able to land a few things I’m proud of:</p>
+      <p>A 48-hour Game Jam project exploring shopkeeping economy loops and NPC state behaviors within a constrained timeline.</p>
       <ul>
-        <li><strong>Shop Management:</strong> Players could sell various items, with an inventory system to keep track of available goods. The <em>OpenInv.cs</em> script managed the player's inventory effectively, allowing for a range of items to be offered for sale.</li>
-        <li><strong>NPC Interaction and AI:</strong> NPCs were designed with varied behaviours—customers would enter the shop, interact with items, and either buy or gossip about what they found. The <em>Customer.cs</em> and <em>Gossiper.cs</em> files helped implement this depth of interaction, adding character to the town.</li>
-        <li><strong>Dynamic Environment:</strong> I worked on <em>PlayerManager.cs</em> and <em>Movement.cs</em>, focusing on character movement and the interaction with the environment, contributing to an immersive shopkeeping experience.</li>
+        <li><strong>Modular Inventory Controller:</strong> Scriptable object and event-driven inventory data model tracking item quantities, valuations, and capacity thresholds.</li>
+        <li><strong>NPC Interaction Behavior:</strong> State-driven customer agents executing shopping sequences: shop entry, inventory evaluation, purchasing transactions, and dialogue triggers.</li>
+        <li><strong>Prototyping Trade-offs:</strong> Rapid feature scoping and script decoupling under strict time constraints.</li>
       </ul>
-      <p>Even without every feature finished, it was a solid exercise in rapid prototyping and team communication under a deadline.</p>
-      <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-primary">Play my submission</a>
+      <a href="https://github.com/CelesteGiraffe/Shopkeep" target="_blank" class="btn btn-primary">Repository</a>
+      <a href="https://pilipaladev.itch.io/the-little-shop-on-hallow-hill-incomplete" target="_blank" class="btn btn-secondary">Itch.io Build</a>
     `,
     image: "/assets/images/TLSoHH.png",
     link: "https://github.com/CelesteGiraffe/Shopkeep",
@@ -469,53 +332,131 @@ const portfolioItems = [
     genre: "game",
   },
   {
-    title: "TechSavvy",
+    title: "Client-Side Tier List Board",
     tags: [
-      "Python",
-      "Flask",
-      "MySQL",
-      "OAuth2",
-      "Database Design & Management",
-      "Security",
-      "Docker",
       "HTML",
       "CSS",
-      "Bootstrap",
-      "Team Facilitation",
-      "Inclusive Teams",
-      "Team Collaboration",
-      "Inclusive Design",
-      "Accessibility",
+      "JavaScript",
+      "jQuery",
+      "DOM API",
+      "Drag-and-Drop",
+      "Web Development",
     ],
     description:
-      "A social platform for women in STEM, where I led the database design and most of the security work.",
+      "Client-side interactive ranking application built with HTML5/JavaScript, utilizing DOM drag-and-drop APIs, asynchronous image URL preloading, and dynamic board serialization.",
     languagesUsed: {
-      Flask: 40,
-      MySQL: 35,
-      Docker: 10,
-      HTML: 5,
-      CSS: 5,
-      Bootstrap: 5,
+      HTML: 35,
+      CSS: 10,
+      JavaScript: 35,
+      jQuery: 10,
+      Bootstrap: 10,
     },
-    effort: 10,
+    effort: 4,
     longDescription: `
-      <p>TechSavvy is my university capstone: a social platform aimed at supporting and connecting women in STEM. I led the database design and OAuth2 integration. Key pieces:</p>
+      <p>A client-side ranking tool engineered to eliminate server-side storage overhead by operating entirely in the browser via DOM manipulation and URL ingestion.</p>
       <ul>
-        <li><strong>Schema design:</strong> Tables for users, auth, communities, posts, comments, resources, jobs, and messaging.</li>
-        <li><strong>OAuth2:</strong> Login flows using external providers such as Google.</li>
-        <li><strong>Data access layer:</strong> DAOs and a service layer to keep SQL in one place.</li>
-        <li><strong>Security basics:</strong> Prepared statements, safer queries, and some early access‑control work.</li>
-        <li><strong>Docker:</strong> Containerised MySQL to keep dev environments predictable.</li>
+        <li><strong>DOM Drag-and-Drop:</strong> Native mouse and touch event handling for dynamic re-ordering of ranking tiles across configurable tier containers.</li>
+        <li><strong>Asynchronous Image Pipeline:</strong> Ingests external image URLs with error fallbacks, avoiding server uploads and preserving client bandwidth.</li>
+        <li><strong>Board Serialization:</strong> Dynamic DOM generation with extensible tier categorization.</li>
       </ul>
-      <p>It was a good chance to apply database and security concepts to something that actually aims to support people.</p>
+      <a href="https://github.com/CelesteGiraffe/Tierlist" target="_blank" class="btn btn-primary">Repository</a>
+      <a href="/Tierlist/pre-loader.html" class="btn btn-secondary">Launch Tool</a>
     `,
-    image: "/assets/images/TechSavvy.png",
-    link: "https://github.com/maddisonstockton/TechSavvy",
-    date: "2024-10-04",
+    image: "/assets/images/TierListMaker.png",
+    link: "https://github.com/CelesteGiraffe/Tierlist",
+    date: "2023-10-24",
     genre: "tool",
   },
   {
-    title: "Movie Rating Project 1.0",
+    title: "Sorting Algorithm Visualizer",
+    tags: [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Algorithms",
+      "Asynchronous Execution",
+      "Web Development",
+    ],
+    description:
+      "Algorithm visualization tool rendering real-time execution states for comparison sorting algorithms (QuickSort, MergeSort, etc.) on HTML5 Canvas using asynchronous dispatch loops.",
+    languagesUsed: {
+      HTML: 45,
+      CSS: 10,
+      TypeScript: 45,
+    },
+    effort: 4,
+    longDescription: `
+      <p>An educational visualization tool designed to render computational complexity and memory partition behaviors of sorting algorithms in real time.</p>
+      <ul>
+        <li><strong>Algorithm Implementations:</strong> Models QuickSort partition invariants, MergeSort auxiliary arrays, BubbleSort, and InsertionSort.</li>
+        <li><strong>Non-Blocking Render Loop:</strong> Employs asynchronous dispatch and timer intervals to decouple algorithm execution from the UI thread, ensuring continuous canvas frame rendering.</li>
+        <li><strong>Step-by-Step State Inspection:</strong> Tracks active array comparisons, swaps, and sorted boundary partitions dynamically.</li>
+      </ul>
+      <a href="https://github.com/CelesteGiraffe/Sorting-Algorithm-Visualizer" target="_blank" class="btn btn-primary">Repository</a>
+      <a href="/SortingAlgoVisualizer/Sort.html" class="btn btn-secondary">Launch Visualizer</a>
+    `,
+    image: "/assets/images/Sort.png",
+    link: "https://github.com/CelesteGiraffe/Sorting-Algorithm-Visualizer",
+    date: "2021-11-25",
+    genre: "tool",
+  },
+  {
+    title: "POSIX Shell Version Control System",
+    tags: [
+      "Linux Shell",
+      "Bash Scripting",
+      "Version Control",
+      "Systems Programming",
+      "CLI",
+    ],
+    description:
+      "Snapshot-based version control tool written in POSIX Bash, modeling content-addressable storage trees, staging index management, commit hashing, and delta diff calculation.",
+    languagesUsed: {
+      Bash: 100,
+    },
+    effort: 5,
+    longDescription: `
+      <p>A command-line version control system implemented in POSIX shell scripts to analyze the internal storage and diffing mechanics of Git.</p>
+      <ul>
+        <li><strong>Content-Addressable Storage:</strong> Directory-based object tree tracking file snapshots via checksum manifests and metadata logs.</li>
+        <li><strong>Staging & Commit Workflows:</strong> CLI commands handling workspace status checks, staging area index updates, commit history traversal, and revision checkouts.</li>
+        <li><strong>Delta Computation:</strong> Employs Unix core tools (<code>diff</code>, <code>patch</code>, <code>sed</code>) for calculating and verifying incremental file differences.</li>
+      </ul>
+      <a href="https://github.com/CelesteGiraffe/UnixShellVCS" target="_blank" class="btn btn-primary">Repository</a>
+    `,
+    image: "/assets/images/UnixShellVCS.png",
+    link: "https://github.com/CelesteGiraffe/UnixShellVCS",
+    date: "2023-10-13",
+    genre: "tool",
+  },
+  {
+    title: "Inventory Management Desktop Application",
+    tags: ["Java", "JavaFX", "OOP", "SQL", "NetBeans", "Software Engineering"],
+    description:
+      "Desktop inventory management system built in Java/JavaFX applying strict object-oriented design patterns, MVC separation, and persistent relational storage.",
+    languagesUsed: {
+      Java: 60,
+      JavaFX: 30,
+      SQL: 10,
+    },
+    effort: 6,
+    longDescription: `
+      <p>A desktop application designed to demonstrate object-oriented software engineering principles, persistent data storage, and graphical user interfaces in Java.</p>
+      <ul>
+        <li><strong>OOP Design Patterns:</strong> Strict adherence to encapsulation, inheritance hierarchies, and polymorphism across business domain classes.</li>
+        <li><strong>MVC Architecture:</strong> JavaFX UI layer decoupled from data access routines via controller interfaces.</li>
+        <li><strong>Relational Persistence:</strong> Local SQL database integration handling ACID-compliant inventory record mutations.</li>
+      </ul>
+      <a href="https://github.com/CelesteGiraffe/InventoryJavaOOP" target="_blank" class="btn btn-primary">Repository</a>
+    `,
+    image: "/assets/images/JavaInv.png",
+    link: "https://github.com/CelesteGiraffe/InventoryJavaOOP",
+    date: "2021-11-28",
+    genre: "tool",
+  },
+  {
+    title: "Movie Rating Project 1.0 (LAMP Stack)",
     tags: [
       "HTML",
       "CSS",
@@ -524,12 +465,10 @@ const portfolioItems = [
       "MySQL",
       "Linux",
       "Apache2",
-      "jQuery",
-      "Bootstrap",
       "Full-Stack Development",
     ],
     description:
-      "The original movie rating system I built on a LAMP stack, and my first real full‑stack web project.",
+      "Initial full-stack web application engineered on a LAMP stack (Linux, Apache, MySQL, PHP), implementing relational data persistence, session management, and CRUD pipelines.",
     languagesUsed: {
       HTML: 30,
       CSS: 5,
@@ -541,75 +480,72 @@ const portfolioItems = [
     },
     effort: 5,
     longDescription: `
-      <p>Movie Rating Project 1.0 was my first serious step into full‑stack development using the LAMP stack (Linux, Apache, MySQL, PHP). It helped me learn the basics of server‑side code and web app structure. Key features:</p>
+      <p>A foundational full-stack project built on a classic LAMP stack to master server-side rendering, session-based authentication, and relational database interactions.</p>
       <ul>
-        <li><strong>User Authentication:</strong> Implemented a user authentication system to allow users to create accounts, log in, and interact with the platform.</li>
-        <li><strong>Dynamic Movie Rating System:</strong> Users could rate movies, write reviews, and see others' ratings and comments, providing an interactive experience.</li>
-        <li><strong>Responsive Design:</strong> Developed a mobile-friendly interface using Bootstrap to ensure the website looked good across different screen sizes.</li>
+        <li><strong>Session Authentication:</strong> Cookie-backed session verification and user account lifecycle management.</li>
+        <li><strong>Relational CRUD:</strong> Structured MySQL queries for movie ratings, user reviews, and aggregated score tallies.</li>
+        <li><strong>Server Configuration:</strong> Self-managed Apache HTTP Server configuration on Linux.</li>
       </ul>
-      <p>It set the baseline skills I later built on with more modern stacks.</p>
+      <a href="https://github.com/CelesteGiraffe/Personal-Project-v1" target="_blank" class="btn btn-primary">Repository</a>
     `,
     image: "/assets/images/MovieRating.png",
     link: "https://github.com/CelesteGiraffe/Personal-Project-v1",
     date: "2021-09-15",
-    genre: "Discovery",
+    genre: "website",
   },
   {
-    title: "Personal Portfolio 1.0",
-    tags: ["HTML", "PHP", "CSS", "JavaScript", "Bootstrap", "Web Development"],
+    title: "AlaSeason LLC: Production Client Website",
+    tags: ["JavaScript", "HTML", "CSS", "Bootstrap", "Web Development"],
     description:
-      "The first version of my personal portfolio, built to get my early projects online.",
+      "Commercial production website built for an Alabama startup, featuring responsive design, semantic HTML5 structure, and Apache web server deployment.",
     languagesUsed: {
-      HTML: 30,
-      PHP: 45,
-      Bootstrap: 25,
+      HTML: 40,
+      CSS: 10,
+      JavaScript: 20,
+      Bootstrap: 30,
     },
-    effort: 8,
+    effort: 2,
     longDescription: `
-      <p>This is the original version of my portfolio, built with HTML, PHP, CSS, and JavaScript. Key features:</p>
+      <p>A commercial client website developed for a local commercial cleaning business during my first year of university.</p>
       <ul>
-        <li>Project showcase with links to GitHub repositories</li>
-        <li>Responsive design using Bootstrap</li>
-        <li>Personal branding and custom design</li>
+        <li><strong>Production Deployment:</strong> Configured Apache HTTP web servers, domain DNS routing, and static asset caching.</li>
+        <li><strong>Semantic HTML5 & Responsive Layouts:</strong> Cross-browser compatibility and accessible page structures.</li>
       </ul>
-      <p>It was my first attempt at pulling my work into one place where people could actually find it.</p>
+      <a href="https://web.archive.org/web/20230124034233/https://www.alaseasonllc.com/" target="_blank" class="btn btn-primary">Wayback Archive</a>
     `,
-    image: "/assets/images/Portfolio.png",
-    link: "https://github.com/CelesteGiraffe/Personal-Portfolio",
-    date: "2022-03-20",
-    genre: "Discovery",
+    image: "/assets/images/AlaSeason.png",
+    link: "https://web.archive.org/web/20230124034233/https://www.alaseasonllc.com/",
+    date: "2020-08-15",
+    genre: "website",
   },
   {
-    title: "Personal Portfolio 2.0 (this website)",
+    title: "Personal Portfolio Platform",
     tags: [
       "HTML",
       "CSS",
       "JavaScript",
-      "Bootstrap",
       "Web Development",
-      "Inclusive Design",
       "Accessibility",
+      "Inclusive Design",
     ],
     description:
-      "The second version of my portfolio website, which you’re browsing now.",
+      "Static single-page architecture portfolio with client-side role filtering, URL-serialized custom query generation, WCAG AA contrast compliance, and zero external runtime dependencies.",
     languagesUsed: {
       HTML: 40,
-      CSS: 10,
+      CSS: 35,
       JavaScript: 25,
-      Bootstrap: 25,
     },
     effort: 8,
     longDescription: `
-      <p>This is the current version of my portfolio, built with HTML, CSS, JavaScript, and Bootstrap. It features:</p>
+      <p>This portfolio platform is built with pure HTML5, CSS3, and vanilla ECMAScript, operating without runtime frameworks or bundling overhead.</p>
       <ul>
-        <li>Dynamic project cards with detailed descriptions</li>
-        <li>Mobile-responsive layout for accessibility</li>
-        <li>Enhanced UI/UX design using Bootstrap framework</li>
+        <li><strong>Zero-Dependency Architecture:</strong> Pure client-side execution with static hosting on GitHub Pages.</li>
+        <li><strong>URL-Driven Filter State:</strong> Serialized URL query parameters for reproducible and shareable curated views.</li>
+        <li><strong>Accessibility (WCAG AA):</strong> Strict color contrast ratios, keyboard navigation focus indicators, and semantic ARIA landmark hierarchy.</li>
       </ul>
-      <p>It’s where I keep my projects, context, and a few small tools in one place.</p>
     `,
     image: "/assets/images/Portfolio2.png",
-    link: "#",
+    link: "https://github.com/CelesteGiraffe/CelesteGiraffe.github.io",
     date: "2024-09-20",
     genre: "website",
   },

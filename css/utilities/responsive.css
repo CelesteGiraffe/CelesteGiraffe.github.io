@@ -1,92 +1,81 @@
 /* Responsive Design */
-  @media (max-width: 1024px) {
-    .about-hero {
-      grid-template-columns: 1fr;
-      padding: 2.5rem;
-    }
-
-    .about-timeline {
-      padding: 2.5rem;
-    }
+@media (max-width: 1024px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
   }
 
-  @media (max-width: 768px) {
-    .container {
-      padding: 0 1rem;
-    }
-  
-    nav {
-      padding: 1rem;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-  
-    .page-header h1 {
-      font-size: 2rem;
-    }
-  
-    .projects-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  
-    .tag-selector-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .tag-checkboxes {
-      grid-template-columns: 1fr;
-    }
-  
-    .tag-controls {
-      width: 100%;
-    }
-  
-    .tag-controls .btn {
-      flex: 1 1 calc(50% - 0.5rem);
-      text-align: center;
-      min-height: 48px;
-      font-size: 0.95rem;
-    }
-  
-    .display-page-header h1 {
-      font-size: 2rem;
-    }
-  
-    .title-input-container {
-      padding: 1.5rem;
-    }
-  
-    .section-title {
-      font-size: 2rem;
-    }
-  
-    .role-cards-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .custom-filter-card {
-      padding: 2rem 1.5rem;
-    }
-  
-    .custom-filter-title {
-      font-size: 1.5rem;
-    }
+  .about-timeline {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
   }
 
-  @media (max-width: 520px) {
-    .tag-controls {
-      flex-direction: column;
-    }
-
-    .tag-controls .btn {
-      flex: 1 1 100%;
-      width: 100%;
-      font-size: 1rem;
-    }
+  .page-header h1 {
+    font-size: 1.65rem;
   }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .tag-selector-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tag-checkboxes {
+    grid-template-columns: 1fr;
+  }
+
+  .tag-controls {
+    width: 100%;
+  }
+
+  .tag-controls .btn {
+    flex: 1 1 calc(50% - 0.5rem);
+    text-align: center;
+    min-height: 40px;
+    font-size: 0.85rem;
+  }
+
+  .display-page-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .title-input-container {
+    padding: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .role-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-filter-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .custom-filter-title {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .tag-controls {
+    flex-direction: column;
+  }
+
+  .tag-controls .btn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}

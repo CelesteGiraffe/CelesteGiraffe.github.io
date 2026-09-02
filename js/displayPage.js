@@ -52,7 +52,7 @@ function updateDisplayHeader(title, tagCount) {
 
   if (subtitleElement) {
     if (tagCount > 0) {
-      subtitleElement.textContent = `Showing projects that match ${tagCount} selected tag${tagCount !== 1 ? 's' : ''}.`;
+      subtitleElement.textContent = `Showing projects matching ${tagCount} selected tag${tagCount !== 1 ? 's' : ''}.`;
     } else {
       subtitleElement.textContent = '';
     }
@@ -68,8 +68,8 @@ function displayNoTagsMessage() {
     container.innerHTML = `
       <div class="no-results" style="grid-column: 1 / -1;">
         <h2>No tags selected</h2>
-        <p>Select at least one tag to see matching projects.</p>
-        <a href="custom.html" class="btn btn-primary" style="margin-top: 1rem;">Create Custom View</a>
+        <p>Select at least one tag to filter matching projects.</p>
+        <a href="custom.html" class="btn btn-primary" style="margin-top: 1rem;">Open Custom Filter</a>
       </div>
     `;
   }
@@ -124,8 +124,8 @@ function renderDisplayProjects(items, container, selectedTags) {
     container.innerHTML = `
       <div class="no-results" style="grid-column: 1 / -1;">
         <h2>No projects found</h2>
-        <p>No projects match the selected tags.</p>
-        <a href="custom.html" class="btn btn-primary" style="margin-top: 1rem;">Try Different Tags</a>
+        <p>No projects match all of the selected tags.</p>
+        <a href="custom.html" class="btn btn-primary" style="margin-top: 1rem;">Adjust Tag Selection</a>
       </div>
     `;
     return;
@@ -136,16 +136,16 @@ function renderDisplayProjects(items, container, selectedTags) {
       `<a
         class="tag tag-link"
         href="display.html?tags=${encodeURIComponent(tag)}&title=${encodeURIComponent('Tag: ' + tag)}"
-        title="Show all projects with tag ${escapeHtml(tag)}"
+        title="Show all projects tagged ${escapeHtml(tag)}"
       >${escapeHtml(tag)}</a>`
     ).join('');
 
     const imageHtml = item.image 
-      ? `<img src="${item.image}" alt="${escapeHtml(item.title)}" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%23ddd\' width=\'400\' height=\'300\'/%3E%3Ctext fill=\'%23999\' font-family=\'sans-serif\' font-size=\'20\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3ENo Image%3C/text%3E%3C/svg%3E';">`
+      ? `<img src="${item.image}" alt="${escapeHtml(item.title)}" class="project-image" onerror="this.style.display='none';">`
       : '';
 
     const linkHtml = item.link && item.link !== '#' 
-      ? `<a href="${item.link}" target="_blank" class="btn btn-primary">View Project</a>`
+      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Repository</a>`
       : '';
 
     const relevanceBadge = `<span class="relevance-badge">${item.relevanceScore} of ${selectedTags.size} tag${selectedTags.size !== 1 ? 's' : ''} matched</span>`;
@@ -187,6 +187,6 @@ function escapeHtml(text) {
 function formatDate(dateString) {
   if (!dateString) return '';
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 }
 

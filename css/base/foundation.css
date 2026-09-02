@@ -1,73 +1,102 @@
 /* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  :root {
-    /* Gaming Color Palette - Gamer Girl Vibe */
-    --primary-color: #ff6ec7; /* Hot Pink */
-    --primary-dark: #ff4db8;
-    --secondary-color: #9d4edd; /* Purple */
-    --accent-color: #00f5ff; /* Cyan */
-    --accent-dark: #00d4e6;
-    --success-color: #06ffa5; /* Mint Green */
-    --bg-color: #0a0a0f; /* Deep Dark */
-    --bg-secondary: #151520;
-    --card-bg: #1a1a2e;
-    --card-hover: #242440;
-    --text-color: #ffffff;
-    --text-light: #b8b8d4;
-    --text-muted: #8888aa;
-    --border-color: #2a2a3e;
-    --border-glow: rgba(255, 110, 199, 0.3);
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    --shadow-lg: 0 8px 30px rgba(255, 110, 199, 0.4);
-    --shadow-glow: 0 0 20px rgba(255, 110, 199, 0.6);
-    --nav-stack-gap: 2rem;
-  }
-  
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
-    min-height: 100vh;
-    position: relative;
-  }
-  
-  /* Animated background pattern */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(255, 110, 199, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 20%, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
-    background-size: 100% 100%;
-    pointer-events: none;
-    z-index: -1;
-    animation: backgroundShift 20s ease-in-out infinite;
-  }
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  @keyframes backgroundShift {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-  }
+:root {
+  /* Slate Technical Color System (WCAG AA Compliant) */
+  --bg-primary: #0d1117;
+  --bg-surface: #161b22;
+  --bg-surface-hover: #1c2128;
+  --bg-surface-active: #21262d;
+  
+  --border-default: #30363d;
+  --border-subtle: #21262d;
+  --border-focus: #58a6ff;
+  
+  --text-primary: #f0f6fc;
+  --text-secondary: #c9d1d9;
+  --text-muted: #8b949e;
+  
+  --accent-primary: #1f6feb;
+  --accent-hover: #388bfd;
+  --accent-text: #58a6ff;
+  
+  --success-bg: #238636;
+  --success-hover: #2ea043;
+  --success-text: #ffffff;
+  
+  /* Discipline Accent Tokens (WCAG AAA Compliant on dark surfaces) */
+  --color-game: #3fb950;
+  --color-backend: #58a6ff;
+  --color-web: #e3b341;
+  --color-fullstack: #bc8cff;
+  
+  /* Legacy token mapping for component compatibility */
+  --primary-color: var(--accent-primary);
+  --primary-dark: var(--accent-hover);
+  --secondary-color: var(--border-default);
+  --accent-color: var(--accent-text);
+  --accent-dark: var(--accent-primary);
+  --success-color: var(--success-bg);
+  --bg-color: var(--bg-primary);
+  --bg-secondary: var(--bg-surface);
+  --card-bg: var(--bg-surface);
+  --card-hover: var(--bg-surface-hover);
+  --text-color: var(--text-primary);
+  --text-light: var(--text-secondary);
+  --border-color: var(--border-default);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.4);
+  
+  --nav-stack-gap: 2rem;
+  
+  /* Typography Stacks */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
 
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

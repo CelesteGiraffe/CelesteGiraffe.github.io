@@ -374,7 +374,7 @@ function filterAndDisplayProjects() {
  */
 function renderFilteredProjects(items, container) {
   if (items.length === 0) {
-    container.innerHTML = '<p class="no-results">Nothing matches those tags yet. Try adding or changing a few.</p>';
+    container.innerHTML = '<p class="no-results">No projects match the selected tags.</p>';
     return;
   }
 
@@ -383,16 +383,16 @@ function renderFilteredProjects(items, container) {
       `<a
         class="tag tag-link"
         href="display.html?tags=${encodeURIComponent(tag)}&title=${encodeURIComponent('Tag: ' + tag)}"
-        title="Show all projects with tag ${escapeHtml(tag)}"
+        title="Show all projects tagged ${escapeHtml(tag)}"
       >${escapeHtml(tag)}</a>`
     ).join('');
 
     const imageHtml = item.image 
-      ? `<img src="${item.image}" alt="${escapeHtml(item.title)}" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%23ddd\' width=\'400\' height=\'300\'/%3E%3Ctext fill=\'%23999\' font-family=\'sans-serif\' font-size=\'20\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3ENo Image%3C/text%3E%3C/svg%3E';">`
+      ? `<img src="${item.image}" alt="${escapeHtml(item.title)}" class="project-image" onerror="this.style.display='none';">`
       : '';
 
     const linkHtml = item.link && item.link !== '#' 
-      ? `<a href="${item.link}" target="_blank" class="btn btn-primary">View Project</a>`
+      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Repository</a>`
       : '';
 
     const relevanceBadge = `<span class="relevance-badge">${item.relevanceScore} of ${selectedTags.size} tag${selectedTags.size !== 1 ? 's' : ''} matched</span>`;
@@ -473,7 +473,7 @@ function escapeHtml(text) {
 function formatDate(dateString) {
   if (!dateString) return '';
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 }
 
 // Handle browser back/forward buttons

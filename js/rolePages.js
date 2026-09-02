@@ -2,48 +2,47 @@
 const roleTagSets = {
   'game-developer': [
     'Unity', 'C#', 'Game Design', 'State Machine AI', 'NavMesh',
-    'Animation', 'Blender', 'Mixamo', 'Player Movement', 'GameJam',
-    'State System', 'Time Manipulation', 'NPC Interaction',
-    'Inventory Management', '.NET', 'Custom Graphics', 'Grid Systems',
-    'C++', 'Rust', 'Console', 'Emergent Systems', 'Emulation'
+    'Player Kinematics', 'Input Buffering', 'Blender', 'Mixamo',
+    'Animation Pipelines', 'NPC AI', 'Inventory Systems', 'Rapid Prototyping',
+    '.NET', 'Algorithms', 'Grid Systems', 'UI Architecture',
+    'Discrete Simulation', 'Toroidal Grids', 'Emulation', 'Computer Architecture',
+    'C++', 'Rust', 'Systems Programming'
   ],
   'web-developer': [
-    'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Web Development',
-    'jQuery', 'TypeScript', 'SCSS', 'Responsive Design', 'Frontend',
-    'TailwindCSS', 'Accessibility', 'Inclusive Design'
+    'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Bootstrap',
+    'Web Development', 'DOM API', 'Drag-and-Drop', 'Algorithms',
+    'Asynchronous Execution', 'Accessibility', 'Inclusive Design',
+    'REST API', 'SCSS', 'jQuery'
   ],
   'backend-developer': [
-    'PHP', 'MySQL', 'Flask', 'Database Design & Management',
-    'Backend Development', 'CRUD', 'Python', 'OAuth2', 'Security',
-    'Node.js', 'Express', 'MongoDB', 'Database Architecture',
-    'API', 'Server-side', 'SQL', 'Apache2', 'Docker', 'Networking'
+    'PHP', 'MySQL', 'Flask', 'Python', 'Database Architecture',
+    'Transactions', 'CRUD', 'Security', 'Backend Development',
+    'OAuth2', 'DAO Pattern', 'Docker', 'REST API', 'Node.js',
+    'Express', 'MongoDB', 'Sockets', 'Networking', 'TCP/IP',
+    'RFC 1459', 'Concurrent I/O'
   ],
   'fullstack-developer': [
-    'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Web Development',
-    'PHP', 'MySQL', 'Flask', 'Database Design & Management',
-    'Backend Development', 'Full-Stack Development', 'Node.js',
-    'Express', 'MongoDB', 'OAuth2', 'EJS', 'API', 'Full-Stack',
-    'TailwindCSS', 'Docker', 'SQL'
+    'Full-Stack Development', 'Python', 'Flask', 'MySQL', 'Node.js',
+    'Express', 'MongoDB', 'OAuth2', 'Database Architecture', 'Docker',
+    'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'REST API',
+    'Backend Development', 'Web Development', 'Accessibility',
+    'Inclusive Design', 'DAO Pattern', 'Transactions', 'CRUD', 'Security'
   ],
   'systems-programming': [
-    'C++', 'Assembly', 'Compiler Design', 'Complexity Theory',
-    'Concurrency', 'Emergent Systems', 'Emulation', 'File I/O',
-    'Linux', 'Linux Shell', 'Memory Management', 'Parsing',
-    'Regex', 'Rust', 'Sockets', 'Lexical Analysis'
+    'C++', 'Rust', 'Assembly', 'Emulation', 'Computer Architecture',
+    'Lexical Analysis', 'Parsing', 'Memory Systems', 'Memory Management',
+    'Concurrency', 'Systems Programming', 'Zero-Cost Abstractions',
+    'Data Structures', 'Discrete Simulation', 'Toroidal Grids',
+    'Sockets', 'Networking', 'TCP/IP', 'RFC 1459', 'Concurrent I/O',
+    'Linux Shell', 'Bash Scripting', 'POSIX Shell', 'Version Control', 'CLI'
   ],
   'devops-infrastructure': [
-    'Docker', 'Apache2', 'Bash Scripting', 'Dotenv', 'Linux',
-    'Linux Shell', 'Networking', 'IRC', 'Version Control'
-  ],
-  'skills-learning': [
-    'Learning', 'OOP', 'Team Collaboration', 'Team Facilitation',
-    'Inclusive Teams', 'Inclusive Design', 'Accessibility'
-  ],
-  'api-integrations': [
-    'New York Times API', 'OMDB API'
+    'Docker', 'Linux', 'Linux Shell', 'Bash Scripting', 'POSIX Shell',
+    'Apache2', 'Version Control', 'Networking', 'Security'
   ],
   'software-engineering': [
-    'Java', 'JavaFX', 'NetBeans', 'File I/O'
+    'Java', 'JavaFX', 'OOP', 'SQL', 'MVC Architecture',
+    'Software Engineering', 'NetBeans'
   ]
 };
 
@@ -60,6 +59,7 @@ function filterByRole(roleKey) {
   const itemsWithScores = portfolioItems.map(item => {
     const matchingTags = item.tags.filter(tag => 
       roleTags.some(roleTag => 
+        tag.toLowerCase() === roleTag.toLowerCase() ||
         tag.toLowerCase().includes(roleTag.toLowerCase()) || 
         roleTag.toLowerCase().includes(tag.toLowerCase())
       )
@@ -113,7 +113,7 @@ function renderPortfolioItems(items, container) {
   if (!container) return;
 
   if (items.length === 0) {
-    container.innerHTML = '<p class="no-results">No projects fit this view yet. Feel free to ask me about similar work.</p>';
+    container.innerHTML = '<p class="no-results">No projects match this role criteria.</p>';
     return;
   }
 
@@ -122,16 +122,16 @@ function renderPortfolioItems(items, container) {
       `<a
         class="tag tag-link"
         href="display.html?tags=${encodeURIComponent(tag)}&title=${encodeURIComponent('Tag: ' + tag)}"
-        title="Show all projects with tag ${escapeHtml(tag)}"
+        title="Show all projects tagged ${escapeHtml(tag)}"
       >${escapeHtml(tag)}</a>`
     ).join('');
 
     const imageHtml = item.image 
-      ? `<img src="${item.image}" alt="${escapeHtml(item.title)}" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%23ddd\' width=\'400\' height=\'300\'/%3E%3Ctext fill=\'%23999\' font-family=\'sans-serif\' font-size=\'20\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3ENo Image%3C/text%3E%3C/svg%3E';">`
+      ? `<img src="${item.image}" alt="${escapeHtml(item.title)}" class="project-image" onerror="this.style.display='none';">`
       : '';
 
     const linkHtml = item.link && item.link !== '#' 
-      ? `<a href="${item.link}" target="_blank" class="btn btn-primary">View Project</a>`
+      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Repository</a>`
       : '';
 
     const relevanceBadge = item.relevanceScore 
@@ -175,5 +175,5 @@ function escapeHtml(text) {
 function formatDate(dateString) {
   if (!dateString) return '';
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 }

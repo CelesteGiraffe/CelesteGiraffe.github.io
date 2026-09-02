@@ -1,181 +1,161 @@
-/* Title Input */
-  .title-input-container {
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 46, 0.8) 100%);
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-  }
-  
-  .title-input-container:focus-within {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(255, 110, 199, 0.3);
-  }
-  
-  .title-input-label {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .title-input {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    font-size: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-family: inherit;
-    background: rgba(10, 10, 15, 0.8);
-    color: var(--text-color);
-  }
-  
-  .title-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(255, 110, 199, 0.3);
-    background: rgba(10, 10, 15, 0.95);
-  }
-  
-  .title-input-hint {
-    margin-top: 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.875rem;
-  }
-  
-  /* Tag Selector */
-  .tag-selector-container {
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 46, 0.8) 100%);
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(10px);
-  }
-  
-  .tag-selector-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .tag-selector-header h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .tag-controls {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
+/* Form Controls & Custom Filter */
+.title-input-container {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
-  .tag-controls .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .tag-checkboxes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
+.title-input-container:focus-within {
+  border-color: var(--border-focus);
+}
 
-  .tag-checkboxes-grouped {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
-  }
+.title-input-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
 
-  .tag-discipline-section {
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
-  }
+.title-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  font-family: inherit;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
 
-  .tag-discipline-section:first-child {
-    padding-top: 0;
-    border-top: none;
-  }
+.title-input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  background-color: var(--bg-surface);
+}
 
-  .tag-discipline-title {
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    font-weight: 600;
-  }
-  
-  .tag-checkbox-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.75rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-  }
-  
-  .tag-checkbox-label:hover {
-    background: rgba(255, 110, 199, 0.1);
-    border-color: var(--primary-color);
-    transform: translateX(5px);
-  }
-  
-  .tag-checkbox-label input[type="checkbox"] {
-    margin-right: 0.75rem;
-    cursor: pointer;
-    width: 1.25rem;
-    height: 1.25rem;
-    accent-color: var(--primary-color);
-  }
-  
-  .tag-checkbox-text {
-    user-select: none;
-    color: var(--text-light);
-    transition: color 0.3s ease;
-  }
-  
-  .tag-checkbox-label:hover .tag-checkbox-text {
-    color: var(--primary-color);
-  }
-  
-  .tag-checkbox-label input[type="checkbox"]:checked + .tag-checkbox-text {
-    color: var(--primary-color);
-    font-weight: 600;
-  }
-  
-  .selected-tags-count {
-    padding-top: 1rem;
-    border-top: 2px solid var(--border-color);
-    color: var(--text-light);
-    font-weight: 600;
-  }
-  
-  .selected-tags-count strong {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-  }
+.title-input-hint {
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Tag Selector */
+.tag-selector-container {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tag-selector-header h3 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tag-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag-checkboxes-grouped {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tag-discipline-section {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tag-discipline-section:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.tag-discipline-title {
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.45rem 0.65rem;
+  border-radius: 4px;
+  background-color: var(--bg-surface-active);
+  border: 1px solid var(--border-default);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.tag-checkbox-label:hover {
+  border-color: #8b949e;
+  background-color: var(--bg-surface-hover);
+}
+
+.tag-checkbox-label input[type="checkbox"] {
+  margin-right: 0.6rem;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--accent-primary);
+}
+
+.tag-checkbox-text {
+  user-select: none;
+  color: var(--text-secondary);
+  font-size: 0.825rem;
+  font-family: var(--font-mono);
+  transition: color 0.15s ease;
+}
+
+.tag-checkbox-label:hover .tag-checkbox-text {
+  color: var(--text-primary);
+}
+
+.tag-checkbox-label input[type="checkbox"]:checked + .tag-checkbox-text {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.selected-tags-count {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+}
+
+.selected-tags-count strong {
+  color: var(--accent-text);
+  font-size: 0.95rem;
+}

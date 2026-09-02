@@ -1,35 +1,57 @@
-# Celeste Artley Portfolio
+# Celeste Artley — Systems & Gameplay Portfolio
 
-Hi! This repo holds my role-based portfolio site. From here you can move between Game, Web, Backend, and Full-Stack views or spin up a curated project list with a few tag clicks.
+Personal engineering portfolio showcasing gameplay systems, discrete simulations, hardware emulation, and full-stack backend platforms. Hosted on GitHub Pages as a zero-dependency static web application.
 
-## What you get
+## Architectural Overview
 
-- `index.html` is the main hub with links to every role page.
-- Each `*-developer.html` view auto-sorts projects that fit that specialty.
-- `custom.html` lets you pick tags from job listings and filter the portfolio. Checkboxes are grouped by discipline (Game, Web, Backend, Full-Stack, Systems & Low-Level, DevOps & Infrastructure, Skills & Learning, APIs & Integrations, Software Engineering), and tags that appear in more than one group stay in sync.
-- `display.html` turns those tag choices into a link you can share with anyone.
-- The `Tierlist/` and `SortingAlgoVisualizer/` folders contain the live demos that power “Try it out” buttons.
+- **Zero-Dependency Architecture:** Pure client-side HTML5, CSS3, and ECMAScript. No runtime build dependencies or heavy frontend frameworks.
+- **Dynamic Relevance Scoring & URL Serialization:** Custom multi-tag query engine (`js/tagFilter.js` and `js/displayPage.js`) matching technology constraints and serializing filter state directly into shareable URLs.
+- **High-Density Technical Design System:** Strict WCAG AA contrast compliance across dark slate surfaces (`#0d1117`, `#161b22`), custom monospace/system typography, and responsive grid layouts.
 
-## Try it locally
+## Repository Structure
 
-1. Clone or download the repo.
-2. Open `index.html` in any modern browser.
-3. Explore the pages. Everything runs in the browser so there is nothing to build.
+```
+├── index.html                   # Central entrypoint and technical discipline navigation
+├── about.html                   # Engineering background, credentials, and technical chronology
+├── game-developer.html          # Gameplay AI, kinematics, and simulation projects
+├── backend-developer.html       # Relational schemas, socket daemons, and microservices
+├── web-developer.html           # Canvas visualization, DOM APIs, and accessible interfaces
+├── fullstack-developer.html     # End-to-end distributed platforms and stack migrations
+├── custom.html                  # Interactive multi-tag filter query generator
+├── display.html                 # URL-driven curated project showcase
+├── js/
+│   ├── portfolioItems.js        # Core project dataset with technical breakdowns
+│   ├── rolePages.js             # Role tag definitions, relevance scoring, and card rendering
+│   ├── tagFilter.js             # Multi-select discipline filter logic and clipboard serialization
+│   ├── displayPage.js           # Query parameter parsing and curated view renderer
+│   ├── navigation.js            # Mobile navigation toggling and keyboard traps
+│   └── tryableProjects.js       # Sticky navigation banner for embedded tools
+└── css/
+    ├── styles.css               # Import hub combining modular CSS partials
+    ├── base/foundation.css      # Design tokens, color system, WCAG AA contrast, and typography
+    ├── components/              # Project cards, buttons, tag selectors, and state indicators
+    ├── layout/                  # Navigation bar, page headers, structure, and footer
+    ├── pages/                   # Home, About, and Display page layouts
+    └── utilities/               # Responsive media queries, scrollbar, and selection styles
+```
 
-If you want to tweak content, look at `js/portfolioItems.js` for project data, `js/rolePages.js` for role logic, and the CSS partials under `css/` (pulled together by `css/styles.css`) for the shared design language.
+## Running Locally
 
-## CSS structure
+Because the platform is built with pure web standards, no package installations or compilation steps are required:
 
-Every HTML page still links to `css/styles.css`, but that file is now an import hub so you can work on focused style slices:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CelesteGiraffe/CelesteGiraffe.github.io.git
+   ```
+2. Open `index.html` in any modern web browser, or serve with a local static file server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+3. Navigate to `http://localhost:8000`.
 
-- `css/base/` – resets, root tokens, page-wide effects.
-- `css/layout/` – navigation, containers, footer, and other structural pieces.
-- `css/components/` – cards, buttons, tag/filter controls, and state helpers.
-- `css/pages/` – page-specific sections such as Display, Home, and About.
-- `css/utilities/` – shared responsive rules plus scroll/selection tweaks.
+## Contact
 
-When you add a new chunk of styling, create the file in the matching folder and append `@import url('./path/to/file.css');` to `css/styles.css` so the bundle stays in sync without touching any HTML link tags.
+- **Email:** [celestepersonalmail@gmail.com](mailto:celestepersonalmail@gmail.com)
+- **LinkedIn:** [linkedin.com/in/celeste-artley](https://linkedin.com/in/celeste-artley)
+- **GitHub:** [github.com/CelesteGiraffe](https://github.com/CelesteGiraffe)
 
-## Behind the scenes docs
-
-Need the full playbook for contributing, styling, or wiring up new features? Jump to the [docs table of contents](docs/README.md). Each section there breaks down standards, styling, and every JavaScript module in plain language.
