@@ -90,21 +90,50 @@
 .about-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
+  gap: var(--space-5);
+  margin-bottom: var(--space-10);
 }
 
 .about-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-default);
   border-radius: 6px;
-  padding: 1.5rem;
+  padding: var(--space-6);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.about-card:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+.about-card--game {
+  border-top: 2px solid var(--color-game);
+}
+
+.about-card--game .about-card-eyebrow {
+  color: var(--color-game);
+}
+
+.about-card--backend {
+  border-top: 2px solid var(--color-backend);
+}
+
+.about-card--backend .about-card-eyebrow {
+  color: var(--color-backend);
+}
+
+.about-card--web {
+  border-top: 2px solid var(--color-web);
+}
+
+.about-card--web .about-card-eyebrow {
+  color: var(--color-web);
 }
 
 .about-card h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
   color: var(--text-primary);
 }
 
@@ -112,7 +141,7 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.55;
-  margin-bottom: 0.85rem;
+  margin-bottom: var(--space-3);
 }
 
 .about-card-eyebrow {
@@ -121,30 +150,35 @@
   color: var(--accent-text);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.4rem;
+  margin-bottom: var(--space-2);
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .about-card-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
   color: var(--text-secondary);
   font-size: 0.875rem;
   line-height: 1.5;
 }
 
 .about-card-list li {
-  padding-left: 1rem;
+  padding-left: var(--space-4);
   position: relative;
 }
 
 .about-card-list li::before {
-  content: '–';
+  content: '›';
   position: absolute;
   left: 0;
   color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: bold;
 }
 
 /* Timeline Section */
@@ -252,14 +286,16 @@
 .focus-card li {
   line-height: 1.5;
   position: relative;
-  padding-left: 1rem;
+  padding-left: var(--space-4);
 }
 
 .focus-card li::before {
-  content: '–';
+  content: '›';
   position: absolute;
   left: 0;
   color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: bold;
 }
 
 .focus-card strong {

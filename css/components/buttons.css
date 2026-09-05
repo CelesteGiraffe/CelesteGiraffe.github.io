@@ -31,6 +31,58 @@
   color: #ffffff;
 }
 
+.btn-game {
+  background-color: var(--color-game);
+  color: #0d1117;
+  border-color: var(--color-game);
+  font-weight: 600;
+}
+
+.btn-game:hover {
+  background-color: #2ea043;
+  color: #0d1117;
+  border-color: #2ea043;
+}
+
+.btn-backend {
+  background-color: var(--color-backend);
+  color: #0d1117;
+  border-color: var(--color-backend);
+  font-weight: 600;
+}
+
+.btn-backend:hover {
+  background-color: #388bfd;
+  color: #0d1117;
+  border-color: #388bfd;
+}
+
+.btn-web {
+  background-color: var(--color-web);
+  color: #0d1117;
+  border-color: var(--color-web);
+  font-weight: 600;
+}
+
+.btn-web:hover {
+  background-color: #d29922;
+  color: #0d1117;
+  border-color: #d29922;
+}
+
+.btn-fullstack {
+  background-color: var(--color-fullstack);
+  color: #0d1117;
+  border-color: var(--color-fullstack);
+  font-weight: 600;
+}
+
+.btn-fullstack:hover {
+  background-color: #a371f7;
+  color: #0d1117;
+  border-color: #a371f7;
+}
+
 .btn-secondary {
   background-color: var(--bg-surface-active);
   color: var(--text-secondary);

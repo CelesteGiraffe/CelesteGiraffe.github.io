@@ -97,13 +97,32 @@
 }
 
 .tag-discipline-title {
-  margin-bottom: 0.6rem;
+  margin-bottom: var(--space-2);
   font-size: 0.85rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tag-discipline-section--game .tag-discipline-title {
+  color: var(--color-game);
+}
+
+.tag-discipline-section--backend .tag-discipline-title {
+  color: var(--color-backend);
+}
+
+.tag-discipline-section--web .tag-discipline-title {
+  color: var(--color-web);
+}
+
+.tag-discipline-section--fullstack .tag-discipline-title {
+  color: var(--color-fullstack);
 }
 
 .tag-checkbox-label {
@@ -130,6 +149,22 @@
   accent-color: var(--accent-primary);
 }
 
+.tag-discipline-section--game .tag-checkbox-label input[type="checkbox"] {
+  accent-color: var(--color-game);
+}
+
+.tag-discipline-section--backend .tag-checkbox-label input[type="checkbox"] {
+  accent-color: var(--color-backend);
+}
+
+.tag-discipline-section--web .tag-checkbox-label input[type="checkbox"] {
+  accent-color: var(--color-web);
+}
+
+.tag-discipline-section--fullstack .tag-checkbox-label input[type="checkbox"] {
+  accent-color: var(--color-fullstack);
+}
+
 .tag-checkbox-text {
   user-select: none;
   color: var(--text-secondary);
@@ -145,6 +180,22 @@
 .tag-checkbox-label input[type="checkbox"]:checked + .tag-checkbox-text {
   color: var(--accent-text);
   font-weight: 600;
+}
+
+.tag-discipline-section--game .tag-checkbox-label input[type="checkbox"]:checked + .tag-checkbox-text {
+  color: var(--color-game);
+}
+
+.tag-discipline-section--backend .tag-checkbox-label input[type="checkbox"]:checked + .tag-checkbox-text {
+  color: var(--color-backend);
+}
+
+.tag-discipline-section--web .tag-checkbox-label input[type="checkbox"]:checked + .tag-checkbox-text {
+  color: var(--color-web);
+}
+
+.tag-discipline-section--fullstack .tag-checkbox-label input[type="checkbox"]:checked + .tag-checkbox-text {
+  color: var(--color-fullstack);
 }
 
 .selected-tags-count {

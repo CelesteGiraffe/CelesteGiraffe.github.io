@@ -107,9 +107,66 @@ function getAllTags() {
 /**
  * Render portfolio items to the page
  * @param {Array} items - Filtered portfolio items to render
- * @param {HTMLElement} container - Container element to render into
+/**
+ * Detect the active discipline from roleKey or current page URL
+ * @param {string} [roleKey] - Optional role identifier
+ * @returns {string} Discipline identifier ('game', 'backend', 'web', 'fullstack', or '')
  */
-function renderPortfolioItems(items, container) {
+function getActivePageDiscipline(roleKey) {
+  if (roleKey) {
+    if (roleKey.startsWith('game')) return 'game';
+    if (roleKey.startsWith('backend') || roleKey.startsWith('systems')) return 'backend';
+    if (roleKey.startsWith('web')) return 'web';
+    if (roleKey.startsWith('fullstack')) return 'fullstack';
+  }
+  const path = (window.location.pathname || '').toLowerCase();
+  if (path.includes('web-developer')) return 'web';
+  if (path.includes('fullstack-developer')) return 'fullstack';
+  if (path.includes('game-developer')) return 'game';
+  if (path.includes('backend-developer')) return 'backend';
+  return '';
+}
+
+/**
+ * Determine the native discipline of a portfolio item
+ * @param {Object} item - Portfolio item object
+ * @returns {string} Discipline identifier ('game', 'backend', 'web', 'fullstack')
+ */
+function getItemDiscipline(item) {
+  if (!item) return 'backend';
+  const genre = (item.genre || '').toLowerCase();
+  const tags = (item.tags || []).map(t => (t || '').toLowerCase());
+
+  if (genre === 'game') return 'game';
+
+  // Full-Stack check
+  if (tags.some(t => t === 'full-stack development' || t === 'full-stack') ||
+      (genre === 'website' && tags.some(t => ['node.js', 'express', 'mongodb', 'flask', 'php'].includes(t)))) {
+    return 'fullstack';
+  }
+
+  // Backend & Systems check
+  if (genre === 'systems' || genre === 'backend' ||
+      tags.some(t => ['c++', 'rust', 'assembly', 'linux shell', 'bash scripting', 'sql', 'mysql', 'database architecture'].includes(t))) {
+    return 'backend';
+  }
+
+  // Web check
+  if (genre === 'website' || genre === 'tool' ||
+      tags.some(t => ['html', 'css', 'javascript', 'typescript', 'canvas', 'accessibility', 'bootstrap', 'jquery'].includes(t))) {
+    return 'web';
+  }
+
+  return 'backend';
+}
+
+/**
+ * Render filtered portfolio items into the container
+ * @param {Array} items - Array of portfolio items to render
+ * @param {HTMLElement} container - Container element to render into
+ * @param {string} [roleKey] - Optional role identifier
+ */
+function renderPortfolioItems(items, container, roleKey) {
   if (!container) return;
 
   if (items.length === 0) {
@@ -117,21 +174,28 @@ function renderPortfolioItems(items, container) {
     return;
   }
 
+  const pageDiscipline = getActivePageDiscipline(roleKey);
+
   container.innerHTML = items.map(item => {
-    const tagsHtml = item.tags.map(tag =>
-      `<a
-        class="tag tag-link"
+    const discipline = pageDiscipline || getItemDiscipline(item);
+    const genreClass = 'project-card--' + discipline;
+    const buttonClass = 'btn btn-' + discipline;
+
+    const tagsHtml = item.tags.map(tag => {
+      const tagModifier = getTagDisciplineClass(tag);
+      return `<a
+        class="tag tag-link ${tagModifier}"
         href="display.html?tags=${encodeURIComponent(tag)}&title=${encodeURIComponent('Tag: ' + tag)}"
         title="Show all projects tagged ${escapeHtml(tag)}"
-      >${escapeHtml(tag)}</a>`
-    ).join('');
+      >${escapeHtml(tag)}</a>`;
+    }).join('');
 
     const imageHtml = item.image 
       ? `<img src="${item.image}" alt="${escapeHtml(item.title)}" class="project-image" onerror="this.style.display='none';">`
       : '';
 
     const linkHtml = item.link && item.link !== '#' 
-      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Repository</a>`
+      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="${buttonClass}">Repository</a>`
       : '';
 
     const relevanceBadge = item.relevanceScore 
@@ -139,7 +203,7 @@ function renderPortfolioItems(items, container) {
       : '';
 
     return `
-      <div class="project-card">
+      <div class="project-card ${genreClass}">
         ${relevanceBadge}
         ${imageHtml}
         <div class="project-content">
@@ -176,4 +240,45 @@ function formatDate(dateString) {
   if (!dateString) return '';
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+}
+
+/**
+ * Get discipline styling modifier for a tag
+ * @param {string} tag - Tag name
+ * @returns {string} CSS class name
+ */
+function getTagDisciplineClass(tag) {
+  const t = (tag || '').toLowerCase();
+  const gameTags = [
+    'unity', 'c#', 'game design', 'state machine ai', 'navmesh',
+    'player kinematics', 'input buffering', 'blender', 'mixamo',
+    'animation pipelines', 'npc ai', 'inventory systems', 'rapid prototyping',
+    '.net', 'grid systems', 'ui architecture', 'discrete simulation', 'toroidal grids'
+  ];
+  if (gameTags.some(gt => gt === t || t.includes(gt))) return 'tag--game';
+
+  const backendTags = [
+    'c++', 'rust', 'assembly', 'emulation', 'computer architecture',
+    'lexical analysis', 'parsing', 'memory systems', 'memory management',
+    'concurrency', 'systems programming', 'zero-cost abstractions',
+    'sockets', 'networking', 'tcp/ip', 'rfc 1459', 'concurrent i/o',
+    'linux', 'linux shell', 'bash', 'posix', 'cli', 'version control',
+    'python', 'mysql', 'sql', 'database architecture', 'transactions', 'crud',
+    'security', 'docker', 'apache2', 'dao pattern', 'php', 'backend development'
+  ];
+  if (backendTags.some(bt => bt === t || t.includes(bt))) return 'tag--backend';
+
+  const webTags = [
+    'html', 'css', 'javascript', 'typescript', 'bootstrap', 'web development',
+    'dom api', 'drag-and-drop', 'algorithms', 'asynchronous execution',
+    'accessibility', 'inclusive design', 'scss', 'jquery', 'canvas'
+  ];
+  if (webTags.some(wt => wt === t || t.includes(wt))) return 'tag--web';
+
+  const fullstackTags = [
+    'full-stack', 'flask', 'node.js', 'express', 'mongodb', 'oauth2', 'rest api'
+  ];
+  if (fullstackTags.some(ft => ft === t || t.includes(ft))) return 'tag--fullstack';
+
+  return '';
 }

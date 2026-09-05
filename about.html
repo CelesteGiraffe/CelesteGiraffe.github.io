@@ -10,14 +10,17 @@
 <body>
   <nav>
     <div class="container">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-title">Celeste Artley</span>
+      </a>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="game-developer.html">Game Developer</a></li>
-        <li><a href="web-developer.html">Web Developer</a></li>
-        <li><a href="backend-developer.html">Backend Developer</a></li>
-        <li><a href="fullstack-developer.html">Full-Stack Developer</a></li>
-        <li><a href="custom.html">Custom Filter</a></li>
+        <li><a href="index.html" class="nav-link nav-link--home">Home</a></li>
+        <li><a href="about.html" class="nav-link nav-link--about active">About</a></li>
+        <li><a href="game-developer.html" class="nav-link nav-link--game"><span class="discipline-pip discipline-pip--game" aria-hidden="true"></span> Game Dev</a></li>
+        <li><a href="backend-developer.html" class="nav-link nav-link--backend"><span class="discipline-pip discipline-pip--backend" aria-hidden="true"></span> Backend</a></li>
+        <li><a href="web-developer.html" class="nav-link nav-link--web"><span class="discipline-pip discipline-pip--web" aria-hidden="true"></span> Web</a></li>
+        <li><a href="fullstack-developer.html" class="nav-link nav-link--fullstack"><span class="discipline-pip discipline-pip--fullstack" aria-hidden="true"></span> Full-Stack</a></li>
+        <li><a href="custom.html" class="nav-link nav-link--filter">Filter</a></li>
       </ul>
     </div>
   </nav>
@@ -31,14 +34,14 @@
           I'm a game developer and systems programmer with a background in Computer Science and Psychology from the University of Alabama at Birmingham. I love building enemy AI, gameplay mechanics, low-level emulators and socket tools, and clean web apps.
         </p>
         <div class="about-hero-tags">
-          <a class="tag-link" href="display.html?tags=Unity&title=Tag:%20Unity" title="Projects tagged Unity">Unity</a>
-          <a class="tag-link" href="display.html?tags=C%23&title=Tag:%20C%23" title="Projects tagged C#">C#</a>
-          <a class="tag-link" href="display.html?tags=C%2B%2B&title=Tag:%20C%2B%2B" title="Projects tagged C++">C++</a>
-          <a class="tag-link" href="display.html?tags=Python&title=Tag:%20Python" title="Projects tagged Python">Python</a>
-          <a class="tag-link" href="display.html?tags=MySQL&title=Tag:%20MySQL" title="Projects tagged MySQL">MySQL</a>
-          <a class="tag-link" href="display.html?tags=Docker&title=Tag:%20Docker" title="Projects tagged Docker">Docker</a>
-          <a class="tag-link" href="display.html?tags=Accessibility&title=Tag:%20Accessibility" title="Projects tagged Accessibility">Accessibility</a>
-          <a class="tag-link" href="display.html?tags=Systems%20Programming&title=Tag:%20Systems%20Programming" title="Projects tagged Systems Programming">Systems Programming</a>
+          <a class="tag-link tag--game" href="display.html?tags=Unity&title=Tag:%20Unity" title="Projects tagged Unity">Unity</a>
+          <a class="tag-link tag--game" href="display.html?tags=C%23&title=Tag:%20C%23" title="Projects tagged C#">C#</a>
+          <a class="tag-link tag--backend" href="display.html?tags=C%2B%2B&title=Tag:%20C%2B%2B" title="Projects tagged C++">C++</a>
+          <a class="tag-link tag--backend" href="display.html?tags=Python&title=Tag:%20Python" title="Projects tagged Python">Python</a>
+          <a class="tag-link tag--backend" href="display.html?tags=MySQL&title=Tag:%20MySQL" title="Projects tagged MySQL">MySQL</a>
+          <a class="tag-link tag--backend" href="display.html?tags=Docker&title=Tag:%20Docker" title="Projects tagged Docker">Docker</a>
+          <a class="tag-link tag--web" href="display.html?tags=Accessibility&title=Tag:%20Accessibility" title="Projects tagged Accessibility">Accessibility</a>
+          <a class="tag-link tag--backend" href="display.html?tags=Systems%20Programming&title=Tag:%20Systems%20Programming" title="Projects tagged Systems Programming">Systems Programming</a>
         </div>
         <div class="about-hero-actions">
           <a class="btn btn-primary" href="mailto:celestepersonalmail@gmail.com">Send an Email</a>
@@ -57,8 +60,8 @@
     </section>
 
     <section class="about-card-grid">
-      <article class="about-card">
-        <p class="about-card-eyebrow">Game Systems</p>
+      <article class="about-card about-card--game">
+        <p class="about-card-eyebrow"><span class="discipline-pip discipline-pip--game" aria-hidden="true"></span> Game Systems</p>
         <h3>AI &amp; Gameplay Mechanics</h3>
         <p>
           I like building games where enemies react intelligibly and player controls feel immediate and satisfying.
@@ -70,8 +73,8 @@
         </ul>
       </article>
 
-      <article class="about-card">
-        <p class="about-card-eyebrow">Usability &amp; Design</p>
+      <article class="about-card about-card--web">
+        <p class="about-card-eyebrow"><span class="discipline-pip discipline-pip--web" aria-hidden="true"></span> Usability &amp; Design</p>
         <h3>Accessibility &amp; Player Psychology</h3>
         <p>
           My psychology background taught me to think carefully about player ergonomics, cognitive friction, and accessibility.
@@ -83,9 +86,9 @@
         </ul>
       </article>
 
-      <article class="about-card">
-        <p class="about-card-eyebrow">Looking Forward</p>
-        <h3>Roles &amp; Relocation</h3>
+      <article class="about-card about-card--backend">
+        <p class="about-card-eyebrow"><span class="discipline-pip discipline-pip--backend" aria-hidden="true"></span> Systems &amp; Direction</p>
+        <h3>Roles &amp; Technical Breadth</h3>
         <p>
           I'm actively looking for junior or graduate engineering roles in game development, tools, or backend systems.
         </p>

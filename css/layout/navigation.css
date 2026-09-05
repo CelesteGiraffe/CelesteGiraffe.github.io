@@ -2,7 +2,7 @@
 nav {
   background-color: var(--bg-surface);
   border-bottom: 1px solid var(--border-default);
-  padding: 0.75rem 1.5rem;
+  padding: 0.65rem 1.5rem;
   margin-bottom: var(--nav-stack-gap, 2rem);
   position: sticky;
   top: 0;
@@ -13,27 +13,56 @@ nav .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
+  max-width: 1200px;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.25rem 0;
+  flex-shrink: 0;
+}
+
+.nav-brand:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav-brand-title {
+  color: var(--text-primary);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  gap: 0.35rem;
   align-items: center;
+  white-space: nowrap;
 }
 
 nav a {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-family: var(--font-mono);
-  padding: 0.35rem 0.65rem;
+  padding: 0.32rem 0.58rem;
   border-radius: 4px;
   border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -44,10 +73,126 @@ nav a:hover {
 }
 
 nav a.active {
+  color: var(--text-primary);
+  background-color: var(--bg-surface-active);
+  border-color: var(--border-default);
+  font-weight: 600;
+}
+
+/* Discipline Navigation Links - Always Alive with Semantic Colors */
+nav a.nav-link--game {
+  color: var(--color-game);
+  background-color: var(--color-game-subtle);
+  border-color: var(--color-game-border);
+}
+
+nav a.nav-link--game:hover {
+  background-color: rgba(63, 185, 80, 0.22);
+  border-color: var(--color-game);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a.nav-link--game.active {
+  background-color: var(--color-game);
+  color: #0d1117;
+  border-color: var(--color-game);
+  font-weight: 700;
+}
+
+nav a.nav-link--game.active .discipline-pip {
+  background-color: #0d1117;
+}
+
+nav a.nav-link--backend {
+  color: var(--color-backend);
+  background-color: var(--color-backend-subtle);
+  border-color: var(--color-backend-border);
+}
+
+nav a.nav-link--backend:hover {
+  background-color: rgba(88, 166, 255, 0.22);
+  border-color: var(--color-backend);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a.nav-link--backend.active {
+  background-color: var(--color-backend);
+  color: #0d1117;
+  border-color: var(--color-backend);
+  font-weight: 700;
+}
+
+nav a.nav-link--backend.active .discipline-pip {
+  background-color: #0d1117;
+}
+
+nav a.nav-link--web {
+  color: var(--color-web);
+  background-color: var(--color-web-subtle);
+  border-color: var(--color-web-border);
+}
+
+nav a.nav-link--web:hover {
+  background-color: rgba(227, 179, 65, 0.22);
+  border-color: var(--color-web);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a.nav-link--web.active {
+  background-color: var(--color-web);
+  color: #0d1117;
+  border-color: var(--color-web);
+  font-weight: 700;
+}
+
+nav a.nav-link--web.active .discipline-pip {
+  background-color: #0d1117;
+}
+
+nav a.nav-link--fullstack {
+  color: var(--color-fullstack);
+  background-color: var(--color-fullstack-subtle);
+  border-color: var(--color-fullstack-border);
+}
+
+nav a.nav-link--fullstack:hover {
+  background-color: rgba(188, 140, 255, 0.22);
+  border-color: var(--color-fullstack);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a.nav-link--fullstack.active {
+  background-color: var(--color-fullstack);
+  color: #0d1117;
+  border-color: var(--color-fullstack);
+  font-weight: 700;
+}
+
+nav a.nav-link--fullstack.active .discipline-pip {
+  background-color: #0d1117;
+}
+
+nav a.nav-link--filter {
   color: var(--accent-text);
   background-color: var(--bg-surface-active);
-  border-color: rgba(88, 166, 255, 0.35);
-  font-weight: 600;
+  border-color: var(--border-default);
+}
+
+nav a.nav-link--filter:hover {
+  border-color: var(--border-focus);
+  background-color: var(--bg-surface-hover);
+  text-decoration: none;
+}
+
+nav a.nav-link--filter.active {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-hover);
+  font-weight: 700;
 }
 
 .nav-toggle {
@@ -112,24 +257,32 @@ nav.is-open .nav-toggle-bar--bottom {
 
 @media (max-width: 768px) {
   nav {
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 1rem;
   }
 
   nav .container {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .nav-brand {
+    order: 1;
   }
 
   nav .nav-toggle {
     display: inline-flex;
-    align-self: flex-end;
+    order: 2;
   }
 
   nav.nav-collapsible .container > ul {
     width: 100%;
+    order: 3;
     flex-direction: column;
     align-items: stretch;
     padding-top: 0.75rem;
+    margin-top: 0.5rem;
     border-top: 1px solid var(--border-subtle);
     display: none;
     gap: 0.25rem;

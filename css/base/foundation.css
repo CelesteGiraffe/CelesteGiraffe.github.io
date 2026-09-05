@@ -28,13 +28,35 @@
   --success-hover: #2ea043;
   --success-text: #ffffff;
   
-  /* Discipline Accent Tokens (WCAG AAA Compliant on dark surfaces) */
+  /* Discipline Accent Tokens */
   --color-game: #3fb950;
+  --color-game-subtle: rgba(63, 185, 80, 0.12);
+  --color-game-border: rgba(63, 185, 80, 0.35);
+
   --color-backend: #58a6ff;
+  --color-backend-subtle: rgba(88, 166, 255, 0.12);
+  --color-backend-border: rgba(88, 166, 255, 0.35);
+
   --color-web: #e3b341;
+  --color-web-subtle: rgba(227, 179, 65, 0.12);
+  --color-web-border: rgba(227, 179, 65, 0.35);
+
   --color-fullstack: #bc8cff;
+  --color-fullstack-subtle: rgba(188, 140, 255, 0.12);
+  --color-fullstack-border: rgba(188, 140, 255, 0.35);
+
+  /* Strict 8-Point Spatial Grid Tokens */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1.0rem;   /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2.0rem;   /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3.0rem;  /* 48px */
   
-  /* Legacy token mapping for component compatibility */
+  /* Component tokens */
   --primary-color: var(--accent-primary);
   --primary-dark: var(--accent-hover);
   --secondary-color: var(--border-default);
@@ -48,10 +70,12 @@
   --text-color: var(--text-primary);
   --text-light: var(--text-secondary);
   --border-color: var(--border-default);
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.4);
   
-  --nav-stack-gap: 2rem;
+  /* No floating blurry drop shadows - solid crisp borders for elevation */
+  --shadow: none;
+  --shadow-lg: none;
+  
+  --nav-stack-gap: var(--space-8);
   
   /* Typography Stacks */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
@@ -87,6 +111,31 @@ button:focus-visible,
 input:focus-visible {
   outline: 2px solid var(--border-focus);
   outline-offset: 2px;
+}
+
+/* Global Discipline Pips */
+.discipline-pip {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.discipline-pip--game {
+  background-color: var(--color-game);
+}
+
+.discipline-pip--backend {
+  background-color: var(--color-backend);
+}
+
+.discipline-pip--web {
+  background-color: var(--color-web);
+}
+
+.discipline-pip--fullstack {
+  background-color: var(--color-fullstack);
 }
 
 .sr-only {

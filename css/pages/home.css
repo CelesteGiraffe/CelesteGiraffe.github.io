@@ -66,20 +66,21 @@
 .role-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2.25rem;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .role-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-default);
   border-radius: 6px;
-  padding: 1.25rem;
+  padding: var(--space-5);
   text-decoration: none;
   transition: border-color 0.15s ease, background-color 0.15s ease;
   display: flex;
   flex-direction: column;
   text-align: left;
+  position: relative;
 }
 
 .role-card:hover {
@@ -88,36 +89,47 @@
   text-decoration: none;
 }
 
+.role-card--game {
+  border-top: 2px solid var(--color-game);
+}
+
+.role-card--game:hover {
+  border-color: var(--color-game);
+  background-color: var(--color-game-subtle);
+}
+
+.role-card--backend {
+  border-top: 2px solid var(--color-backend);
+}
+
+.role-card--backend:hover {
+  border-color: var(--color-backend);
+  background-color: var(--color-backend-subtle);
+}
+
+.role-card--web {
+  border-top: 2px solid var(--color-web);
+}
+
+.role-card--web:hover {
+  border-color: var(--color-web);
+  background-color: var(--color-web-subtle);
+}
+
+.role-card--fullstack {
+  border-top: 2px solid var(--color-fullstack);
+}
+
+.role-card--fullstack:hover {
+  border-color: var(--color-fullstack);
+  background-color: var(--color-fullstack-subtle);
+}
+
 .role-card-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-}
-
-/* Subtle discipline indicator pips */
-.discipline-pip {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.discipline-pip--game {
-  background-color: var(--color-game);
-}
-
-.discipline-pip--backend {
-  background-color: var(--color-backend);
-}
-
-.discipline-pip--web {
-  background-color: var(--color-web);
-}
-
-.discipline-pip--fullstack {
-  background-color: var(--color-fullstack);
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .role-card-title {
@@ -132,7 +144,7 @@
   font-size: 0.78rem;
   font-family: var(--font-mono);
   color: var(--accent-text);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .role-card--game .role-card-subtitle {
@@ -155,7 +167,7 @@
   display: block;
   font-size: 0.85rem;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.5;
   margin-top: auto;
 }
 

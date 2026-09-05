@@ -2,14 +2,43 @@
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--space-6);
   position: relative;
 }
 
 .page-header {
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-6);
   border-bottom: 1px solid var(--border-default);
+}
+
+.page-header-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-2);
+}
+
+.page-header-eyebrow--game {
+  color: var(--color-game);
+}
+
+.page-header-eyebrow--backend {
+  color: var(--color-backend);
+}
+
+.page-header-eyebrow--web {
+  color: var(--color-web);
+}
+
+.page-header-eyebrow--fullstack {
+  color: var(--color-fullstack);
 }
 
 .page-header h1 {
@@ -18,13 +47,13 @@
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.25;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .page-header p {
   color: var(--text-secondary);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   max-width: 720px;
 }
 

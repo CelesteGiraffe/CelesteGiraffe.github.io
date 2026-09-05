@@ -10,20 +10,27 @@
 <body>
   <nav>
     <div class="container">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-title">Celeste Artley</span>
+      </a>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="game-developer.html">Game Developer</a></li>
-        <li><a href="web-developer.html">Web Developer</a></li>
-        <li><a href="backend-developer.html">Backend Developer</a></li>
-        <li><a href="fullstack-developer.html" class="active">Full-Stack Developer</a></li>
-        <li><a href="custom.html">Custom Filter</a></li>
+        <li><a href="index.html" class="nav-link nav-link--home">Home</a></li>
+        <li><a href="about.html" class="nav-link nav-link--about">About</a></li>
+        <li><a href="game-developer.html" class="nav-link nav-link--game"><span class="discipline-pip discipline-pip--game" aria-hidden="true"></span> Game Dev</a></li>
+        <li><a href="backend-developer.html" class="nav-link nav-link--backend"><span class="discipline-pip discipline-pip--backend" aria-hidden="true"></span> Backend</a></li>
+        <li><a href="web-developer.html" class="nav-link nav-link--web"><span class="discipline-pip discipline-pip--web" aria-hidden="true"></span> Web</a></li>
+        <li><a href="fullstack-developer.html" class="nav-link nav-link--fullstack active"><span class="discipline-pip discipline-pip--fullstack" aria-hidden="true"></span> Full-Stack</a></li>
+        <li><a href="custom.html" class="nav-link nav-link--filter">Filter</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
     <header class="page-header">
+      <div class="page-header-eyebrow page-header-eyebrow--fullstack">
+        <span class="discipline-pip discipline-pip--fullstack" aria-hidden="true"></span>
+        <span>Discipline // Full-Stack Platforms</span>
+      </div>
       <h1>Full-Stack Platforms</h1>
       <p>Complete web applications with database design, authentication, REST APIs, and backend migrations in Flask, Node.js, MySQL, and MongoDB.</p>
     </header>
@@ -56,7 +63,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       const filteredItems = filterByRole('fullstack-developer');
       const container = document.getElementById('projects-container');
-      renderPortfolioItems(filteredItems, container);
+      renderPortfolioItems(filteredItems, container, 'fullstack-developer');
     });
   </script>
 </body>
